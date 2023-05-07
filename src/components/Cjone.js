@@ -11,6 +11,7 @@ function Cjone() {
 
   return (
         <div className='wrap Cjone'>
+            <div className='bg'></div>
         <Nav />
         <div className='top_wrap Cjone'>
             <video autoPlay loop muted poster="../images/Cjone-Large.png">

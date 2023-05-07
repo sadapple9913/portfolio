@@ -20,6 +20,7 @@ function Work() {
 
   return (
     <div>
+        <div className='bg'></div>
       <Nav />
       <div className="list__content__wraper">
         <div

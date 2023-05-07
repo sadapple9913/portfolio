@@ -11,6 +11,7 @@ function SamsungEg() {
 
   return (
     <div className='wrap samsungEg'>
+        <div className='bg'></div>
     <Nav />
     <div className='top_wrap samsungEg'></div>
     <div className='info samsungEg'>

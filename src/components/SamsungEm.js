@@ -12,6 +12,7 @@ function SamsungEm() {
 
   return (
     <div className='wrap samsungEm'>
+        <div className='bg'></div>
         <Nav />
         <div className='top_wrap samsungEm'>
         <video autoPlay loop muted poster="../images/samsungEm-Large.png">

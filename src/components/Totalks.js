@@ -11,6 +11,7 @@ function Totalks() {
 
   return (
     <div className='wrap Totalks'>
+        <div className='bg'></div>
     <Nav />
     <div className='top_wrap Totalks'></div>
     <div className='info Totalks'>

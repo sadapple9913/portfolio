@@ -24,6 +24,7 @@ function Menu() {
 
   return (
     <div className='Menu__wrap'>
+        <div className='bg'></div>
     <Nav />
       <div className='profile__name'>
         <p>SangCheal Jung</p>

@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 function PureCss() {
   return (
     <div className='wrap PureCss'>
+        <div className='bg'></div>
     <Nav />
     <div className='top_wrap PureCss'>
         <div></div>

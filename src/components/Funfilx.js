@@ -11,6 +11,7 @@ function Funfilx() {
 
   return (
     <div className='wrap Funfilx'>
+    <div className='bg'></div>
     <Nav />
     <div className='top_wrap Funfilx'></div>
     <div className='info Funfilx'>
