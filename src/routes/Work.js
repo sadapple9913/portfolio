@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import Nav from '../components/Nav';
 import '../styles/Work.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -8,13 +8,14 @@ function Work() {
   const [hoverIndex, setHoverIndex] = useState(null);
   const navigate = useNavigate();
 
-  const handleMouseOver = (index) => {
+  const handleMouseOver = useCallback((index) => {
     setHoverIndex(index);
-  };
+  }, [setHoverIndex]);
 
-  const handleMouseOut = () => {
+  const handleMouseOut = useCallback(() => {
     setHoverIndex(null);
-  };
+  }, [setHoverIndex]);
+
 
 
   return (

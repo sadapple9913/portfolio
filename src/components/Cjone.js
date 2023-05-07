@@ -12,7 +12,11 @@ function Cjone() {
   return (
         <div className='wrap Cjone'>
         <Nav />
-        <div className='top_wrap Cjone'></div>
+        <div className='top_wrap Cjone'>
+            <video autoPlay loop muted poster="../images/Cjone-Large.png">
+            <source src='../videos/cjone_movie.mp4' type="video/mp4" />
+        </video>
+        </div>
         <div className='info Cjone'>
             <div className='info_top_wrap'>
                 <h2><span>Cj one</span></h2>

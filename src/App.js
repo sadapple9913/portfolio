@@ -19,7 +19,6 @@ library.add(fas, faTwitter, faFontAwesome, far )
 
 function App() {
 
-  // const [isMenuOpen, setIsMenuOpen] = useState(true);
 
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>

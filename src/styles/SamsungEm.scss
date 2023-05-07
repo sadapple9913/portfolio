@@ -14,11 +14,12 @@
     width: 1420px;
     height: 730px;
     margin-bottom: 60px;
-}
-.top_wrap.samsungEm{
-    background: url(../images/samsungEm-Large.png)no-repeat 0 0;
-    border-radius: 0px 0px 50px 50px;
-    background-size: cover;
+
+    video{
+        width: 1420px;
+        height: 730px;
+        border-radius: 0px 0px 50px 50px;
+    }
 }
 
 .info_top_wrap{

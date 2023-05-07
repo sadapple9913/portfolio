@@ -13,7 +13,11 @@ function SamsungEm() {
   return (
     <div className='wrap samsungEm'>
         <Nav />
-        <div className='top_wrap samsungEm'></div>
+        <div className='top_wrap samsungEm'>
+        <video autoPlay loop muted poster="../images/samsungEm-Large.png">
+        <source src="videos/em_movie.mp4" type="video/mp4" />
+        </video>
+        </div>
         <div className='info samsungEm'>
             <div className='info_top_wrap'>
                 <h2><span>SAMSUNG EM</span> - 삼성전기</h2>
