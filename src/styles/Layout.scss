@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+html,body{
+
+  background: #E7E6ED;
+  width: 100%;
+  height: 100%;
+
+  ::selection{
+    background-color: #78ffd1;
+    color: #606887;
+    -webkit-text-stroke: 0;
+  }
+}
+

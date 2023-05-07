@@ -1,0 +1,58 @@
+@charset "UTF-8";
+@import url(../styles/Common.scss);
+
+
+.main__info{
+  z-index: 100 !important;
+  position: relative;
+  top: 32%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 51%;
+  font-family: Caveat, sans-serif;
+  text-align: center;
+  color: #636B88;
+  h1{
+    font-size: 80px;
+    font-weight: bold;
+    margin-bottom: 40px;
+
+    span{
+      font-size: 85px;
+      -webkit-text-stroke:2px #636B88;
+      text-shadow: -2px -2px 0 #636B88, 2px -2px 0 #636B88, -2px 2px 0 #636B88, 2px 2px 0 #636B88;
+      color: #E7E6ED;
+      font-weight: normal;
+    }
+  }
+
+  p{
+    font-size: 55px;
+    margin-bottom: 40px;
+  }
+  
+.more__box{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+
+  span{
+    width: 30%;
+    font-size: 38px;
+
+    svg{
+      font-size: 28px;
+    }
+  }
+
+}
+}
+
+.cube{
+  z-index: 1;
+    position: absolute;
+    top:50%;
+    left: 15%;
+}
+

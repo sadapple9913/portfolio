@@ -1,0 +1,56 @@
+@charset "UTF-8";
+@import url(../styles/Common.scss);
+
+.wrap.samsungEg{
+    width: 100%;
+    height: 100vh;
+
+    .top_wrap.samsungEg{
+        background: url(../images/samsungEg-Large.png)no-repeat 0 0;
+        border-radius: 0px 0px 50px 52px;
+        background-size: cover;
+    }
+
+    .info_top_wrap{
+        color: #1428A0;
+    }
+
+    .info_bottom_wrap{
+        
+         .info_left_side{
+            h3{
+                color: #1428A0;
+            }
+         }
+
+        .info_right_side{
+            div{
+                h3{
+                    color: #1428A0;
+                }
+                ul{  
+                    margin: 0 0 20px 20px;}
+               }
+        }
+    }
+
+}
+
+.mockup_desktop.samsungEg {
+    background: url(../images/samsungEg-mockup1.png)no-repeat 0 0;
+    background-size: cover;
+    border-radius: 15px;
+}
+.mockup_tablet.samsungEg{
+    width: 570px;
+    height: 471px;
+    background: url(../images/samsungEg-mockup2.png)no-repeat 0 0;
+    background-size: cover;
+    border-radius: 15px;
+}
+.mockup_phone.samsungEg{
+    background: url(../images/samsungEg-mockup3.png)no-repeat 0 0;
+    background-size: contain;
+    border-radius: 15px;
+}
+

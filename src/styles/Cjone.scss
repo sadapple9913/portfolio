@@ -1,0 +1,64 @@
+@charset "UTF-8";
+@import url(../styles/Common.scss);
+
+.wrap.Cjone{
+    width: 100%;
+    height: 100vh;
+
+    .top_wrap.Cjone{
+        background: url(../images/cjone-Large.png)no-repeat 0 0;
+        border-radius: 0px 0px 50px 52px;
+        background-size: cover;
+    }
+
+    .info_top_wrap{
+        color: #AF3C42;
+    }
+
+    .info_bottom_wrap{
+        
+         .info_left_side{
+            h3{
+                color: #AF3C42;
+            }
+         }
+
+        .info_right_side{
+            div{
+                h3{
+                    color: #AF3C42;
+                }
+                ul{  
+                    margin: 0 0 20px 20px;}
+               }
+        }
+    }
+
+}
+
+.mockup_desktop.Cjone {
+    background: url(../images/cjoneMockup2.png)no-repeat 0 0;
+    background-size: cover;
+    border-radius: 15px;
+}
+.mockup_tablet.Cjone{
+    position: absolute;
+    left: 10%;
+    bottom: 0;
+    width: 528px;
+    height: 471px;
+    background: url(../images/cjoneMockup3.png)no-repeat 0 0;
+    background-size: cover;
+    border-radius: 15px;
+}
+.mockup_phone.Cjone{
+    position: absolute;
+    left: 70%;
+    bottom: 0;
+    width: 300px;
+    height: 500px;
+    background: url(../images/cjoneMockup1.png)no-repeat 0 0;
+    background-size: contain;
+    border-radius: 15px;
+}
+
