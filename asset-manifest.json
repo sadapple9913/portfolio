@@ -1,0 +1,39 @@
+{
+  "files": {
+    "main.css": "/portfolio/static/css/main.8130ebde.css",
+    "main.js": "/portfolio/static/js/main.ac73ca57.js",
+    "static/media/funfilx-Large.png": "/portfolio/static/media/funfilx-Large.5ac545ad36271f20383b.png",
+    "static/media/funfilx.png": "/portfolio/static/media/funfilx.544192ae99cc730c6a1f.png",
+    "static/media/samsungEg-Large.png": "/portfolio/static/media/samsungEg-Large.cb014f16800d49d4a4b3.png",
+    "static/media/samsungEg.png": "/portfolio/static/media/samsungEg.ea72de6bd35269abe755.png",
+    "static/media/samsungEm-Large.png": "/portfolio/static/media/samsungEm-Large.b152d7bbdab62ae58382.png",
+    "static/media/samsungEm.png": "/portfolio/static/media/samsungEm.97c92356553e1bfbfe15.png",
+    "static/media/cjone-Large.png": "/portfolio/static/media/cjone-Large.fc8d8225770c70ea69a5.png",
+    "static/media/samsungEg-mockup1.png": "/portfolio/static/media/samsungEg-mockup1.72856bb4549af4296ebc.png",
+    "static/media/samsungEm-mockup.png": "/portfolio/static/media/samsungEm-mockup.0c5ac3c8cb0f31edf84c.png",
+    "static/media/funfilx-mockup1.png": "/portfolio/static/media/funfilx-mockup1.a227fd51eb5a7a2c7af7.png",
+    "static/media/funfilx-mockup2.png": "/portfolio/static/media/funfilx-mockup2.b8a3ef8ff175a15df98e.png",
+    "static/media/cjone.png": "/portfolio/static/media/cjone.2cc640fda609fee70de2.png",
+    "static/media/cjoneMockup3.png": "/portfolio/static/media/cjoneMockup3.5a0bb5d46dc476bff9bd.png",
+    "static/media/samsungEg-mockup2.png": "/portfolio/static/media/samsungEg-mockup2.a6d93bf92ced1872ec00.png",
+    "static/media/cjoneMockup1.png": "/portfolio/static/media/cjoneMockup1.50c1263ef733ca82df02.png",
+    "static/media/kimm_bold.woff": "/portfolio/static/media/kimm_bold.6334bd6a4e950095edf9.woff",
+    "static/media/kimm_Light.woff": "/portfolio/static/media/kimm_Light.a0d78cda2538bd72ed49.woff",
+    "static/media/funfilx-mockup3.png": "/portfolio/static/media/funfilx-mockup3.0d587690e5c5671312ec.png",
+    "static/media/cjoneMockup2.png": "/portfolio/static/media/cjoneMockup2.71e574bf56db2387d022.png",
+    "static/media/totalks-mockup.png": "/portfolio/static/media/totalks-mockup.e3d6ce2f7b1b9bcd37c4.png",
+    "static/media/samsungEg-mockup3.png": "/portfolio/static/media/samsungEg-mockup3.489691b2db4fb7a22a54.png",
+    "static/media/css.png": "/portfolio/static/media/css.bfb7e2644752e697b7c9.png",
+    "static/media/css-Large2.png": "/portfolio/static/media/css-Large2.52a975904038210d0b6a.png",
+    "static/media/totalks-Large.png": "/portfolio/static/media/totalks-Large.de3af4b6a8151cc7050a.png",
+    "static/media/css-Large1.png": "/portfolio/static/media/css-Large1.3fecc85ac668d6014c03.png",
+    "static/media/totalk.png": "/portfolio/static/media/totalk.01c663dcffd05dd62a99.png",
+    "index.html": "/portfolio/index.html",
+    "main.8130ebde.css.map": "/portfolio/static/css/main.8130ebde.css.map",
+    "main.ac73ca57.js.map": "/portfolio/static/js/main.ac73ca57.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8130ebde.css",
+    "static/js/main.ac73ca57.js"
+  ]
+}
