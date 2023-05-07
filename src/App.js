@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Main from "./routes/Main";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, BrowserRouter } from "react-router-dom";
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import { faTwitter, faFontAwesome } from '@fortawesome/free-brands-svg-icons'
@@ -22,7 +22,7 @@ function App() {
   // const [isMenuOpen, setIsMenuOpen] = useState(true);
 
   return (
-    <Router>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
     <Routes>
       <Route path="/" element={<Main />} />
       <Route path="/Menu" element={<Menu />} />
@@ -34,7 +34,7 @@ function App() {
       <Route path="/Funfilx" element={<Funfilx />} />
       <Route path="/PureCss" element={<PureCss />} />
     </Routes>
-    </Router>
+    </BrowserRouter>
   );
 }
 
