@@ -20,19 +20,19 @@
     }
 
     .list__content__img:nth-of-type(1) {
-        background: url(../images/samsungEm.png)no-repeat 0 0;
+        background: url(../../public/images/samsungEm.png)no-repeat 0 0;
         background-size: cover;
     }
     .list__content__img:nth-of-type(2) {
-        background: url(../images/cjone.png)no-repeat 0 0;
+        background: url(../../public/images/cjone.png)no-repeat 0 0;
         background-size: cover;
     }
     .list__content__img:nth-of-type(3) {
-        background: url(../images/samsungEg.png)no-repeat 0 0;
+        background: url(../../public/images/samsungEg.png)no-repeat 0 0;
         background-size: cover;
     }
     .list__content__img:nth-of-type(4){
-        background: url(../images/totalk.png)no-repeat 0 0;
+        background: url(../../public/images/totalk.png)no-repeat 0 0;
         left: 200px;
         width: 500px;
         height: 500px;
@@ -41,11 +41,11 @@
         overflow: hidden;
     }
     .list__content__img:nth-of-type(5){
-        background: url(../images/funfilx.png)no-repeat 0 0;
+        background: url(../../public/images/funfilx.png)no-repeat 0 0;
         background-size: cover;
     }
     .list__content__img:last-of-type{
-        background: url(../images/css.png)no-repeat 0 0;
+        background: url(../../public/images/css.png)no-repeat 0 0;
         background-size: cover;
     }
 }

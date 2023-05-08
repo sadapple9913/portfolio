@@ -1,51 +1,43 @@
-import React, { useEffect, useRef } from 'react';
-import "../styles/MousePointer.scss"
+import React, { useEffect, useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import "../styles/MousePointer.scss";
 
 function MousePointer() {
-  const cursorRef = useRef(null);
-  const targetRef = useRef(null);
+  const [isClicked, setIsClicked] = useState(false);
 
   useEffect(() => {
-    const cursor = cursorRef.current;
-    const target = targetRef.current;
+    const cursor = document.querySelector(".cursor");
+    const cursorDot = document.querySelector(".cursor_dot");
 
-    const handleMouseMove = (event) => {
-      const cursorPosition = {
-        left: event.clientX,
-        top: event.clientY
-      };
-
-      const targetPosition = {
-        left: target.getBoundingClientRect().left + target.getBoundingClientRect().width / 2,
-        top: target.getBoundingClientRect().top + target.getBoundingClientRect().height / 2,
-      };
-
-      const distance = {
-        x: targetPosition.left - cursorPosition.left,
-        y: targetPosition.top - cursorPosition.top
-      };
-
-      const hypotenuse = Math.sqrt(distance.x * distance.x + distance.y * distance.y);
-
-      if (hypotenuse < 90) { // triggerDistance 값을 적절히 조정하세요
-        const angle = Math.atan2(distance.x, distance.y);
-        cursor.style.transform = `translate3d(${targetPosition.left - Math.sin(angle) * hypotenuse / 5}px, ${targetPosition.top - Math.cos(angle) * hypotenuse / 5}px, 0)`;
-      } else {
-        cursor.style.transform = `translate3d(${cursorPosition.left}px, ${cursorPosition.top}px, 0)`;
-      }
+    const handleMouseMove = (e) => {
+      cursor.style.left = e.pageX + "px";
+      cursor.style.top = e.pageY - window.scrollY + "px";
+      cursorDot.style.left = e.pageX + "px";
+      cursorDot.style.top = e.pageY - window.scrollY + "px";
     };
 
-    window.addEventListener('mousemove', handleMouseMove);
+    const handleMouseClick = () => {
+      setIsClicked(true);
+      setTimeout(() => {
+        setIsClicked(false);
+      }, 150);
+    };
+
+    window.addEventListener("scroll", handleMouseMove);
+    window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("click", handleMouseClick);
 
     return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener("scroll", handleMouseMove);
+      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("click", handleMouseClick);
     };
   }, []);
 
   return (
     <>
-      <div ref={targetRef} className="target"></div>
-      <div ref={cursorRef} className="cursor"></div>
+      <div className={`cursor${isClicked ? ' Click' : ''}`}></div>
+      <div className='cursor_dot'><FontAwesomeIcon icon={["fa-solid", "circle"]} /></div>
     </>
   );
 }

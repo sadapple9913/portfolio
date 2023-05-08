@@ -33,8 +33,8 @@ function Menu() {
         <ul>
           <li onClick={HomeLink}><span>01</span> HOME</li>
           <li onClick={WorkLink}><span>02</span> WORK</li>
-          <li><span>03</span> ABOUT</li>
-          <li><span>04</span> CONTACT</li>
+          <li onClick={AboutLink}><span>03</span> ABOUT</li>
+          <li onClick={ContactLink}><span>04</span> CONTACT</li>
         </ul>
       </div>
       <div className='cube menu'>

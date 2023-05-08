@@ -14,6 +14,8 @@ import Totalks from "./components/Totalks";
 import Funfilx from "./components/Funfilx"
 import PureCss from "./components/PureCss";
 import MousePointer from "./components/MousePointer";
+import About from "./routes/About";
+import Contact from "./routes/Contact";
 
 library.add(fas, faTwitter, faFontAwesome, far )
 
@@ -29,6 +31,8 @@ function App() {
       <Route path="/" element={<Main />} />
       <Route path="/Menu" element={<Menu />} />
       <Route path="/Work" element={<Work />} />
+      <Route path="/About" element={<About />} />
+      <Route path="/Contact" element={<Contact />} />
       <Route path="/SamsungEm" element={<SamsungEm />} />
       <Route path="/Cjone" element={<Cjone />} />
       <Route path="/SamsungEg" element={<SamsungEg />} />

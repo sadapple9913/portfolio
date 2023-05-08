@@ -6,7 +6,7 @@
     height: 100vh;
 
     .top_wrap.samsungEg{
-        background: url(../images/samsungEg-Large.png)no-repeat 0 0;
+        background: url(../../public/images/samsungEg-Large.png)no-repeat 0 0;
         border-radius: 0px 0px 50px 52px;
         background-size: cover;
     }
@@ -37,19 +37,19 @@
 }
 
 .mockup_desktop.samsungEg {
-    background: url(../images/samsungEg-mockup1.png)no-repeat 0 0;
+    background: url(../../public/images/samsungEg-mockup1.png)no-repeat 0 0;
     background-size: cover;
     border-radius: 15px;
 }
 .mockup_tablet.samsungEg{
     width: 570px;
     height: 471px;
-    background: url(../images/samsungEg-mockup2.png)no-repeat 0 0;
+    background: url(../../public/images/samsungEg-mockup2.png)no-repeat 0 0;
     background-size: cover;
     border-radius: 15px;
 }
 .mockup_phone.samsungEg{
-    background: url(../images/samsungEg-mockup3.png)no-repeat 0 0;
+    background: url(../../public/images/samsungEg-mockup3.png)no-repeat 0 0;
     background-size: contain;
     border-radius: 15px;
 }

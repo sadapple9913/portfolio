@@ -6,7 +6,7 @@
     height: 100vh;
 
     .top_wrap.Funfilx{
-        background: url(../images/funfilx-Large.png)no-repeat 0 0;
+        background: url(../../public/images/funfilx-Large.png)no-repeat 0 0;
         border-radius: 0px 0px 50px 52px;
         background-size: cover;
     }
@@ -38,19 +38,19 @@
 
 .mockup_desktop.Funfilx {
     width: 960px;
-    background: url(../images/funfilx-mockup1.png)no-repeat 0 0;
+    background: url(../../public/images/funfilx-mockup1.png)no-repeat 0 0;
     background-size: cover;
     border-radius: 15px;
 }
 .mockup_tablet.Funfilx{
     width: 570px;
     height: 471px;
-    background: url(../images/funfilx-mockup2.png)no-repeat 0 0;
+    background: url(../../public/images/funfilx-mockup2.png)no-repeat 0 0;
     background-size: cover;
     border-radius: 15px;
 }
 .mockup_phone.Funfilx{
-    background: url(../images/funfilx-mockup3.png)no-repeat 0 0;
+    background: url(../../public/images/funfilx-mockup3.png)no-repeat 0 0;
     background-size: contain;
     border-radius: 15px;
 }
