@@ -15,7 +15,6 @@ function PureCss() {
     <div className='info PureCss'>
         <div className='info_top_wrap'>
             <h2><span>Pure CSS</span></h2>
-            <p><span><FontAwesomeIcon icon="fa-solid fa-arrow-right" /></span> View the Website</p>
         </div>
         <div className='info_bottom_wrap'>
 

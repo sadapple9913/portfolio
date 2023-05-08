@@ -1,13 +1,14 @@
 
 /* 커스텀 커서 스타일 정의해주기 */
 .cursor {
+  z-index: 1000;
+  position: fixed;
+  left: -13px;
+  top: -13px;
   width: 1.5rem;
   height: 1.5rem;
   border: 2px solid #636B88;
   border-radius: 50%;
-  position: fixed;
-  z-index: 1000;
-  transform: translate(-50%, -50%);
   pointer-events: none;
   transition: all 50ms ease;
   transform-origin: 100% 100%;
@@ -20,12 +21,13 @@
 }
 
 .cursor_dot{
+  z-index: 1000;
+  position: fixed;
+  left: -2px;
+  top: -6px;
   font-size: 5px;
   color: #636B88;
   border-radius: 50%;
-  position: fixed;
-  z-index: 1000;
-  transform: translate(-50%, -50%);
   pointer-events: none;
   transition: all 0.1s ease;
   transition-property: background, transform;

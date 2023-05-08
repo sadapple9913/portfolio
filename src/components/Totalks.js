@@ -13,7 +13,11 @@ function Totalks() {
     <div className='wrap Totalks'>
         <div className='bg'></div>
     <Nav />
-    <div className='top_wrap Totalks'></div>
+    <div className='top_wrap Totalks'>
+    <video  className='totalks_video'  autoPlay loop muted >
+    <source  src={process.env.PUBLIC_URL + '/videos/totalks.mp4'} type="video/mp4" />
+    </video>
+    </div>
     <div className='info Totalks'>
         <div className='info_top_wrap'>
             <h2><span>TOTALKS</span></h2>

@@ -13,7 +13,11 @@ function SamsungEg() {
     <div className='wrap samsungEg'>
         <div className='bg'></div>
     <Nav />
-    <div className='top_wrap samsungEg'></div>
+    <div className='top_wrap samsungEg'>
+        <video autoPlay loop muted>
+        <source  src={process.env.PUBLIC_URL + '/videos/samsungEg.mp4'} type="video/mp4" />
+        </video>
+    </div>
     <div className='info samsungEg'>
         <div className='info_top_wrap'>
             <h2 onClick={handleOnClick}><span>SAMSUNG ENGINNEERING</span></h2>
