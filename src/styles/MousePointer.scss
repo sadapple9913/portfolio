@@ -1,0 +1,21 @@
+
+/* 커스텀 커서 스타일 정의해주기 */
+.cursor {
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 2px solid #636B88;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 1000;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: all 0.3s ease;
+  transition-property: background, transform;
+  transform-origin: 100% 100%;
+  background-size: cover;
+}
+
+// .cursor-grow {
+//   transform: scale(2);
+//   background-color: var(--color-texta);
+// }

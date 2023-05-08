@@ -2,12 +2,12 @@
 @import url(../styles/Common.scss);
 
 .list__content__wraper{
-    position: relative;
-    top: 240px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
     width: 900px;
     height: 700px;
     overflow: hidden;
-    border-radius: 0 50px 0 0;
 
     .list__content__img{
         opacity: 0;
@@ -70,7 +70,6 @@
     justify-content: space-between;
     border-bottom: 2px solid #636B88;
     padding: 20px 0;
-    cursor: pointer;
     overflow: hidden;
     
     p{

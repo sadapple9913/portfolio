@@ -15,9 +15,10 @@ function SamsungEm() {
         <div className='bg'></div>
         <Nav />
         <div className='top_wrap samsungEm'>
-        <video autoPlay loop muted poster="../images/samsungEm-Large.png">
-        <source src="videos/em_movie.mp4" type="video/mp4" />
+        <video  autoPlay loop muted >
+        <source  src={process.env.PUBLIC_URL + '/videos/em_movie.mp4'} type="video/mp4" />
         </video>
+
         </div>
         <div className='info samsungEm'>
             <div className='info_top_wrap'>
