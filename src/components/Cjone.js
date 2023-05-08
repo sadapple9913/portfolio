@@ -14,7 +14,7 @@ function Cjone() {
             <div className='bg'></div>
         <Nav />
         <div className='top_wrap Cjone'>
-            <video autoPlay loop muted poster="../images/cjone_movie.png">
+            <video autoPlay loop muted >
             <source src={process.env.PUBLIC_URL + '/videos/cjone_movie.mp4'} type="video/mp4" />
         </video>
         </div>
