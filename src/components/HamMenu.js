@@ -9,7 +9,16 @@ function HamMenu() {
   const [opacity, setOpacity] = useState(0);
 
   useEffect(() => {
-    setOpacity(1);
+    setOpacity(0);
+  
+    const timeoutId = setTimeout(() => {
+      setOpacity(1);
+    }, 100);
+  
+    return () => {
+      clearTimeout(timeoutId);
+      setOpacity(0);
+    };
   }, []);
 
   useEffect(() => {
@@ -23,7 +32,7 @@ function HamMenu() {
       } else {
         navigate("/menu");
       }
-    }, 700);
+    }, 800);
   };
 
   return (

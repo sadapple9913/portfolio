@@ -111,3 +111,25 @@
 
 }
 
+
+
+// 페이지 전환 효과
+
+.list__content{
+    position: relative;
+    transition: all 0.2s ease-in-out 0.2s;
+
+    p{
+        overflow: hidden;
+    }
+  }
+  .list__content.visible {
+    top: 0px;
+    opacity: 1;
+  }
+
+  .list__content.hidden {
+    top: -35px;
+    opacity: 0;
+  }
+

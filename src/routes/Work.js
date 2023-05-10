@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import Nav from '../components/Nav';
 import '../styles/Work.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -7,6 +7,7 @@ import { Link, useNavigate } from 'react-router-dom';
 function Work() {
   const [hoverIndex, setHoverIndex] = useState(null);
   const navigate = useNavigate();
+  const [opacity, setOpacity] = useState(0);
 
   const handleMouseOver = useCallback((index) => {
     setHoverIndex(index);
@@ -16,6 +17,19 @@ function Work() {
     setHoverIndex(null);
   }, [setHoverIndex]);
 
+
+  useEffect(() => {
+    setOpacity(0);
+  
+    const timeoutId = setTimeout(() => {
+      setOpacity(1);
+    }, 0);
+  
+    return () => {
+      clearTimeout(timeoutId);
+      setOpacity(0);
+    };
+  }, []);
 
 
   return (
@@ -56,12 +70,13 @@ function Work() {
       </div>
       <div className="Work__list">
         <ul>
-          <li className="list__content title">
+          <li 
+          className={`list__content title ${opacity === 1 ? "visible" : "hidden"}`}>
             <h1>WORK</h1>
             <span>6</span>
           </li>
           <li
-            className="list__content ssEm"
+            className={`list__content ${opacity === 1 ? "visible" : "hidden"}`}
             onMouseOver={() => handleMouseOver(0)}
             onMouseOut={handleMouseOut}
             onClick={samsungEm => navigate("/SamsungEm")}
@@ -70,7 +85,7 @@ function Work() {
             <span>Web Development</span>
           </li>
           <li
-            className="list__content cj"
+            className={`list__content ${opacity === 1 ? "visible" : "hidden"}`}
             onMouseOver={() => handleMouseOver(1)}
             onMouseOut={handleMouseOut}
             onClick={cjone => navigate("/Cjone")}
@@ -79,7 +94,7 @@ function Work() {
             <span>Web Development</span>
           </li>
           <li
-            className="list__content ssEg"
+             className={`list__content ${opacity === 1 ? "visible" : "hidden"}`}
             onMouseOver={() => handleMouseOver(2)}
             onMouseOut={handleMouseOut}
             onClick={SamsungEg => navigate("/SamsungEg")}
@@ -88,7 +103,7 @@ function Work() {
             <span>Web Development</span>
           </li>
           <li
-            className="list__content tt"
+            className={`list__content ${opacity === 1 ? "visible" : "hidden"}`}
             onMouseOver={() => handleMouseOver(3)}
             onMouseOut={handleMouseOut}
             onClick={Totalks => navigate("/Totalks")}
@@ -97,7 +112,7 @@ function Work() {
             <span>Web Development</span>
           </li>
           <li
-            className="list__content ff"
+            className={`list__content ${opacity === 1 ? "visible" : "hidden"}`}
             onMouseOver={() => handleMouseOver(4)}
             onMouseOut={handleMouseOut}
             onClick={Funfilx => navigate("/Funfilx")}
@@ -106,7 +121,7 @@ function Work() {
             <span>Web Development</span>
           </li>
           <li
-            className="list__content css"
+            className={`list__content ${opacity === 1 ? "visible" : "hidden"}`}
             onMouseOver={() => handleMouseOver(5)}
             onMouseOut={handleMouseOut}
             onClick={PureCss => navigate("/PureCss")}
