@@ -13,29 +13,35 @@ function Work() {
     setHoverIndex(index);
   }, [setHoverIndex]);
 
+  
   const handleMouseOut = useCallback(() => {
     setHoverIndex(null);
   }, [setHoverIndex]);
-
-
-  useEffect(() => {
+  
+  function handleOnClick() {
     setOpacity(0);
-  
-    const timeoutId = setTimeout(() => {
+    setTimeout(() => {
       setOpacity(1);
-    }, 0);
-  
-    return () => {
-      clearTimeout(timeoutId);
-      setOpacity(0);
-    };
-  }, []);
+    },800);
+  }
 
+useEffect(() => {
+  setOpacity(0);
+
+  const timeoutId = setTimeout(() => {
+    setOpacity(1);
+  }, 0);
+
+  return () => {
+    clearTimeout(timeoutId);
+    setOpacity(0);
+  };
+}, [navigate]);
 
   return (
     <div>
         <div className='bg'></div>
-      <Nav />
+      <Nav handleOnClick={handleOnClick}/>
       <div className="list__content__wraper">
         <div
           className={`list__content__img ${
@@ -79,7 +85,12 @@ function Work() {
             className={`list__content ${opacity === 1 ? "visible" : "hidden"}`}
             onMouseOver={() => handleMouseOver(0)}
             onMouseOut={handleMouseOut}
-            onClick={samsungEm => navigate("/SamsungEm")}
+            onClick={() => {
+              setOpacity(0);
+              setTimeout(() => {
+                navigate("/SamsungEm");
+              }, 550);
+            }}
           >
             <p><span><FontAwesomeIcon icon="fa-solid fa-arrow-right" /></span> Samsung-Em clone</p>
             <span>Web Development</span>

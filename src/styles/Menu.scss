@@ -117,9 +117,6 @@
       .menuMove{
         position: relative;
         transition: all 0.4s ease-in-out 0.2s;
-        &{
-          overflow-y: hidden;
-        }
       }
       .menuMove.visible {
         top: 0;

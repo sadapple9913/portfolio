@@ -1,31 +1,55 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Nav from './Nav'
 import "../styles/Totalks.scss"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useNavigate } from 'react-router-dom';
 
 function Totalks() {
+    const [opacity, setOpacity] = useState(0);
+    const navigate = useNavigate();
 
     function handleOnClick() {
         window.open("https://sadapple9913.github.io/kakao/", "_blank");
       }
 
+      function handleOnClick() {
+        setOpacity(0);
+        setTimeout(() => {
+        setOpacity(1);
+        },800);
+        }
+                 
+        
+        useEffect(() => {
+            setOpacity(0);
+          
+            const timeoutId = setTimeout(() => {
+              setOpacity(1);
+            }, 0);
+          
+            return () => {
+              clearTimeout(timeoutId);
+              setOpacity(0);
+            };
+          }, [navigate]);
+        
   return (
     <div className='wrap Totalks'>
         <div className='bg'></div>
-    <Nav />
-    <div className='top_wrap Totalks'>
-    <video  className='totalks_video'  autoPlay loop muted >
+    <Nav  handleOnClick={handleOnClick}/>
+    <div className={`top_wrap Totalks bgMoveMent ${opacity === 1 ? "visible" : "hidden"}`} >
+    <video className={`totalks_video bgMoveMent ${opacity === 1 ? "visible" : "hidden"}`} autoPlay loop muted >
     <source  src={process.env.PUBLIC_URL + '/videos/totalks.mp4'} type="video/mp4" />
     </video>
     </div>
     <div className='info Totalks'>
-        <div className='info_top_wrap'>
+        <div className={`info_top_wrap moveMent ${opacity === 1 ? "visible" : "hidden"}`}>
             <h2><span>TOTALKS</span></h2>
             <p onClick={handleOnClick}><span><FontAwesomeIcon icon="fa-solid fa-arrow-right" /></span> View the Website</p>
         </div>
         <div className='info_bottom_wrap'>
 
-        <div className='info_left_side'>
+        <div className={`info_left_side moveMent ${opacity === 1 ? "visible" : "hidden"}`}>
             <div>
                 <h3>CATERORY</h3>
                 <p>모바일_앱</p>
@@ -48,7 +72,7 @@ function Totalks() {
             </div>
         </div>
 
-        <div className='info_right_side'>
+        <div className={`info_right_side moveMent ${opacity === 1 ? "visible" : "hidden"}`}>
             <div>
                 <h3>주요 업무</h3>
                 <ul>React/SCSS 주요 기술

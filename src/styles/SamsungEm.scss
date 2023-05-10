@@ -16,6 +16,7 @@
     margin-bottom: 60px;
 
     video{
+        position: absolute;
         width: 1420px;
         height: 730px;
         border-radius: 0px 0px 50px 50px;
@@ -138,3 +139,31 @@
    
 }
 
+
+// 화면전환 효과
+
+.bgMoveMent{
+    transition: all 0.4s ease-in-out 0.6s ;
+}
+
+  .bgMoveMent.visible {
+    top: 0;
+    opacity: 1;
+  }
+  
+  .bgMoveMent.hidden {
+    top: -200px;
+    opacity: 0;
+  }
+  
+  .info_top_wrap.moveMent{
+    transition-delay: 0.5s;
+  }
+
+  .info_left_side.moveMent{
+    transition-delay: 0.35s;
+  }
+
+  .info_right_side.moveMent{
+    transition-delay: 0.2s;
+  }

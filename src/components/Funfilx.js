@@ -1,27 +1,50 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Nav from './Nav'
 import "../styles/Funfilx.scss"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useNavigate } from 'react-router-dom';
 
 function Funfilx() {
+    const [opacity, setOpacity] = useState(0);
+    const navigate = useNavigate();
 
     function handleOnClick() {
         window.open("https://sadapple9913.github.io/funfilx/", "_blank");
       }
 
+      
+      function handleOnClick() {
+        setOpacity(0);
+        setTimeout(() => {
+        setOpacity(1);
+        },800);
+        }
+                 
+        useEffect(() => {
+            setOpacity(0);
+          
+            const timeoutId = setTimeout(() => {
+              setOpacity(1);
+            }, 0);
+          
+            return () => {
+              clearTimeout(timeoutId);
+              setOpacity(0);
+            };
+          }, [navigate]);
   return (
     <div className='wrap Funfilx'>
     <div className='bg'></div>
-    <Nav />
+    <Nav  handleOnClick={handleOnClick}/>
     <div className='top_wrap Funfilx'></div>
     <div className='info Funfilx'>
-        <div className='info_top_wrap'>
+        <div className={`info_top_wrap moveMent ${opacity === 1 ? "visible" : "hidden"}`}>
             <h2><span>FunFilx</span></h2>
             <p onClick={handleOnClick}><span><FontAwesomeIcon icon="fa-solid fa-arrow-right" /></span> View the Website</p>
         </div>
         <div className='info_bottom_wrap'>
 
-        <div className='info_left_side'>
+        <div className={`info_left_side moveMent ${opacity === 1 ? "visible" : "hidden"}`}>
             <div>
                 <h3>CATERORY</h3>
                 <p>반응형_웹</p>
@@ -44,7 +67,7 @@ function Funfilx() {
             </div>
         </div>
 
-        <div className='info_right_side'>
+        <div className={`info_right_side moveMent ${opacity === 1 ? "visible" : "hidden"}`}>
             <div>
                 <h3>주요 업무</h3>
                 <ul>React/SCSS 주요 기술

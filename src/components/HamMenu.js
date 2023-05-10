@@ -13,7 +13,7 @@ function HamMenu() {
   
     const timeoutId = setTimeout(() => {
       setOpacity(1);
-    }, 100);
+    }, 0);
   
     return () => {
       clearTimeout(timeoutId);
@@ -29,8 +29,10 @@ function HamMenu() {
     setTimeout(() => {
       if (isMenuOpen) {
         navigate(-1);
+        setOpacity(0);
       } else {
         navigate("/menu");
+        setOpacity(0);
       }
     }, 800);
   };
