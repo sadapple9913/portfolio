@@ -4,7 +4,7 @@ import "../styles/Nav.scss"
 import HamMenu from './HamMenu';
 
 
-function Nav() {
+function Nav({ handleOnClick }) {
 
 
 
@@ -17,7 +17,7 @@ function Nav() {
       </div>
       <div className='right_side'>
         <span className='moon'><FontAwesomeIcon icon="fa-regular fa-moon" /></span>
-        <span><HamMenu /></span>
+        <span  onClick={handleOnClick}><HamMenu /></span>
       </div>  
     </div>
   )
