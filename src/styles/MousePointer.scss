@@ -23,7 +23,7 @@
   border: 2px solid #78ffd1;
 
 }
-
+  
 .cursor_dot{
   z-index: 1000;
   position: fixed;
@@ -36,4 +36,23 @@
   transition: all 0.1s ease;
   transition-property: background, transform;
   transform-origin: center center;
+}
+
+.cursor-effect {
+  cursor: pointer;
+}
+
+.cursor.cursor-effect{
+  width: 3rem;
+  height: 3rem;
+  left: -23px;
+  top: -23px;
+  background: rgba($color: #000000, $alpha: 0.3);
+  border: none;
+  transition: all 0.1s ease;
+  box-shadow: 0 0 3px rgba($color: #000000, $alpha: 0.3);;
+}
+
+.cursor_dot.cursor-effect{
+  display: none;
 }

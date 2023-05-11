@@ -31,21 +31,34 @@
 
 }
 
-.mockup_desktop.samsungEg {
-    background: url(../../public/images/samsungEg-mockup1.png)no-repeat 0 0;
-    background-size: cover;
-    border-radius: 15px;
-}
-.mockup_tablet.samsungEg{
-    width: 570px;
-    height: 471px;
-    background: url(../../public/images/samsungEg-mockup2.png)no-repeat 0 0;
-    background-size: cover;
-    border-radius: 15px;
-}
-.mockup_phone.samsungEg{
-    background: url(../../public/images/samsungEg-mockup3.png)no-repeat 0 0;
-    background-size: contain;
-    border-radius: 15px;
-}
+// .mockup_desktop.samsungEg {
+//     background: url(../../public/images/samsungEg-mockup1.png)no-repeat 0 0;
+//     background-size: cover;
+//     border-radius: 15px;
+// }
+// .mockup_tablet.samsungEg{
+//     width: 570px;
+//     height: 471px;
+//     background: url(../../public/images/samsungEg-mockup2.png)no-repeat 0 0;
+//     background-size: cover;
+//     border-radius: 15px;
+// }
+// .mockup_phone.samsungEg{
+//     background: url(../../public/images/samsungEg-mockup3.png)no-repeat 0 0;
+//     background-size: contain;
+//     border-radius: 15px;
+// }
 
+.move__project.samsungEg{
+    .info_left_side:hover{
+        p{
+            color: #E73446;
+        }
+    }
+
+    .info_right_side:hover{
+        p{
+            color: #E73446;
+        }
+    }
+    }

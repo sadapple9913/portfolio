@@ -44,11 +44,25 @@
 
 }
 
-.mockup_phone.Totalks{
-    left: 55%;
-    width: 623px;
-    height: 730px;
-    background: url(../../public/images/totalks-mockup.png)no-repeat 0 0;
-    background-size: cover;
-    border-radius: 15px;
-}
+// .mockup_phone.Totalks{
+//     left: 55%;
+//     width: 623px;
+//     height: 730px;
+//     background: url(../../public/images/totalks-mockup.png)no-repeat 0 0;
+//     background-size: cover;
+//     border-radius: 15px;
+// }
+
+.move__project.totalks{
+    .info_left_side:hover{
+        p{
+            color: #E50914;
+        }
+    }
+
+    .info_right_side:hover{
+        p{
+            color: #E50914;
+        }
+    }
+    }

@@ -1,24 +1,66 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Nav from './Nav'
 import "../styles/PureCss.scss"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useNavigate } from 'react-router-dom';
 
 function PureCss() {
+    const [opacity, setOpacity] = useState(0);
+    const navigate = useNavigate();
+
+    function handleOnClick() {
+        setOpacity(0);
+        setTimeout(() => {
+            setOpacity(1);
+        }, 800);
+    }
+
+    function moveProjectClick() {
+        setOpacity(0);
+        setTimeout(() => {
+            navigate('/Work');
+            setOpacity(1);
+            window.scrollTo(0, 0);
+        }, 800);
+        }
+        
+        function moveNextClick() {
+        setOpacity(0);
+        setTimeout(() => {
+            navigate('/SamsungEm    ');
+            setOpacity(1);
+            window.scrollTo(0, 0);
+        }, 800);
+        }   
+                 
+        useEffect(() => {
+            setOpacity(0);
+          
+            const timeoutId = setTimeout(() => {
+              setOpacity(1);
+            }, 0);
+          
+            return () => {
+              clearTimeout(timeoutId);
+              setOpacity(0);
+            };
+          }, [navigate]);
+
   return (
     <div className='wrap PureCss'>
         <div className='bg'></div>
-    <Nav />
+    <Nav  handleOnClick={handleOnClick}/>
     <div className='top_wrap PureCss'>
         <div></div>
         <div></div>
     </div>
     <div className='info PureCss'>
-        <div className='info_top_wrap'>
+        <div className={`info_top_wrap moveMent ${opacity === 1 ? "visible" : "hidden"}`}>
             <h2><span>Pure CSS</span></h2>
         </div>
         <div className='info_bottom_wrap'>
 
-        <div className='info_left_side'>
+        <div className={`info_left_side moveMent ${opacity === 1 ? "visible" : "hidden"}`}>
             <div>
                 <h3>CATERORY</h3>
                 <p>Pure CSS</p>
@@ -41,7 +83,7 @@ function PureCss() {
             </div>
         </div>
 
-        <div className='info_right_side'>
+        <div className={`info_right_side moveMent ${opacity === 1 ? "visible" : "hidden"}`}>
             <div>
                 <h3>주요 업무</h3>
                 <ul>CSS 주요 기술
@@ -50,6 +92,32 @@ function PureCss() {
             </div>
         </div>
         </div>
+
+        <div
+                    className={`move__project purecss funfilx moveMent ${opacity === 1
+                        ? "visible"
+                        : "hidden"}`}>
+                    <div
+                        className={`info_left_side moveMent ${opacity === 1
+                            ? "visible"
+                            : "hidden"}`}
+                        onClick={moveProjectClick}>
+                        <p>
+                            <span><FontAwesomeIcon icon="fa-solid fa-arrow-right"/></span>
+                            WORK</p>
+                    </div>
+                    <div
+                        className={`info_right_side moveMent ${opacity === 1
+                            ? "visible"
+                            : "hidden"}`}
+                        onClick={moveNextClick}>
+                        <p>
+                            <span><FontAwesomeIcon icon="fa-solid fa-arrow-right"/></span>
+                            Samsung Em</p>
+                        <p>Wep development</p>
+                    </div>
+                </div>
+
     </div>
 
 </div>

@@ -2,14 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import "../styles/MousePointer.scss";
 
-function MousePointer() {
+function MousePointer({ hideCursor }) {
   const [isClicked, setIsClicked] = useState(false);
   const [position, setPosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
-    const cursor = document.querySelector(".cursor");
-    const cursorDot = document.querySelector(".cursor_dot");
-
     const handleMouseMove = (e) => {
       setPosition({ x: e.pageX, y: e.pageY - window.scrollY });
     };
@@ -36,17 +33,19 @@ function MousePointer() {
 
   return (
     <>
-      <div
-        className={`cursor${isClicked ? ' Click' : ''}`}
+       <div
+        className={`cursor${isClicked ? " Click" : ""}${
+          hideCursor ? " hidden" : ""
+        }`}
         style={{
-          transform: `translate(${position.x}px, ${position.y}px)`, // transform을 사용하여 이동합니다.
-          willChange: "transform", // GPU 가속을 사용하기 위해 will-change를 추가합니다.
+          transform: `translate(${position.x}px, ${position.y}px)`, 
+          willChange: "transform", 
         }}
       ></div>
-      <div
-        className='cursor_dot'
+       <div
+        className={`cursor_dot${hideCursor ? " hidden" : ""}`}
         style={{
-          transform: `translate(${position.x}px, ${position.y}px)`, // transform을 사용하여 이동합니다.
+          transform: `translate(${position.x}px, ${position.y}px)`, 
         }}
       >
         <FontAwesomeIcon icon={["fa-solid", "circle"]} />

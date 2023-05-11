@@ -5,6 +5,7 @@
     font-family: Caveat, sans-serif;
     color: #636B88;
 }
+
 .profile__name{
     position: absolute;
     top: 100px;left: 190px;
@@ -97,9 +98,7 @@
       // 페이지 이동모션
       .profile__name{
         transition: all 0.4s ease-in-out 0.2s;
-        &{
-          overflow-y: hidden;
-        }
+
       }
       .profile__name.visible {
         top: 95px;
@@ -110,16 +109,13 @@
       .profile__name.hidden {
         top: 0px;
         opacity: 0;
-        transition-delay: 0.35s;
+        transition-delay: 0.05s;
       }
 
 
       .menuMove{
         position: relative;
         transition: all 0.4s ease-in-out 0.2s;
-        &{
-          overflow-y: hidden;
-        }
       }
       .menuMove.visible {
         top: 0;
@@ -150,26 +146,26 @@
       .menuMove.hidden {
         top: -95px;
         opacity: 0;
-        transition-delay: 0.35s;
+        transition-delay: 0.05s;
       }
 
        
       .menuMove.hidden:nth-of-type(2) {
         top: -95px;
         opacity: 0;
-        transition-delay: 0.25s;
+        transition-delay: 0.15s;
       }
 
       .menuMove.hidden:nth-of-type(3) {
         top: -95px;
         opacity: 0;
-        transition-delay: 0.15s;
+        transition-delay: 0.25s;
       }
 
       .menuMove.hidden:nth-of-type(4) {
         top: -95px;
         opacity: 0;
-        transition-delay: 0.05s;
+        transition-delay: 0.35s;
       }
       
       .cube.menu{

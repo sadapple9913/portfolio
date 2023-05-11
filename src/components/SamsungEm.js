@@ -1,32 +1,80 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Nav from './Nav'
 import "../styles/SamsungEm.scss"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useNavigate } from 'react-router-dom';
 
 
 function SamsungEm() {
-    
-    function handleOnClick() {
-        window.open("https://sadapple9913.github.io/samsung_electricity_clone/", "_blank");
-      }
+const [opacity, setOpacity] = useState(0);
+const navigate = useNavigate();
+
+function webSiteOnClick() {
+setOpacity(0);
+setTimeout(() => {
+window.open("https://sadapple9913.github.io/samsung_electricity_clone/", "_blank");
+setOpacity(1);
+},800);
+}
+
+function handleOnClick() {
+setOpacity(0);
+setTimeout(() => {
+setOpacity(1);
+},800);
+}
+
+function moveProjectClick() {
+    setOpacity(0);
+    setTimeout(() => {
+      navigate('/Work');
+      setOpacity(1);
+      window.scrollTo(0, 0);
+    }, 800);
+  }
+
+  function moveNextClick() {
+    setOpacity(0);
+    setTimeout(() => {
+      navigate('/Cjone');
+      setOpacity(1);
+      window.scrollTo(0, 0);
+    }, 800);
+  }
+
+         
+
+useEffect(() => {
+setOpacity(0);
+
+const timeoutId = setTimeout(() => {
+    setOpacity(1);
+}, 0);
+
+return () => {
+    clearTimeout(timeoutId);
+    setOpacity(0);
+};
+}, [navigate]);
+
 
   return (
     <div className='wrap samsungEm'>
         <div className='bg'></div>
-        <Nav />
+        <Nav  handleOnClick={handleOnClick}/>
         <div className='top_wrap samsungEm'>
-        <video autoPlay loop muted >
+        <video autoPlay loop muted className={`bgMoveMent ${opacity === 1 ? "visible" : "hidden"}`}>
         <source  src={process.env.PUBLIC_URL + '/videos/em_movie.mp4'} type="video/mp4" />
         </video>
         </div>
         <div className='info samsungEm'>
-            <div className='info_top_wrap'>
+            <div className={`info_top_wrap moveMent ${opacity === 1 ? "visible" : "hidden"}`}>
                 <h2><span>SAMSUNG EM</span> - 삼성전기</h2>
-                <p onClick={handleOnClick}><span><FontAwesomeIcon icon="fa-solid fa-arrow-right" /></span> View the Website</p>
+                <p onClick={webSiteOnClick}><span><FontAwesomeIcon icon="fa-solid fa-arrow-right" /></span> View the Website</p>
             </div>
             <div className='info_bottom_wrap'>
 
-             <div className='info_left_side'>
+             <div className={`info_left_side moveMent ${opacity === 1 ? "visible" : "hidden"}`}>
                 <div>
                     <h3>CATERORY</h3>
                     <p>기업사이트_웹</p>
@@ -49,7 +97,7 @@ function SamsungEm() {
                 </div>
              </div>
 
-             <div className='info_right_side'>
+             <div className={`info_right_side moveMent ${opacity === 1 ? "visible" : "hidden"}`}>
                 <div>
                     <h3>주요 업무</h3>
                     <ul>페이지별 주요 기술
@@ -69,10 +117,18 @@ function SamsungEm() {
              </div>
 
             </div>
-            <div className='mockup'>
+            {/* <div className='mockup'>
                 <div className='mockup_desktop samsungEm'></div>
+            </div> */}
+            <div className={`move__project moveMent ${opacity === 1 ? "visible" : "hidden"}`}  >
+                <div className={`info_left_side moveMent ${opacity === 1 ? "visible" : "hidden"}`} onClick={moveProjectClick}>
+                <p><span><FontAwesomeIcon icon="fa-solid fa-arrow-right" /></span> WORK</p>
+                </div>
+                <div className={`info_right_side moveMent ${opacity === 1 ? "visible" : "hidden"}`} onClick={moveNextClick}>
+                <p><span><FontAwesomeIcon icon="fa-solid fa-arrow-right" /></span> Cj one Clone</p>
+                <p>Web development</p>
+                </div>
             </div>
-
         </div>
     </div>
   )
