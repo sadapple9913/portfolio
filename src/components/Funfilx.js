@@ -2,58 +2,39 @@ import React, {useEffect, useState} from 'react'
 import Nav from './Nav'
 import "../styles/Funfilx.scss"
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {useNavigate} from 'react-router-dom';
+import { useOpacity } from '../Hooks/UseOpacity';
+import { useCursorEffect } from '../Hooks/UseCursorEffect';
+import { useNavigate } from 'react-router-dom';
 
 function Funfilx() {
-    const [opacity, setOpacity] = useState(0);
-    const navigate = useNavigate();
-
-    function webSiteOnClick() {
-        setOpacity(0);
-        setTimeout(() => {
-        window.open("https://sadapple9913.github.io/funfilx/", "_blank");
-        setOpacity(1);
-        },800);
-        }
-
-    function handleOnClick() {
-        setOpacity(0);
-        setTimeout(() => {
-            setOpacity(1);
-        }, 800);
-    }
-
-    function moveProjectClick() {
-        setOpacity(0);
-        setTimeout(() => {
-            navigate('/Work');
-            setOpacity(1);
-            window.scrollTo(0, 0);
-        }, 800);
-        }
-        
-        function moveNextClick() {
-        setOpacity(0);
-        setTimeout(() => {
-            navigate('/PureCss');
-            setOpacity(1);
-            window.scrollTo(0, 0);
-        }, 800);
-        }   
-
-    useEffect(() => {
-        setOpacity(0);
-
-        const timeoutId = setTimeout(() => {
-            setOpacity(1);
-        }, 0);
-
-        return() => {
-            clearTimeout(timeoutId);
-            setOpacity(0);
-        };
-    }, [navigate]);
+const navigate = useNavigate();
+const { opacity, handleOpacityChange } = useOpacity();
+const { handleMouseEnter, handleMouseLeave } = useCursorEffect();
     
+        const webSiteOnClick = () => {
+            handleOpacityChange(() => {
+                window.open("https://sadapple9913.github.io/funfilx/", "_blank");
+            });
+          };
+        
+          const handleOnClick = () => {
+            handleOpacityChange(() => {});
+          };
+        
+          const moveProjectClick = () => {
+            handleOpacityChange(() => {
+              navigate('/Work');
+              window.scrollTo(0, 0);
+            });
+          };
+        
+          const moveNextClick = () => {
+            handleOpacityChange(() => {
+              navigate('/PureCss');
+              window.scrollTo(0, 0);
+            });
+          };
+
     return (
         <div className='wrap Funfilx'>
             <div className='bg'></div>
@@ -61,13 +42,15 @@ function Funfilx() {
             <div className='top_wrap Funfilx'></div>
             <div className='info Funfilx'>
                 <div
-                    className={`info_top_wrap moveMent ${opacity === 1
+                    className={`info_top_wrap cursor-effect moveMent ${opacity === 1
                         ? "visible"
                         : "hidden"}`}>
                     <h2>
                         <span>FunFilx</span>
                     </h2>
-                    <p onClick={webSiteOnClick}>
+                    <p onClick={webSiteOnClick}
+                onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave} >
                         <span><FontAwesomeIcon icon="fa-solid fa-arrow-right"/></span>
                         View the Website</p>
                 </div>
@@ -133,19 +116,23 @@ function Funfilx() {
                         ? "visible"
                         : "hidden"}`}>
                     <div
-                        className={`info_left_side moveMent ${opacity === 1
+                        className={`info_left_side cursor-effect moveMent ${opacity === 1
                             ? "visible"
                             : "hidden"}`}
-                        onClick={moveProjectClick}>
+                        onClick={moveProjectClick}
+                        onMouseEnter={handleMouseEnter}
+                        onMouseLeave={handleMouseLeave}>
                         <p>
                             <span><FontAwesomeIcon icon="fa-solid fa-arrow-right"/></span>
                             WORK</p>
                     </div>
                     <div
-                        className={`info_right_side moveMent ${opacity === 1
+                        className={`info_right_side cursor-effect moveMent ${opacity === 1
                             ? "visible"
                             : "hidden"}`}
-                        onClick={moveNextClick}>
+                        onClick={moveNextClick}
+                        onMouseEnter={handleMouseEnter}
+                        onMouseLeave={handleMouseLeave}>
                         <p>
                             <span><FontAwesomeIcon icon="fa-solid fa-arrow-right"/></span>
                             Pure Css</p>

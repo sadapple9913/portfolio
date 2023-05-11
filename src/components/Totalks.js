@@ -3,56 +3,37 @@ import Nav from './Nav'
 import "../styles/Totalks.scss"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useNavigate } from 'react-router-dom';
+import { useOpacity } from '../Hooks/UseOpacity';
+import { useCursorEffect } from '../Hooks/UseCursorEffect';
 
 function Totalks() {
-    const [opacity, setOpacity] = useState(0);
     const navigate = useNavigate();
+    const { opacity, handleOpacityChange } = useOpacity();
+    const { handleMouseEnter, handleMouseLeave } = useCursorEffect();
+        
+const webSiteOnClick = () => {
+    handleOpacityChange(() => {
+        window.open("https://sadapple9913.github.io/kakao/", "_blank");
+    });
+    };
 
-    function webSiteOnClick() {
-    setOpacity(0);
-    setTimeout(() => {
-    window.open("https://sadapple9913.github.io/kakao/", "_blank");
-    setOpacity(1);
-    },800);
-    }
+    const handleOnClick = () => {
+    handleOpacityChange(() => {});
+    };
 
-    function handleOnClick() {
-    setOpacity(0);
-    setTimeout(() => {
-    setOpacity(1);
-    },800);
-    }
-    
-function moveProjectClick() {
-    setOpacity(0);
-    setTimeout(() => {
+    const moveProjectClick = () => {
+    handleOpacityChange(() => {
         navigate('/Work');
-        setOpacity(1);
         window.scrollTo(0, 0);
-    }, 800);
-    }
-    
-    function moveNextClick() {
-    setOpacity(0);
-    setTimeout(() => {
+    });
+    };
+
+    const moveNextClick = () => {
+    handleOpacityChange(() => {
         navigate('/Funfilx');
-        setOpacity(1);
         window.scrollTo(0, 0);
-    }, 800);
-    }   
-        
-    useEffect(() => {
-        setOpacity(0);
-        
-        const timeoutId = setTimeout(() => {
-            setOpacity(1);
-        }, 0);
-        
-        return () => {
-            clearTimeout(timeoutId);
-            setOpacity(0);
-        };
-        }, [navigate]);
+    });
+    };
     
   return (
     <div className='wrap Totalks'>
@@ -64,9 +45,11 @@ function moveProjectClick() {
     </video>
     </div>
     <div className='info Totalks'>
-        <div className={`info_top_wrap moveMent ${opacity === 1 ? "visible" : "hidden"}`}>
+        <div className={`info_top_wrap cursor-effect moveMent ${opacity === 1 ? "visible" : "hidden"}`}>
             <h2><span>TOTALKS</span></h2>
-            <p onClick={webSiteOnClick}><span><FontAwesomeIcon icon="fa-solid fa-arrow-right" /></span> View the Website</p>
+            <p onClick={webSiteOnClick}
+                            onMouseEnter={handleMouseEnter}
+                            onMouseLeave={handleMouseLeave}><span><FontAwesomeIcon icon="fa-solid fa-arrow-right" /></span> View the Website</p>
         </div>
         <div className='info_bottom_wrap'>
 
@@ -111,11 +94,15 @@ function moveProjectClick() {
     <div className='mockup_phone Totalks'></div>
     </div> */}
 
-            <div className={`move__project totalks moveMent ${opacity === 1 ? "visible" : "hidden"}`}  >
-                <div className={`info_left_side moveMent ${opacity === 1 ? "visible" : "hidden"}`} onClick={moveProjectClick}>
+            <div className={`move__project totalks cursor-effect moveMent ${opacity === 1 ? "visible" : "hidden"}`}  >
+                <div className={`info_left_side moveMent ${opacity === 1 ? "visible" : "hidden"}`} onClick={moveProjectClick}
+                                onMouseEnter={handleMouseEnter}
+                                onMouseLeave={handleMouseLeave}>
                 <p><span><FontAwesomeIcon icon="fa-solid fa-arrow-right" /></span> WORK</p>
                 </div>
-                <div className={`info_right_side moveMent ${opacity === 1 ? "visible" : "hidden"}`} onClick={moveNextClick}>
+                <div className={`info_right_side cursor-effect moveMent ${opacity === 1 ? "visible" : "hidden"}`} onClick={moveNextClick}
+                                onMouseEnter={handleMouseEnter}
+                                onMouseLeave={handleMouseLeave}>
                 <p><span><FontAwesomeIcon icon="fa-solid fa-arrow-right" /></span> Funfilx</p>
                 <p>Web development</p>
                 </div>

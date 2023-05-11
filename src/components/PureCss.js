@@ -3,48 +3,37 @@ import Nav from './Nav'
 import "../styles/PureCss.scss"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useNavigate } from 'react-router-dom';
+import { useOpacity } from '../Hooks/UseOpacity';
+import { useCursorEffect } from '../Hooks/UseCursorEffect';
 
 function PureCss() {
-    const [opacity, setOpacity] = useState(0);
     const navigate = useNavigate();
-
-    function handleOnClick() {
-        setOpacity(0);
-        setTimeout(() => {
-            setOpacity(1);
-        }, 800);
-    }
-
-    function moveProjectClick() {
-        setOpacity(0);
-        setTimeout(() => {
-            navigate('/Work');
-            setOpacity(1);
-            window.scrollTo(0, 0);
-        }, 800);
-        }
+    const { opacity, handleOpacityChange } = useOpacity();
+    const { handleMouseEnter, handleMouseLeave } = useCursorEffect();
         
-        function moveNextClick() {
-        setOpacity(0);
-        setTimeout(() => {
-            navigate('/SamsungEm    ');
-            setOpacity(1);
-            window.scrollTo(0, 0);
-        }, 800);
-        }   
-                 
-        useEffect(() => {
-            setOpacity(0);
-          
-            const timeoutId = setTimeout(() => {
-              setOpacity(1);
-            }, 0);
-          
-            return () => {
-              clearTimeout(timeoutId);
-              setOpacity(0);
-            };
-          }, [navigate]);
+            // const webSiteOnClick = () => {
+            //     handleOpacityChange(() => {
+            //         window.open("https://sadapple9913.github.io/funfilx/", "_blank");
+            //     });
+            //   };
+            
+              const handleOnClick = () => {
+                handleOpacityChange(() => {});
+              };
+            
+              const moveProjectClick = () => {
+                handleOpacityChange(() => {
+                  navigate('/Work');
+                  window.scrollTo(0, 0);
+                });
+              };
+            
+              const moveNextClick = () => {
+                handleOpacityChange(() => {
+                  navigate('/samsungEm');
+                  window.scrollTo(0, 0);
+                });
+              };
 
   return (
     <div className='wrap PureCss'>
@@ -101,7 +90,9 @@ function PureCss() {
                         className={`info_left_side moveMent ${opacity === 1
                             ? "visible"
                             : "hidden"}`}
-                        onClick={moveProjectClick}>
+                        onClick={moveProjectClick}
+                        onMouseEnter={handleMouseEnter}
+                        onMouseLeave={handleMouseLeave}>
                         <p>
                             <span><FontAwesomeIcon icon="fa-solid fa-arrow-right"/></span>
                             WORK</p>
@@ -110,7 +101,9 @@ function PureCss() {
                         className={`info_right_side moveMent ${opacity === 1
                             ? "visible"
                             : "hidden"}`}
-                        onClick={moveNextClick}>
+                        onClick={moveNextClick}
+                        onMouseEnter={handleMouseEnter}
+                        onMouseLeave={handleMouseLeave}>
                         <p>
                             <span><FontAwesomeIcon icon="fa-solid fa-arrow-right"/></span>
                             Samsung Em</p>

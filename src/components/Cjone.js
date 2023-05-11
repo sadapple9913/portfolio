@@ -3,77 +3,37 @@ import Nav from './Nav'
 import "../styles/Cjone.scss"
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {useNavigate} from 'react-router-dom';
+import { useOpacity } from '../Hooks/UseOpacity';
+import { useCursorEffect } from '../Hooks/UseCursorEffect';
 
 function Cjone() {
-    const [opacity, setOpacity] = useState(0);
     const navigate = useNavigate();
-    const handleMouseEnter = useCallback(() => {
-        document
-            .querySelector('.cursor')
-            .classList
-            .add('cursor-effect');
-        document
-            .querySelector('.cursor_dot')
-            .classList
-            .add('cursor-effect');
-    }, []);
+    const { opacity, handleOpacityChange } = useOpacity();
+    const { handleMouseEnter, handleMouseLeave } = useCursorEffect();
 
-    const handleMouseLeave = useCallback(() => {
-        document
-            .querySelector('.cursor')
-            .classList
-            .remove('cursor-effect');
-        document
-            .querySelector('.cursor_dot')
-            .classList
-            .remove('cursor-effect');
-    }, []);
+const webSiteOnClick = () => {
+    handleOpacityChange(() => {
+        window.open("https://sadapple9913.github.io/cjone_clone/", "_blank");
+    });
+    };
 
-    function webSiteOnClick() {
-        setOpacity(0);
-        setTimeout(() => {
-            window.open("https://sadapple9913.github.io/cjone_clone/", "_blank");
-            setOpacity(1);
-        }, 800);
-    }
+    const handleOnClick = () => {
+    handleOpacityChange(() => {});
+    };
 
-    function handleOnClick() {
-        setOpacity(0);
-        setTimeout(() => {
-            setOpacity(1);
-        }, 800);
-    }
+    const moveProjectClick = () => {
+    handleOpacityChange(() => {
+        navigate('/Work');
+        window.scrollTo(0, 0);
+    });
+    };
 
-    function moveProjectClick() {
-        setOpacity(0);
-        setTimeout(() => {
-            navigate('/Work');
-            setOpacity(1);
-            window.scrollTo(0, 0);
-        }, 800);
-    }
-
-    function moveNextClick() {
-        setOpacity(0);
-        setTimeout(() => {
-            navigate('/SamsungEg');
-            setOpacity(1);
-            window.scrollTo(0, 0);
-        }, 800);
-    }
-
-    useEffect(() => {
-        setOpacity(0);
-
-        const timeoutId = setTimeout(() => {
-            setOpacity(1);
-        }, 0);
-
-        return() => {
-            clearTimeout(timeoutId);
-            setOpacity(0);
-        };
-    }, [navigate]);
+    const moveNextClick = () => {
+    handleOpacityChange(() => {
+        navigate('/samsungEg');
+        window.scrollTo(0, 0);
+    });
+    };
 
     return (
         <div className='wrap Cjone'>
@@ -172,7 +132,7 @@ function Cjone() {
                         ? "visible"
                         : "hidden"}`}>
                     <div
-                        className={`info_left_side cursor-effect cjnoe moveMent ${opacity === 1
+                        className={`info_left_side cursor-effect cjone moveMent ${opacity === 1
                             ? "visible"
                             : "hidden"}`}
                         onClick={moveProjectClick}
@@ -183,7 +143,7 @@ function Cjone() {
                             WORK</p>
                     </div>
                     <div
-                        className={`info_right_side cursor-effect cjnoe moveMent ${opacity === 1
+                        className={`info_right_side cursor-effect cjone moveMent ${opacity === 1
                             ? "visible"
                             : "hidden"}`}
                         onClick={moveNextClick}

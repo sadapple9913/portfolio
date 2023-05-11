@@ -3,82 +3,38 @@ import Nav from './Nav'
 import "../styles/SamsungEm.scss"
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {useNavigate} from 'react-router-dom';
+import { useOpacity } from '../Hooks/UseOpacity';
+import { useCursorEffect } from '../Hooks/UseCursorEffect';
 
 function SamsungEm() {
-    const [opacity, setOpacity] = useState(0);
-    const navigate = useNavigate();
+const navigate = useNavigate();
+const { opacity, handleOpacityChange } = useOpacity();
+const { handleMouseEnter, handleMouseLeave } = useCursorEffect();
 
-    const handleMouseEnter = useCallback(() => {
-        document
-            .querySelector('.cursor')
-            .classList
-            .add('cursor-effect');
-        document
-            .querySelector('.cursor_dot')
-            .classList
-            .add('cursor-effect');
-    }, []);
+const webSiteOnClick = () => {
+    handleOpacityChange(() => {
+        window.open("https://sadapple9913.github.io/samsung_electricity_clone/", "_blank");
+    });
+    };
 
-    const handleMouseLeave = useCallback(() => {
-        document
-            .querySelector('.cursor')
-            .classList
-            .remove('cursor-effect');
-        document
-            .querySelector('.cursor_dot')
-            .classList
-            .remove('cursor-effect');
-    }, []);
+    const handleOnClick = () => {
+    handleOpacityChange(() => {});
+    };
 
-    function webSiteOnClick() {
-        setOpacity(0);
-        setTimeout(() => {
-            window.open(
-                "https://sadapple9913.github.io/samsung_electricity_clone/",
-                "_blank"
-            );
-            setOpacity(1);
-        }, 800);
-    }
+    const moveProjectClick = () => {
+    handleOpacityChange(() => {
+        navigate('/Work');
+        window.scrollTo(0, 0);
+    });
+    };
 
-    function handleOnClick() {
-        setOpacity(0);
-        setTimeout(() => {
-            setOpacity(1);
-        }, 800);
-    }
-
-    function moveProjectClick() {
-        setOpacity(0);
-        setTimeout(() => {
-            navigate('/Work');
-            setOpacity(1);
-            window.scrollTo(0, 0);
-        }, 800);
-    }
-
-    function moveNextClick() {
-        setOpacity(0);
-        setTimeout(() => {
-            navigate('/Cjone');
-            setOpacity(1);
-            window.scrollTo(0, 0);
-        }, 800);
-    }
-
-    useEffect(() => {
-        setOpacity(0);
-
-        const timeoutId = setTimeout(() => {
-            setOpacity(1);
-        }, 0);
-
-        return() => {
-            clearTimeout(timeoutId);
-            setOpacity(0);
-        };
-    }, [navigate]);
-
+    const moveNextClick = () => {
+    handleOpacityChange(() => {
+        navigate('/Cjone');
+        window.scrollTo(0, 0);
+    });
+    };
+    
     return (
         <div className='wrap samsungEm'>
             <div className='bg'></div>
