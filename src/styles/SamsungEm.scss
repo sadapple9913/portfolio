@@ -197,8 +197,11 @@
 }
 
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> a9ac2cf4a5fe1a06e02115384e30389a0c9c6ed5
 // 화면전환 효과
 
 .bgMoveMent{
@@ -213,10 +216,15 @@
   .bgMoveMent.hidden {
     top: -200px;
     opacity: 0;
+<<<<<<< HEAD
     transition-delay: 0.2s;
   }
   
 
+=======
+  }
+  
+>>>>>>> a9ac2cf4a5fe1a06e02115384e30389a0c9c6ed5
   .info_top_wrap.moveMent{
     transition-delay: 0.5s;
   }
@@ -227,6 +235,7 @@
 
   .info_right_side.moveMent{
     transition-delay: 0.2s;
+<<<<<<< HEAD
   }
 
 
@@ -244,4 +253,6 @@
 
   .move__project.moveMent{
     transition-delay: 0s;
+=======
+>>>>>>> a9ac2cf4a5fe1a06e02115384e30389a0c9c6ed5
   }

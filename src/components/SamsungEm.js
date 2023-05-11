@@ -58,6 +58,27 @@ return () => {
 }, [navigate]);
 
 
+function handleOnClick() {
+setOpacity(0);
+setTimeout(() => {
+setOpacity(1);
+},800);
+}
+         
+
+useEffect(() => {
+    setOpacity(0);
+  
+    const timeoutId = setTimeout(() => {
+      setOpacity(1);
+    }, 0);
+  
+    return () => {
+      clearTimeout(timeoutId);
+      setOpacity(0);
+    };
+  }, [navigate]);
+
   return (
     <div className='wrap samsungEm'>
         <div className='bg'></div>
