@@ -11,7 +11,6 @@ function PureCss() {
     function handleOnClick() {
         setOpacity(0);
         setTimeout(() => {
-<<<<<<< HEAD
             setOpacity(1);
         }, 800);
     }
@@ -33,11 +32,6 @@ function PureCss() {
             window.scrollTo(0, 0);
         }, 800);
         }   
-=======
-        setOpacity(1);
-        },800);
-        }
->>>>>>> a9ac2cf4a5fe1a06e02115384e30389a0c9c6ed5
                  
         useEffect(() => {
             setOpacity(0);
