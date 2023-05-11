@@ -6,8 +6,8 @@ import { useNavigate } from 'react-router-dom';
 
 
 function Nav({ handleOnClick }) {
-const navigate = useNavigate();
-
+  const navigate = useNavigate();
+    
   const handleMouseEnter = useCallback(() => {
     document.querySelector('.cursor').classList.add('cursor-effect');
     document.querySelector('.cursor_dot').classList.add('cursor-effect');
@@ -18,11 +18,10 @@ const navigate = useNavigate();
     document.querySelector('.cursor_dot').classList.remove('cursor-effect');
   }, []);
 
-  
   return (
     <div className='nav__wrap '>
       <div className='left_side'>
-        <span onClick={()=> navigate("/")}>
+        <span>
           <FontAwesomeIcon icon="fa-solid fa-cube" />
           </span>
       </div>

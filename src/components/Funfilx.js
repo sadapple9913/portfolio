@@ -53,6 +53,7 @@ function Funfilx() {
             setOpacity(0);
         };
     }, [navigate]);
+    
     return (
         <div className='wrap Funfilx'>
             <div className='bg'></div>

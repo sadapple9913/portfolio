@@ -150,7 +150,7 @@
     font-weight: bold;
     font-family: Caveat , sans-serif;
     .info_left_side{
-        width: 100%;
+        width: 150px;
         margin-top: 30px;
         font-size: 32px;
         overflow-x: hidden;
@@ -169,29 +169,30 @@
     }
 
     .info_right_side{
-        position: relative;
-        left: 30px;
-        width: 100%;
         margin-top: 28px;
         padding-right: 5px;
         font-size: 32px;
         text-align: right;
         line-height: 1.3;
-        overflow-x: hidden;
         p{
-            transform: translateX(-30px);
             transition: all 0.3s ease 0s;
+            span{
+                transition: opacity 0.3s ease 0s;
+                opacity: 0;
+            }
         }
         p:last-of-type{
+            width: 200px;
             font-size:  28px;
             font-weight: normal;
         }
     }
     .info_right_side:hover{
         p{
-            animation: pmove 0.3s;
-            animation-fill-mode: forwards;
             color: #AF3C42;
+            span{
+                opacity: 1;
+            }
         }
     }
 }
