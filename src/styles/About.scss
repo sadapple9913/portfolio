@@ -7,7 +7,7 @@
 
   h1{
     position: absolute;
-    top: 90px;
+    top: 180px;
     left: 12%;
     font-family: Caveat;
     font-size: 50px;
@@ -96,5 +96,122 @@
   span{
     font-size: 20px;
     color: rgba($color: #636B88, $alpha: 0.8);
+  }
+}
+
+// 전환 이펙트 효과
+
+.about_wrap{
+  overflow-y: hidden;
+
+  h1.moveMent.visible{
+      top: 90px;
+      transition-delay: 0.4s;
+
+  }
+  h1.moveMent.hidden{
+    top: 40px;
+  }
+  .top_wrap.about.moveMent.hidden{
+    top: 200px;
+
+    h2.moveMent.visible{
+      transition-delay: 0.6s;
+    }
+    h2.moveMent.hidden{
+      transition-delay: 0.2s;
+    }
+    p.moveMent.visible{
+      transition-delay: 0.4s;
+    }
+    p.moveMent.hidden{
+      transition-delay: 0.4s;
+    }
+  }
+  
+}
+.left_side.about{
+  .moveMent.visible{
+    transition-delay: 0.45s;
+  }
+  .moveMent.hidden{
+    transition-delay: 0s;
+  }
+}
+.skill_wrap{
+  .moveMent.visible{
+    &:first-of-type{
+      transition-delay:0.4s ;
+    }
+    &:nth-of-type(2){
+      transition-delay:0.3s ;
+    }
+    &:nth-of-type(3){
+      transition-delay:0.2s ;
+    }
+    &:nth-of-type(4){
+      transition-delay:0.1s ;
+    }
+    &:nth-of-type(5){
+      transition-delay:0s ;
+    }
+    &:nth-of-type(6){
+      transition-delay:0.4s ;
+    }
+    &:nth-of-type(7){
+      transition-delay:0.3s ;
+    }
+    &:last-of-type{
+      transition-delay:0.2s ;
+    }
+  }
+
+  .moveMent.hidden{
+    &:first-of-type{
+      transition-delay:0s ;
+    }
+    &:nth-of-type(2){
+      transition-delay:0.1s ;
+    }
+    &:nth-of-type(3){
+      transition-delay:0.2s ;
+    }
+    &:nth-of-type(4){
+      transition-delay:0.3s ;
+    }
+    &:nth-of-type(5){
+      transition-delay:0.4s ;
+    }
+    &:nth-of-type(6){
+      transition-delay:0.1s ;
+    }
+    &:nth-of-type(7){
+      transition-delay:0.2s ;
+    }
+    &:last-of-type{
+      transition-delay:0.3s ;
+    }
+  }
+}
+
+.right_side{
+  h2.moveMent.visible{
+    transition-delay: 0.45s;
+  }
+  p.moveMent.visible{
+    transition-delay: 0.4s;
+  }
+  span.moveMent.visible{
+    transition-delay: 0.3s;
+  }
+
+  h2.moveMent.hidden{
+    transition-delay: 0.3s;
+  }
+  p.moveMent.hidden{
+    transition-delay: 0.4s;
+  }
+  span.moveMent.hidden{
+    transition-delay: 0.45s;
   }
 }

@@ -33,3 +33,19 @@
     }
   }
 }
+
+.contact_wrap{
+
+  h2.moveMent.visible{
+    transition-delay: 0.5s;
+  }
+  h2.moveMent.hidden{
+    transition-delay: 0.2s;
+  }
+  p.moveMent.visible{
+    transition-delay: 0.2s;
+  }
+  p.moveMent.hidden{
+    transition-delay: 0.5s;
+  }
+}

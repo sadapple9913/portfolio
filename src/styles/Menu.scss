@@ -101,6 +101,7 @@
 
       }
       .profile__name.visible {
+        z-index: 1000;
         top: 95px;
         opacity: 1;
         transition-delay: 0.35s;
@@ -112,62 +113,64 @@
         transition-delay: 0.05s;
       }
 
-
-      .menuMove{
+.Menu__list{
+      .moveMent{
         position: relative;
         transition: all 0.4s ease-in-out 0.2s;
       }
-      .menuMove.visible {
+      .moveMent.visible {
         top: 0;
         opacity: 1;
         transition-delay: 0.35s;
       }
 
-      .menuMove.visible:nth-of-type(2) {
+      .moveMent.visible:nth-of-type(2) {
         top: 0;
         opacity: 1;
         transition-delay: 0.25s;
       }
 
       
-      .menuMove.visible:nth-of-type(3) {
+      .moveMent.visible:nth-of-type(3) {
         top: 0;
         opacity: 1;
         transition-delay: 0.15s;
       }
 
-      .menuMove.visible:nth-of-type(4) {
+      .moveMent.visible:nth-of-type(4) {
         top: 0;
         opacity: 1;
         transition-delay: 0.05s;
       }
 
       
-      .menuMove.hidden {
+      .moveMent.hidden {
         top: -95px;
         opacity: 0;
         transition-delay: 0.05s;
       }
 
        
-      .menuMove.hidden:nth-of-type(2) {
+      .moveMent.hidden:nth-of-type(2) {
         top: -95px;
         opacity: 0;
         transition-delay: 0.15s;
       }
 
-      .menuMove.hidden:nth-of-type(3) {
+      .moveMent.hidden:nth-of-type(3) {
         top: -95px;
         opacity: 0;
         transition-delay: 0.25s;
       }
 
-      .menuMove.hidden:nth-of-type(4) {
+      .moveMent.hidden:nth-of-type(4) {
         top: -95px;
         opacity: 0;
         transition-delay: 0.35s;
       }
       
+    }
+    
       .cube.menu{
         transition: all 0.2s ease-in-out 0.25s 
       }

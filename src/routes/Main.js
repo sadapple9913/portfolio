@@ -4,72 +4,41 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import Cube from '../components/Cube';
 import Nav from '../components/Nav';
 import {useNavigate} from 'react-router-dom';
+import { useCursorEffect } from '../Hooks/UseCursorEffect';
+import { useOpacity } from '../Hooks/UseOpacity';
+import Box from '../components/UShape';
+import ImageComponent from '../components/ImageComponent';
 
 function Main() {
-    const [opacity, setOpacity] = useState(0);
     const navigate = useNavigate();
+    const { opacity, handleOpacityChange } = useOpacity();
+    const { handleMouseEnter, handleMouseLeave } = useCursorEffect();
 
-    useEffect(() => {
-        setOpacity(0);
-
-        const timeoutId = setTimeout(() => {
-            setOpacity(1);
-        }, 100);
-
-        return() => {
-            clearTimeout(timeoutId);
-            setOpacity(0);
+        
+    const handleOnClick = () => {
+        handleOpacityChange(() => {});
         };
-    }, []);
 
-    function handleOnClick() {
-        setOpacity(0);
-        setTimeout(() => {
-            setOpacity(1);
-        }, 800);
-    }
-
-    function projectOnClick() {
-        setOpacity(0);
-        setTimeout(() => {
+    const projectOnClick = () => {
+        handleOpacityChange(() => {
             window.open("https://github.com/sadapple9913/", "_blank");
-            setOpacity(1);
-        }, 800);
-    }
+        });
+        };
 
-    function aboutLinkOnClick() {
-        setOpacity(0);
-        setTimeout(() => {
-            navigate("/About")
-            setOpacity(1);
-        }, 800);
-    };
-
-    const handleMouseEnter = useCallback(() => {
-        document
-            .querySelector('.cursor')
-            .classList
-            .add('cursor-effect');
-        document
-            .querySelector('.cursor_dot')
-            .classList
-            .add('cursor-effect');
-    }, []);
-
-    const handleMouseLeave = useCallback(() => {
-        document
-            .querySelector('.cursor')
-            .classList
-            .remove('cursor-effect');
-        document
-            .querySelector('.cursor_dot')
-            .classList
-            .remove('cursor-effect');
-    }, []);
+    const aboutLinkOnClick = () => {
+        handleOpacityChange(() => {
+            navigate('/About');
+            window.scrollTo(0, 0);
+        });
+        };
+    
 
     return (
         <div className='main_wrap'>
-            <div className='bg'></div>
+            <div className='bg'>
+                <Box />
+                {/* <ImageComponent /> */}
+                </div>
             <Nav handleOnClick={handleOnClick}/>
             <div
                 className={`cube ${opacity === 1

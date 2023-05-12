@@ -1,84 +1,46 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import Nav from '../components/Nav';
 import '../styles/Work.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useNavigate } from 'react-router-dom';
+import { useOpacity } from '../Hooks/UseOpacity';
+import { useCursorEffect } from '../Hooks/UseCursorEffect';
 
 function Work() {
   const [hoverIndex, setHoverIndex] = useState(null);
   const navigate = useNavigate();
-  const [opacity, setOpacity] = useState(0);
+  const { opacity, handleOpacityChange } = useOpacity();
+  const { handleMouseEnter, handleMouseLeave } = useCursorEffect();
 
   const handleMouseOver = useCallback((index) => {
-    document.querySelector('.cursor').classList.add('cursor-effect');
-    document.querySelector('.cursor_dot').classList.add('cursor-effect');
+    handleMouseEnter();
     setHoverIndex(index);
-  }, [setHoverIndex]);
+  }, [handleMouseEnter]);
 
-  
   const handleMouseOut = useCallback(() => {
-    document.querySelector('.cursor').classList.remove('cursor-effect');
-    document.querySelector('.cursor_dot').classList.remove('cursor-effect');
+    handleMouseLeave();
     setHoverIndex(null);
-  }, [setHoverIndex]);
+  }, [handleMouseLeave]);
 
-  
-  function handleOnClick() {
-    setOpacity(0);
-    setTimeout(() => {
-      setOpacity(1);
-    },800);
-  }
+  const handleOnClick = useCallback(() => handleOpacityChange(() => {}), [handleOpacityChange]);
 
-useEffect(() => {
-  setOpacity(0);
-
-  const timeoutId = setTimeout(() => {
-    setOpacity(1);
-  }, 0);
-
-  return () => {
-    clearTimeout(timeoutId);
-    setOpacity(0);
-  };
-}, [navigate]);
-
+  const handleLinkClick = useCallback((route) => {
+    handleOpacityChange(() => {
+      navigate(route);
+    }, 550);
+  }, [navigate, handleOpacityChange]);
 
   return (
     <div>
         <div className='bg'></div>
       <Nav handleOnClick={handleOnClick}/>
       <div className="list__content__wraper">
-        <div
-          className={`list__content__img ${
-            hoverIndex === 0 ? 'on' : ''
-          }`}
-        ></div>
-        <div
-          className={`list__content__img ${
-            hoverIndex === 1 ? 'on' : ''
-          }`}
-        ></div>
-        <div
-          className={`list__content__img ${
-            hoverIndex === 2 ? 'on' : ''
-          }`}
-        ></div>
-        <div
-          className={`list__content__img ${
-            hoverIndex === 3 ? 'on' : ''
-          }`}
-        ></div>
-        <div
-          className={`list__content__img ${
-            hoverIndex === 4 ? 'on' : ''
-          }`}
-        ></div>
-        <div
-          className={`list__content__img ${
-            hoverIndex === 5 ? 'on' : ''
-          }`}
-        ></div>
+      {Array(6).fill().map((_, i) => (
+          <div
+            key={i}
+            className={`list__content__img ${hoverIndex === i ? 'on' : ''}`}
+          ></div>
+        ))}
       </div>
       <div className="Work__list">
         <ul>
@@ -91,12 +53,7 @@ useEffect(() => {
             className={`list__content cursor-effect ${opacity === 1 ? "visible" : "hidden"}`}
             onMouseOver={() => handleMouseOver(0)}
             onMouseOut={handleMouseOut}
-            onClick={() => {
-              setOpacity(0);
-              setTimeout(() => {
-                navigate("/SamsungEm");
-              }, 550);
-            }}
+            onClick={() => handleLinkClick("/SamsungEm")}
           >
             <p><span><FontAwesomeIcon icon="fa-solid fa-arrow-right" /></span> Samsung-Em clone</p>
             <span>Web Development</span>
@@ -105,18 +62,16 @@ useEffect(() => {
             className={`list__content cursor-effect ${opacity === 1 ? "visible" : "hidden"}`}
             onMouseOver={() => handleMouseOver(1)}
             onMouseOut={handleMouseOut}
-
-            onClick={cjone => navigate("/Cjone")}
+            onClick={() => handleLinkClick("/Cjone")}
           >
             <p><span><FontAwesomeIcon icon="fa-solid fa-arrow-right" /></span> Cj one clone</p>
             <span>Web Development</span>
           </li>
           <li
-             className={`list__content cursor-effect ${opacity === 1 ? "visible" : "hidden"}`}
+            className={`list__content cursor-effect ${opacity === 1 ? "visible" : "hidden"}`}
             onMouseOver={() => handleMouseOver(2)}
             onMouseOut={handleMouseOut}
-
-            onClick={SamsungEg => navigate("/SamsungEg")}
+            onClick={() => handleLinkClick("/SamsungEg")}
           >
             <p><span><FontAwesomeIcon icon="fa-solid fa-arrow-right" /></span> Samsung Engineering clone</p>
             <span>Web Development</span>
@@ -125,18 +80,16 @@ useEffect(() => {
             className={`list__content cursor-effect ${opacity === 1 ? "visible" : "hidden"}`}
             onMouseOver={() => handleMouseOver(3)}
             onMouseOut={handleMouseOut}
-
-            onClick={Totalks => navigate("/Totalks")}
+            onClick={() => handleLinkClick("/Totalks")}
           >
             <p><span><FontAwesomeIcon icon="fa-solid fa-arrow-right" /></span> ToTalk</p>
             <span>Web Development</span>
           </li>
           <li
             className={`list__content cursor-effect ${opacity === 1 ? "visible" : "hidden"}`}
-            onMouseOver={() => handleMouseOver(4)}
+            onMouseOver={() => handleMouseOver(0)}
             onMouseOut={handleMouseOut}
-  
-            onClick={Funfilx => navigate("/Funfilx")}
+            onClick={() => handleLinkClick("/Funfilx")}
           >
             <p><span><FontAwesomeIcon icon="fa-solid fa-arrow-right" /></span> Funfilx</p>
             <span>Web Development</span>
@@ -145,8 +98,7 @@ useEffect(() => {
             className={`list__content cursor-effect ${opacity === 1 ? "visible" : "hidden"}`}
             onMouseOver={() => handleMouseOver(5)}
             onMouseOut={handleMouseOut}
-
-            onClick={PureCss => navigate("/PureCss")}
+            onClick={() => handleLinkClick("/PureCss")}
           >
             <p><span><FontAwesomeIcon icon="fa-solid fa-arrow-right" /></span> Pure CSS Animation</p>
             <span>Pure CSS</span>

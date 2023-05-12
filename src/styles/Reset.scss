@@ -11,6 +11,20 @@
   src: url(../fonts/kimm_bold.woff) format("woff");
 }
 
+@font-face {
+  font-family: 'Gmarket';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SBAggroB';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 #root{ width: 100%; height: 100%;}
 
 html, body {

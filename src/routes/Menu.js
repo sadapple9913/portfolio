@@ -4,10 +4,13 @@ import "../styles/Menu.scss"
 import "../styles/Nav.scss"
 import Cube from '../components/Cube'
 import {useNavigate} from 'react-router-dom'
+import { useOpacity } from '../Hooks/UseOpacity';
+import { useCursorEffect } from '../Hooks/UseCursorEffect';
 
 function Menu() {
-    const [opacity, setOpacity] = useState(0);
     const navigate = useNavigate();
+    const { opacity, handleOpacityChange } = useOpacity();
+    const { handleMouseEnter, handleMouseLeave } = useCursorEffect();
 
     function HomeLink() {
         navigate("/");
@@ -22,54 +25,16 @@ function Menu() {
         navigate("/Contact");
     }
 
-    const handleMouseEnter = useCallback(() => {
-        document
-            .querySelector('.cursor')
-            .classList
-            .add('cursor-effect');
-        document
-            .querySelector('.cursor_dot')
-            .classList
-            .add('cursor-effect');
-    }, []);
-
-    const handleMouseLeave = useCallback(() => {
-        document
-            .querySelector('.cursor')
-            .classList
-            .remove('cursor-effect');
-        document
-            .querySelector('.cursor_dot')
-            .classList
-            .remove('cursor-effect');
-    }, []);
-
-    useEffect(() => {
-        setOpacity(0);
-
-        const timeoutId = setTimeout(() => {
-            setOpacity(1);
-        }, 0);
-
-        return() => {
-            clearTimeout(timeoutId);
-            setOpacity(0);
-        };
-    }, []);
-
-    function handleOnClick() {
-        setOpacity(0);
-        setTimeout(() => {
-            setOpacity(1);
-        }, 800);
-    }
-
+    const handleOnClick = () => {
+        handleOpacityChange(() => {});
+      };
+      
     return (
         <div className='Menu__wrap'>
             <div className='bg'></div>
             <Nav handleOnClick={handleOnClick}/>
             <div
-                className={`profile__name ${opacity === 1
+                className={`profile__name moveMent ${opacity === 1
                     ? "visible"
                     : "hidden"}`}>
                 <p>SangCheal Jung</p>
@@ -80,7 +45,7 @@ function Menu() {
                         onClick={HomeLink}
                         onMouseEnter={handleMouseEnter}
                         onMouseLeave={handleMouseLeave}
-                        className={`cursor-effect menuMove ${opacity === 1
+                        className={`cursor-effect moveMent ${opacity === 1
                             ? "visible"
                             : "hidden"}`}>
                         <span>01</span>
@@ -89,7 +54,7 @@ function Menu() {
                         onClick={WorkLink}
                         onMouseEnter={handleMouseEnter}
                         onMouseLeave={handleMouseLeave}
-                        className={`cursor-effect menuMove ${opacity === 1
+                        className={`cursor-effect moveMent ${opacity === 1
                             ? "visible"
                             : "hidden"}`}>
                         <span>02</span>
@@ -98,7 +63,7 @@ function Menu() {
                         onClick={AboutLink}
                         onMouseEnter={handleMouseEnter}
                         onMouseLeave={handleMouseLeave}
-                        className={`cursor-effect menuMove ${opacity === 1
+                        className={`cursor-effect moveMent ${opacity === 1
                             ? "visible"
                             : "hidden"}`}>
                         <span>03</span>
@@ -107,7 +72,7 @@ function Menu() {
                         onClick={ContactLink}
                         onMouseEnter={handleMouseEnter}
                         onMouseLeave={handleMouseLeave}
-                        className={`cursor-effect menuMove ${opacity === 1
+                        className={`cursor-effect moveMent ${opacity === 1
                             ? "visible"
                             : "hidden"}`}>
                         <span>04</span>
