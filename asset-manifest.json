@@ -1,8 +1,7 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.b7486cd1.css",
-    "main.js": "/portfolio/static/js/main.8aae0e0b.js",
-    "static/media/funfilx-Large.png": "/portfolio/static/media/funfilx-Large.5ac545ad36271f20383b.png",
+    "main.css": "/portfolio/static/css/main.674059b6.css",
+    "main.js": "/portfolio/static/js/main.303f6253.js",
     "static/media/funfilx.png": "/portfolio/static/media/funfilx.544192ae99cc730c6a1f.png",
     "static/media/samsungEg.png": "/portfolio/static/media/samsungEg.ea72de6bd35269abe755.png",
     "static/media/samsungEm.png": "/portfolio/static/media/samsungEm.97c92356553e1bfbfe15.png",
@@ -10,16 +9,17 @@
     "static/media/kimm_bold.woff": "/portfolio/static/media/kimm_bold.6334bd6a4e950095edf9.woff",
     "static/media/kimm_Light.woff": "/portfolio/static/media/kimm_Light.a0d78cda2538bd72ed49.woff",
     "static/media/css.png": "/portfolio/static/media/css.bfb7e2644752e697b7c9.png",
-    "static/media/css-Large2.png": "/portfolio/static/media/css-Large2.52a975904038210d0b6a.png",
+    "static/media/mockup-desktop.png": "/portfolio/static/media/mockup-desktop.98226de4b7039c40ec60.png",
     "static/media/totalks-Large.png": "/portfolio/static/media/totalks-Large.de3af4b6a8151cc7050a.png",
-    "static/media/css-Large1.png": "/portfolio/static/media/css-Large1.3fecc85ac668d6014c03.png",
+    "static/media/mockup-tablet1.png": "/portfolio/static/media/mockup-tablet1.126c2b3f608f1c0b6e4c.png",
     "static/media/totalk.png": "/portfolio/static/media/totalk.01c663dcffd05dd62a99.png",
+    "static/media/mockup-phone.png": "/portfolio/static/media/mockup-phone.0f2db6773941a5cb1853.png",
     "index.html": "/portfolio/index.html",
-    "main.b7486cd1.css.map": "/portfolio/static/css/main.b7486cd1.css.map",
-    "main.8aae0e0b.js.map": "/portfolio/static/js/main.8aae0e0b.js.map"
+    "main.674059b6.css.map": "/portfolio/static/css/main.674059b6.css.map",
+    "main.303f6253.js.map": "/portfolio/static/js/main.303f6253.js.map"
   },
   "entrypoints": [
-    "static/css/main.b7486cd1.css",
-    "static/js/main.8aae0e0b.js"
+    "static/css/main.674059b6.css",
+    "static/js/main.303f6253.js"
   ]
 }
