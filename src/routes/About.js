@@ -15,9 +15,13 @@ function About() {
 
   return (
     <div className='about_wrap'>
-
+      <div className='bg'></div>
       <Nav handleOnClick={handleOnClick} />
-
+      <div className={`profile_image moveMent ${opacity === 1
+                            ? "visible"
+                            : "hidden"}`}>
+                              <img alt="profileImage" src={process.env.PUBLIC_URL + '/images/me.png'} />
+      </div>
       <h1 className={`moveMent ${opacity === 1
                             ? "visible"
                             : "hidden"}`}>ABOUT</h1>

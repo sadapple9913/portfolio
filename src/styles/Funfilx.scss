@@ -5,11 +5,33 @@
     width: 100%;
     height: 100vh;
 
-    .top_wrap.Funfilx{
-        background: url(../../public/images/funfilx-Large.png)no-repeat 0 0;
-        border-radius: 0px 0px 50px 52px;
-        background-size: cover;
-    }
+        .top_wrap.Funfilx{
+            .mockup_frame_desktop{
+                background: url(../../public/images/mockup-desktop.png)no-repeat 0 0;
+                background-size: cover;
+            } 
+    
+            .mockup_frame_tablet{
+                background: url(../../public/images/mockup-tablet1.png)no-repeat 0 0;
+                background-size: cover;
+            } 
+    
+            .mockup_frame_phone{
+                background: url(../../public/images/mockup-phone.png)no-repeat 0 0;
+                background-size: contain;
+            } 
+        }
+    
+        .mockup_frame_phone{
+            video{
+                position: absolute;
+                top: 0px;
+                left: 11px;
+                width: 163px;
+                height: 100%;
+            }
+        }
+    
 
     .info_top_wrap{
         color: #E73446;

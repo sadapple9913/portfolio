@@ -5,24 +5,6 @@
   height: 100%;
 }
 
-.jelly{
-    position: absolute;
-    width: 300px;
-    top: 200px;
-    left: 0;
-    transition: transform 0.2s ease-out;
-    transform-style: preserve-3d;
-    perspective: 1000px;
-    text-shadow: 10px 10px 5px grey;
-}
-
-// .jelly:hover{
-
-// }
-// @keyframes ani{
-  
-// }
-
 .main__info{
   z-index: 100 !important;
   position: relative;
@@ -92,14 +74,14 @@
       width: 0;
       height: 2.5px;
       top: 38px;
-      left: 50px;
+      left: 55px;
       background-color: #636B88; 
       visibility: hidden;
       transition: all 0.3s ease-in-out;
     }
     &:hover:before {
       visibility: visible;
-      width: 72%;
+      width: 69%;
     }
   
     svg{
@@ -113,12 +95,7 @@
 }
 }
 
-.cube{
-  z-index: 1;
-    position: absolute;
-    top:50%;
-    left: 18%;
-}
+
 
 
 // 페이지 전환 효과
@@ -163,14 +140,45 @@ opacity: 0;
   transition: all 0.5s ease-in-out 0.2s;
 }
 
-    
 .cube{
-  transition: all 0.2s ease-in-out 0.25s ;
+  z-index: 1;
+    position: absolute;
+    top:50%;
+    left: 18%;
+    transition: all 0.2s ease-in-out 0.25s ;
 }
+
 .cube.visible {
   opacity: 1;
 }
 
 .cube.hidden {
   opacity: 0;
+}
+
+
+.cubeMove {
+  transform: translateX(0);
+  transition: all 0.4s ease-in-out;
+}
+
+.cubeMove.move-right {
+  transform: translateX(1300px);
+  transition: all 0.4s ease;
+
+}
+.cubeRotate.rotate{
+  animation: rotateInfinite 5s linear forwards ;
+}
+
+@keyframes rotateInfinite {
+  0% {
+    transform: rotate(-360deg) scale(1);
+  }
+  20%{
+    transform:  rotate(-180deg) scale(1.5)
+  }
+  100% {
+    transform:  rotate(360deg) scale(1.5);
+  }
 }

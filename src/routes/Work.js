@@ -87,7 +87,7 @@ function Work() {
           </li>
           <li
             className={`list__content cursor-effect ${opacity === 1 ? "visible" : "hidden"}`}
-            onMouseOver={() => handleMouseOver(0)}
+            onMouseOver={() => handleMouseOver(4)}
             onMouseOut={handleMouseOut}
             onClick={() => handleLinkClick("/Funfilx")}
           >

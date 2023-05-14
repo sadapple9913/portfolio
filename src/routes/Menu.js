@@ -12,18 +12,30 @@ function Menu() {
     const { opacity, handleOpacityChange } = useOpacity();
     const { handleMouseEnter, handleMouseLeave } = useCursorEffect();
 
-    function HomeLink() {
-        navigate("/");
-    }
-    function WorkLink() {
-        navigate("/Work");
-    }
-    function AboutLink() {
-        navigate("/About");
-    }
-    function ContactLink() {
-        navigate("/Contact");
-    }
+    const HomeLink = () => {
+        handleOpacityChange(() => {
+            navigate('/');
+        });
+        };
+
+    const WorkLink = () => {
+        handleOpacityChange(() => {
+            navigate('/Work');
+        });
+        };
+
+    const AboutLink = () => {
+        handleOpacityChange(() => {
+            navigate('/About');
+        });
+        };
+
+    const ContactLink = () => {
+        handleOpacityChange(() => {
+            navigate('/Contact');
+
+        });
+        };
 
     const handleOnClick = () => {
         handleOpacityChange(() => {});

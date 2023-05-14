@@ -1,62 +1,76 @@
-import React, {useState, useEffect, useCallback} from 'react';
+import React, {useState} from 'react';
 import "../styles/Main.scss";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import Cube from '../components/Cube';
 import Nav from '../components/Nav';
 import {useNavigate} from 'react-router-dom';
-import { useCursorEffect } from '../Hooks/UseCursorEffect';
-import { useOpacity } from '../Hooks/UseOpacity';
-import Box from '../components/UShape';
-import ImageComponent from '../components/ImageComponent';
+import {useCursorEffect} from '../Hooks/UseCursorEffect';
+import {useOpacity} from '../Hooks/UseOpacity';
+
 
 function Main() {
     const navigate = useNavigate();
-    const { opacity, handleOpacityChange } = useOpacity();
-    const { handleMouseEnter, handleMouseLeave } = useCursorEffect();
+    const {opacity, handleOpacityChange} = useOpacity();
+    const {handleMouseEnter, handleMouseLeave} = useCursorEffect();
+    const [moveImage, setMoveImage] = useState(false);
 
-        
+    const handleMouseEnterText = () => {
+        setMoveImage(true);
+    };
+
+    const handleMouseLeaveText = () => {
+        setMoveImage(false);
+    };
+
     const handleOnClick = () => {
         handleOpacityChange(() => {});
-        };
+    };
 
     const projectOnClick = () => {
         handleOpacityChange(() => {
             window.open("https://github.com/sadapple9913/", "_blank");
         });
-        };
+    };
 
     const aboutLinkOnClick = () => {
         handleOpacityChange(() => {
             navigate('/About');
             window.scrollTo(0, 0);
         });
-        };
-    
+    };
 
     return (
         <div className='main_wrap'>
-            <div className='bg'>
-                <Box />
-                {/* <ImageComponent /> */}
-                </div>
+            <div className='bg'></div>
             <Nav handleOnClick={handleOnClick}/>
             <div
                 className={`cube ${opacity === 1
                     ? "visible"
                     : "hidden"}`}>
-                <Cube/>
+                <div
+                    className={`cubeMove ${moveImage
+                        ? "move-right"
+                        : ""}`}>
+                    <div className={`cubeRotate ${moveImage
+                        ? "rotate"
+                        : ""}`}>
+                            <Cube/>
+                    </div>
+                </div>
             </div>
             <div className='main__info'>
                 <h1>
                     <span
                         className={`span ${opacity === 1
                             ? "visible"
-                            : "hidden"}`}>HI , I'M 
+                            : "hidden"}`}>HI , I'M
                     </span>
                     <span
                         className={`wave ${opacity === 1
                             ? "visible"
-                            : "hidden"}`}>SAGNCHEAL JUNG</span>
+                            : "hidden"}`}
+                        onMouseEnter={handleMouseEnterText}
+                        onMouseLeave={handleMouseLeaveText}>SAGNCHEAL JUNG</span>
                 </h1>
                 <p
                     className={`moveMent ${opacity === 1

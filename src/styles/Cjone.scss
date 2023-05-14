@@ -1,15 +1,83 @@
 @charset "UTF-8";
 @import url(../styles/Common.scss);
 
-.wrap.Cjone{
+.wrap{
     width: 100%;
     height: 100vh;
 
+    .mockup_frame_tablet{
+        position: absolute;
+        left: 70%;
+        width: 260px;
+        height: 340px;
+        border-radius: 15px;
 
+        video{
+            position: absolute;
+            top: 0px;
+            left: 12px;
+            width: 238px;
+            height: 100%;
+        }
+    }
+    .mockup_frame_phone{
+        position: absolute;
+        left: 15%;
+        width: 260px;
+        height: 370px;
+        border-radius: 15px;
+
+        video{
+            position: absolute;
+            top: 0px;
+            left: 14px;
+            width: 160px;
+            height: 100%;
+        }
+
+    }
+    .mockup_frame_tablet.visible{
+        top: 40%;
+        transition-delay: 0.2s;
+        }
+
+    .mockup_frame_phone.visible{
+        transition-delay: 0.4s;
+        top: 40%;
+    }
+
+    .mockup_frame_tablet.hidden{
+        transition-delay: 0.4s;
+        }
+
+    .mockup_frame_phone.hidden{
+        transition-delay: 0.2s;
+    }
+
+
+    .top_wrap.Cjone{
+        .mockup_frame_desktop{
+            background: url(../../public/images/mockup-desktop.png)no-repeat 0 0;
+            background-size: cover;
+        } 
+
+        .mockup_frame_tablet{
+            background: url(../../public/images/mockup-tablet1.png)no-repeat 0 0;
+            background-size: cover;
+        } 
+
+        .mockup_frame_phone{
+            background: url(../../public/images/mockup-phone.png)no-repeat 0 0;
+            background-size: contain;
+        } 
+    }
+}
+
+.wrap.Cjone{
     .info_top_wrap{
         color: #AF3C42;
     }
-
+    
     .info_bottom_wrap{
         
          .info_left_side{
@@ -17,7 +85,7 @@
                 color: #AF3C42;
             }
          }
-
+    
         .info_right_side{
             div{
                 h3{
@@ -27,9 +95,10 @@
                     margin: 0 0 20px 20px;}
                }
         }
-    }
-
+    } 
 }
+
+
 
 .move__project.cjone{
     .info_left_side:hover{
@@ -49,29 +118,28 @@
     }
     }
 
-// .mockup_desktop.Cjone {
-//     background: url(../../public/images/cjoneMockup2.png)no-repeat 0 0;
-//     background-size: cover;
-//     border-radius: 15px;
-// }
-// .mockup_tablet.Cjone{
-//     position: absolute;
-//     left: 10%;
-//     bottom: 0;
-//     width: 528px;
-//     height: 471px;
-//     background: url(../../public/images/cjoneMockup3.png)no-repeat 0 0;
-//     background-size: cover;
-//     border-radius: 15px;
-// }
-// .mockup_phone.Cjone{
-//     position: absolute;
-//     left: 70%;
-//     bottom: 0;
-//     width: 300px;
-//     height: 500px;
-//     background: url(../../public/images/cjoneMockup1.png)no-repeat 0 0;
-//     background-size: contain;
-//     border-radius: 15px;
-// }
 
+    // 큐브 효과
+
+    .cube.cjone{
+        position: fixed;
+        top: 0;
+        left: 120px;
+        z-index: 0;
+        transition: all 0.4s ease-in-out 0.25s ;
+        .cube__face {
+            animation: none;
+            border: 1px solid #f22d2d;
+            box-shadow: 0 0 1px 2px #f3f2f9;
+            background: #AF3C42 ;
+          }
+      }
+      .cube.cjone.visible{
+        top: 240px;
+        opacity: 1;
+        transform: scale(0.5);
+      }
+      .cube.cjone.hidden{
+        top: 240px;
+        opacity: 0;
+      }
