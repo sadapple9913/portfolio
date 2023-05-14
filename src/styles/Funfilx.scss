@@ -34,21 +34,21 @@
     
 
     .info_top_wrap{
-        color: #E73446;
+        color: #e50914;
     }
 
     .info_bottom_wrap{
         
          .info_left_side{
             h3{
-                color: #E73446;
+                color: #e50914;
             }
          }
 
         .info_right_side{
             div{
                 h3{
-                    color: #E73446;
+                    color: #e50914;
                 }
                 ul{  
                     margin: 0 0 20px 20px;}
@@ -57,25 +57,6 @@
     }
 
 }
-
-// .mockup_desktop.Funfilx {
-//     width: 960px;
-//     background: url(../../public/images/funfilx-mockup1.png)no-repeat 0 0;
-//     background-size: cover;
-//     border-radius: 15px;
-// }
-// .mockup_tablet.Funfilx{
-//     width: 570px;
-//     height: 471px;
-//     background: url(../../public/images/funfilx-mockup2.png)no-repeat 0 0;
-//     background-size: cover;
-//     border-radius: 15px;
-// }
-// .mockup_phone.Funfilx{
-//     background: url(../../public/images/funfilx-mockup3.png)no-repeat 0 0;
-//     background-size: contain;
-//     border-radius: 15px;
-// }
 
 .move__project.funfilx{
     .info_left_side:hover{
@@ -91,3 +72,28 @@
     }
     }
 
+
+    // 큐브 효과
+
+    .cube.funfilx{
+    position: fixed;
+    top: 0;
+    left: 120px;
+    z-index: 0;
+    transition: all 0.4s ease-in-out 0.25s ;
+    .cube__face {
+        animation: none;
+        border: 1px solid #e50914;
+        box-shadow: 0 0 1px 2px #f3f2f9;
+        background: #e50914 ;
+        }
+    }
+    .cube.funfilx.visible{
+    top: 240px;
+    opacity: 1;
+    transform: scale(0.5);
+    }
+    .cube.funfilx.hidden{
+    top: 240px;
+    opacity: 0;
+    }

@@ -5,6 +5,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import { useOpacity } from '../Hooks/UseOpacity';
 import { useCursorEffect } from '../Hooks/UseCursorEffect';
 import { useNavigate } from 'react-router-dom';
+import Cube from './Cube';
 
 function Funfilx() {
 const navigate = useNavigate();
@@ -38,6 +39,12 @@ const { handleMouseEnter, handleMouseLeave } = useCursorEffect();
     return (
         <div className='wrap Funfilx'>
             <div className='bg'></div>
+            <div
+                className={`cube funfilx ${opacity === 1
+                    ? "visible"
+                    : "hidden"}`}>
+                            <Cube/>
+            </div>
             <Nav handleOnClick={handleOnClick}/>
             <div className='top_wrap Funfilx'>
             <div

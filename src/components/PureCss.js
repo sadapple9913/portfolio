@@ -5,15 +5,12 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {useNavigate} from 'react-router-dom';
 import {useOpacity} from '../Hooks/UseOpacity';
 import {useCursorEffect} from '../Hooks/UseCursorEffect';
+import Cube from './Cube';
 
 function PureCss() {
     const navigate = useNavigate();
     const {opacity, handleOpacityChange} = useOpacity();
     const {handleMouseEnter, handleMouseLeave} = useCursorEffect();
-
-    // const webSiteOnClick = () => {     handleOpacityChange(() => {
-    // window.open("https://sadapple9913.github.io/funfilx/", "_blank");     });
-    // };
 
     const handleOnClick = () => {
         handleOpacityChange(() => {});
@@ -36,6 +33,12 @@ function PureCss() {
     return (
         <div className='wrap PureCss'>
             <div className='bg'></div>
+            <div
+                className={`cube pureCss ${opacity === 1
+                    ? "visible"
+                    : "hidden"}`}>
+                            <Cube/>
+            </div>
             <Nav handleOnClick={handleOnClick}/>
             <div className='top_wrap PureCss'>
                 <div

@@ -5,6 +5,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {useNavigate} from 'react-router-dom';
 import { useOpacity } from '../Hooks/UseOpacity';
 import { useCursorEffect } from '../Hooks/UseCursorEffect';
+import Cube from './Cube';
 
 function SamsungEg() {
     const navigate = useNavigate();
@@ -38,6 +39,12 @@ function SamsungEg() {
     return (
         <div className='wrap samsungEg'>
             <div className='bg'></div>
+            <div
+                className={`cube samsungEg ${opacity === 1
+                    ? "visible"
+                    : "hidden"}`}>
+                            <Cube/>
+            </div>
             <Nav handleOnClick={handleOnClick}/>
             <div className='top_wrap samsungEg'>
             <div
