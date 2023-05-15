@@ -22,11 +22,19 @@ function Main() {
             setIsTransitioning(true);
             setTimeout(() => {
                 setGreeting(prevState => prevState.greeting === "HI , I'M"
+<<<<<<< HEAD
                     ? { greeting: "안녕하세요", name: "저는 정상철입니다." }
                     : { greeting: "HI , I'M", name: "SAGNCHEAL JUNG" });
                 setIsTransitioning(false);
             }, 700); 
         }, 5000); 
+=======
+                    ? { greeting: "안녕하세요", name: "제 이름은 정상철입니다." }
+                    : { greeting: "HI , I'M", name: "SAGNCHEAL JUNG" });
+                setIsTransitioning(false);
+            }, 500); 
+        }, 3000); 
+>>>>>>> 247bb97039e674d949c181eadf391d8182b5e46f
         return () => clearInterval(interval);
     }, []);
 
