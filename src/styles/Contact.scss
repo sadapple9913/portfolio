@@ -58,16 +58,25 @@
     
   }
   .cube.visible{
-    transform: scale(1.5);
-    left: 1300px;
+    animation: cubeScale 5s ease-in-out infinite;
+    left: 1300px; 
   }
   .cube.hidden{
     left: 0;
   }
   .cube__face {
     animation: none;
-    border: 1px solid whitesmoke;
+    border: 1px solid #f2f2f2;
+    background: #636B88;
     box-shadow:none;
     filter: blur(3px);
   }
+}
+
+@keyframes cubeScale{
+  0%{transform: scale(1.5) rotate(30deg);}
+  25%{transform: scale(1) rotate(90deg);}
+  50%{transform: scale(1.5) rotate(30deg);}
+  75%{transform: scale(1) rotate(90deg);}
+  100%{transform: scale(1.5) rotate(30deg);}
 }

@@ -35,6 +35,23 @@
 
     .info_top_wrap{
         color: #e50914;
+        p{
+            &:before {
+              content: '';
+              position: absolute;
+              width: 0;
+              height: 2.5px;
+              top: 70px;
+              left: 1160px;
+              background-color: #e50914; 
+              visibility: hidden;
+              transition: all 0.3s ease-in-out;
+            }
+            &:hover:before {
+              visibility: visible;
+              width: 265px;
+            }
+      }
     }
 
     .info_bottom_wrap{

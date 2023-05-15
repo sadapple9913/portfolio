@@ -41,16 +41,7 @@
       background: url(../../public/images/wave.png)repeat-x 0 90%;
       background-size: 350px;
     }
-    .wave.cursor{
-      width: 3rem;
-      height: 3rem;
-      left: -23px;
-      top: -23px;
-      background: rgba($color: #000000, $alpha: 0.3);
-      border: none;
-      transition: all 0.1s ease;
-      box-shadow: 0 0 3px rgba($color: #000000, $alpha: 0.3);;
-    }
+
     .wave:hover{
       animation: ani 5s linear 0s infinite;
     }

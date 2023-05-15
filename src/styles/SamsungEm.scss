@@ -38,6 +38,26 @@
         background: url(../../public/images/mockup-desktop.png)no-repeat 0 0;
         background-size: cover;
     } 
+    .info_top_wrap{
+        p{
+              &:before {
+                content: '';
+                position: absolute;
+                width: 0;
+                height: 2.5px;
+                top: 70px;
+                left: 1160px;
+                background-color: #1428A0; 
+                visibility: hidden;
+                transition: all 0.3s ease-in-out;
+              }
+              &:hover:before {
+                visibility: visible;
+                width: 265px;
+              }
+    
+        }
+    }
 }
 
 .info_top_wrap{
@@ -65,6 +85,22 @@
         span{
             font-size: 30px;
         }
+          &:before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2.5px;
+            top: 70px;
+            left: 1160px;
+            background-color: #1428A0; 
+            visibility: hidden;
+            transition: all 0.3s ease-in-out;
+          }
+          &:hover:before {
+            visibility: visible;
+            width: 265px;
+          }
+
     }
 
 }
@@ -115,7 +151,7 @@
                             left: 150px;
                             width: 560px;
                             margin: 0 0 30px 20px;
-                            font-size: 20px;}
+                            font-size: 19px;}
                     }
     }
 }
