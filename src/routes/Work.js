@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { useOpacity } from '../Hooks/UseOpacity';
 import { useCursorEffect } from '../Hooks/UseCursorEffect';
 
+
 function Work() {
   const [hoverIndex, setHoverIndex] = useState(null);
   const navigate = useNavigate();

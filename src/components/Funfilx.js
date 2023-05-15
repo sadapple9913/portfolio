@@ -121,7 +121,7 @@ const { handleMouseEnter, handleMouseLeave } = useCursorEffect();
                             : "hidden"}`}>
                         <div>
                             <h3>CATERORY</h3>
-                            <p>반응형_웹</p>
+                            <p>REACT로 제작한 반응형_웹</p>
                         </div>
                         <div>
                             <h3>YEAR</h3>
@@ -163,13 +163,7 @@ const { handleMouseEnter, handleMouseLeave } = useCursorEffect();
                         </div>
                     </div>
                 </div>
-                {/* <div className='mockup'>
-    <div className='mockup_desktop Funfilx'></div>
-    <div className='mockup_tablet Funfilx'></div>
-    <div className='mockup_phone Funfilx'></div>
-    </div> */
-                }
-
+                
                 <div
                     className={`move__project funfilx moveMent ${opacity === 1
                         ? "visible"

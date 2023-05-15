@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import "../styles/Main.scss";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import Cube from '../components/Cube';
@@ -6,6 +6,7 @@ import Nav from '../components/Nav';
 import {useNavigate} from 'react-router-dom';
 import {useCursorEffect} from '../Hooks/UseCursorEffect';
 import {useOpacity} from '../Hooks/UseOpacity';
+import WorkImage from '../components/WorkImage';
 
 
 function Main() {
@@ -13,12 +14,27 @@ function Main() {
     const {opacity, handleOpacityChange} = useOpacity();
     const {handleMouseEnter, handleMouseLeave} = useCursorEffect();
     const [moveImage, setMoveImage] = useState(false);
+    const [greeting, setGreeting] = useState({greeting: "HI , I'M", name: "SAGNCHEAL JUNG"});
+    const [isTransitioning, setIsTransitioning] = useState(false);
 
-    const handleMouseEnterText = () => {
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setIsTransitioning(true);
+            setTimeout(() => {
+                setGreeting(prevState => prevState.greeting === "HI , I'M"
+                    ? { greeting: "안녕하세요", name: "저는 정상철입니다." }
+                    : { greeting: "HI , I'M", name: "SAGNCHEAL JUNG" });
+                setIsTransitioning(false);
+            }, 700); 
+        }, 5000); 
+        return () => clearInterval(interval);
+    }, []);
+
+    const handleMouseOverText = () => {
         setMoveImage(true);
     };
 
-    const handleMouseLeaveText = () => {
+    const handleMouseOutText = () => {
         setMoveImage(false);
     };
 
@@ -28,7 +44,7 @@ function Main() {
 
     const projectOnClick = () => {
         handleOpacityChange(() => {
-            window.open("https://github.com/sadapple9913/", "_blank");
+            navigate('/Work');
         });
     };
 
@@ -42,6 +58,7 @@ function Main() {
     return (
         <div className='main_wrap'>
             <div className='bg'></div>
+            {/* <div><WorkImage /></div> */}
             <Nav handleOnClick={handleOnClick}/>
             <div
                 className={`cube ${opacity === 1
@@ -63,17 +80,22 @@ function Main() {
                     <span
                         className={`span ${opacity === 1
                             ? "visible"
-                            : "hidden"}`}>HI , I'M
+                            : "hidden"} ${isTransitioning ? 'fade' : ''}`}>
+                        {greeting.greeting}
                     </span>
                     <span
-                        className={`wave ${opacity === 1
+                        className={` wave cursor-effect ${opacity === 1
                             ? "visible"
-                            : "hidden"}`}
-                        onMouseEnter={handleMouseEnterText}
-                        onMouseLeave={handleMouseLeaveText}>SAGNCHEAL JUNG</span>
+                            : "hidden"} ${isTransitioning ? 'fade' : ''}`}
+                        onMouseOver={handleMouseOverText}
+                        onMouseOut={handleMouseOutText}
+                        onMouseEnter={handleMouseEnter}
+                        onMouseLeave={handleMouseLeave}>
+                        {greeting.name}
+                    </span>
                 </h1>
                 <p
-                    className={`moveMent ${opacity === 1
+                    className={`devloper moveMent ${opacity === 1
                         ? "visible"
                         : "hidden"}`}>
                     <span>I'm front-end developer</span>

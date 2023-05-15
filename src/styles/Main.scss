@@ -18,18 +18,22 @@
 
 
   h1{
-    font-size: 60px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    font-size: 70px;
     font-weight: bold;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     overflow: hidden;
     span{
-      transition: all 0.3s ease-in-out 0.2s;
+      transition: all 0.4s ease-in-out 0.2s;
       position: relative;
       top: 0;
     }
 
     span:first-of-type{
-      font-size: 65px;
+      font-size: 75px;
       -webkit-text-stroke:2px #636B88;
       text-shadow: -2px -2px 0 #636B88, 2px -2px 0 #636B88, -2px 2px 0 #636B88, 2px 2px 0 #636B88;
       color: #E7E6ED;
@@ -41,9 +45,10 @@
       background: url(../../public/images/wave.png)repeat-x 0 90%;
       background-size: 350px;
     }
+
     .wave:hover{
       animation: ani 5s linear 0s infinite;
-  }
+    }
   }
  
   @keyframes ani {
@@ -52,6 +57,8 @@
   }
 
   p{
+    position: relative;
+    top: 120px;
     font-size: 40px;
     margin-bottom: 30px;
   }
@@ -96,12 +103,12 @@
 }
 
 
-
-
 // 페이지 전환 효과
 .span.visible {
   top: 0;
+  left: 0;
   opacity: 1;
+  transform: translateX(1200px);
 }
 
 .span.hidden {
@@ -111,8 +118,10 @@
 
 .wave.visible {
   top: 0;
+  left: 0;
   opacity: 1;
-  transition-delay: 0.25s;
+  transition-delay: 0.35s;
+  transform: translateX(1200px);
 }
 
 .wave.hidden {
@@ -123,19 +132,34 @@
 .moveMent{position: relative;
   transition: all 0.4s ease-in-out 0.2s;}
 
-.moveMent.visible{
-top: 0;
-opacity: 1;
-transition-delay: 0.25s;
-}
-.moveMent.hidden{
-top: -95px;
-opacity: 0;
+.main_wrap{
+  .moveMent.visible{
+    top: 120px;
+   }
+   .moveMent.visible{
+    opacity: 1;
+    transition-delay: 0.75s;
+    }
+  
+  .moveMent.hidden{
+    top: 20px;
+    opacity: 0;
+    }
 }
 
+.moveMent.visible{
+  opacity: 1;
+  top: 0;
+  transition-delay: 0.75s;
+  }
+
+.moveMent.hidden{
+  top: -95px;
+  opacity: 0;
+  }
+  
 .more__box{
   position: relative;
-  overflow: hidden;
   height: 70px;
   transition: all 0.5s ease-in-out 0.2s;
 }
@@ -145,7 +169,7 @@ opacity: 0;
     position: absolute;
     top:50%;
     left: 18%;
-    transition: all 0.2s ease-in-out 0.25s ;
+    // transition: all 0.2s ease-in-out 0.25s ;
 }
 
 .cube.visible {
@@ -164,9 +188,8 @@ opacity: 0;
 
 .cubeMove.move-right {
   transform: translateX(1300px);
-  transition: all 0.4s ease;
-
 }
+
 .cubeRotate.rotate{
   animation: rotateInfinite 5s linear forwards ;
 }
@@ -181,4 +204,16 @@ opacity: 0;
   100% {
     transform:  rotate(360deg) scale(1.5);
   }
+}
+
+
+.span.visible.fade {
+  left: 50%;
+  opacity: 0;
+}
+
+.wave.visible.fade{
+  left: 50%;
+  opacity: 0;
+  transition-delay: 0s;
 }

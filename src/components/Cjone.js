@@ -121,7 +121,7 @@ function Cjone() {
                             : "hidden"}`}>
                         <div>
                             <h3>CATERORY</h3>
-                            <p>기업사이트_반응형 웹</p>
+                            <p>기업사이트_반응형 웹  <br/>웹 표준,웹 접근성 준수</p>
                         </div>
                         <div>
                             <h3>YEAR</h3>
@@ -150,8 +150,6 @@ function Cjone() {
                             <h3>주요 업무</h3>
                             <ul>페이지별 주요 기술
                                 <li>- 메인 : js를 사용하여 다양한 인터렉션 구현</li>
-                                <li>- 서브1 : form속성을 사용하여 고객센터 페이지를 구성</li>
-                                <li>- 서브2 : table속성을 사용하여 채용정보 페이지를 구성</li>
                             </ul>
                             <ul>코드 리펙토링
                                 <li>- JS에서 3회이상 중복되는 코드는 함수로 만들어 호출하여 효율성과 재사용성을 높임</li>
@@ -168,12 +166,6 @@ function Cjone() {
                         </div>
                     </div>
                 </div>
-                {/* <div className='mockup'>
-        <div className='mockup_desktop Cjone'></div>
-        <div className='mockup_tablet Cjone'></div>
-        <div className='mockup_phone Cjone'></div>
-        </div> */
-                }
                 <div
                     className={`move__project cjone moveMent ${opacity === 1
                         ? "visible"

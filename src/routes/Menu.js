@@ -46,9 +46,11 @@ function Menu() {
             <div className='bg'></div>
             <Nav handleOnClick={handleOnClick}/>
             <div
-                className={`profile__name moveMent ${opacity === 1
+                className={`profile__name cursor-effect moveMent ${opacity === 1
                     ? "visible"
-                    : "hidden"}`}>
+                    : "hidden"}`}
+                    onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}>
                 <p>SangCheal Jung</p>
             </div>
             <div className='Menu__list'>

@@ -21,6 +21,24 @@
 
     .info_top_wrap{
         color: #E73446;
+        p{
+            &:before {
+              content: '';
+              position: absolute;
+              width: 0;
+              height: 2.5px;
+              top: 70px;
+              left: 1160px;
+              background-color: #E73446; 
+              visibility: hidden;
+              transition: all 0.3s ease-in-out;
+            }
+            &:hover:before {
+              visibility: visible;
+              width: 265px;
+            }
+  
+      }
     }
 
     .info_bottom_wrap{
@@ -43,15 +61,6 @@
     }
 
 }
-
-// .mockup_phone.Totalks{
-//     left: 55%;
-//     width: 623px;
-//     height: 730px;
-//     background: url(../../public/images/totalks-mockup.png)no-repeat 0 0;
-//     background-size: cover;
-//     border-radius: 15px;
-// }
 
 .move__project.totalks{
     .info_left_side:hover{
