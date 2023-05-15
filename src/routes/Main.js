@@ -6,6 +6,7 @@ import Nav from '../components/Nav';
 import {useNavigate} from 'react-router-dom';
 import {useCursorEffect} from '../Hooks/UseCursorEffect';
 import {useOpacity} from '../Hooks/UseOpacity';
+import WorkImage from '../components/WorkImage';
 
 
 function Main() {
@@ -14,11 +15,11 @@ function Main() {
     const {handleMouseEnter, handleMouseLeave} = useCursorEffect();
     const [moveImage, setMoveImage] = useState(false);
 
-    const handleMouseEnterText = () => {
+    const handleMouseOverText = () => {
         setMoveImage(true);
     };
 
-    const handleMouseLeaveText = () => {
+    const handleMouseOutText = () => {
         setMoveImage(false);
     };
 
@@ -42,6 +43,7 @@ function Main() {
     return (
         <div className='main_wrap'>
             <div className='bg'></div>
+            {/* <div><WorkImage /></div> */}
             <Nav handleOnClick={handleOnClick}/>
             <div
                 className={`cube ${opacity === 1
@@ -66,11 +68,13 @@ function Main() {
                             : "hidden"}`}>HI , I'M
                     </span>
                     <span
-                        className={`wave ${opacity === 1
+                        className={` wave cursor-effect ${opacity === 1
                             ? "visible"
                             : "hidden"}`}
-                        onMouseEnter={handleMouseEnterText}
-                        onMouseLeave={handleMouseLeaveText}>SAGNCHEAL JUNG</span>
+                        onMouseOver={handleMouseOverText}
+                        onMouseOut={handleMouseOutText}
+                        onMouseEnter={handleMouseEnter}
+                        onMouseLeave={handleMouseLeave}>SAGNCHEAL JUNG</span>
                 </h1>
                 <p
                     className={`moveMent ${opacity === 1
