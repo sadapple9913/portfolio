@@ -141,7 +141,7 @@ function PureCss() {
                             WORK</p>
                     </div>
                     <div
-                        className={`info_right_side moveMent ${opacity === 1
+                        className={`info_right_side cursor-effect moveMent ${opacity === 1
                             ? "visible"
                             : "hidden"}`}
                         onClick={moveNextClick}

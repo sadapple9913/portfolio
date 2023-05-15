@@ -84,7 +84,7 @@ function Totalks() {
                             : "hidden"}`}>
                         <div>
                             <h3>CATERORY</h3>
-                            <p>모바일_앱</p>
+                            <p>REACT로 제작한 모바일_앱</p>
                         </div>
                         <div>
                             <h3>YEAR</h3>

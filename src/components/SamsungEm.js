@@ -83,7 +83,7 @@ const webSiteOnClick = () => {
                             : "hidden"}`}>
                         <div>
                             <h3>CATERORY</h3>
-                            <p>기업사이트_웹</p>
+                            <p>기업사이트_웹 <br/>웹 표준,웹 접근성 준수</p>
                         </div>
                         <div>
                             <h3>YEAR</h3>

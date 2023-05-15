@@ -121,7 +121,7 @@ function Cjone() {
                             : "hidden"}`}>
                         <div>
                             <h3>CATERORY</h3>
-                            <p>기업사이트_반응형 웹</p>
+                            <p>기업사이트_반응형 웹  <br/>웹 표준,웹 접근성 준수</p>
                         </div>
                         <div>
                             <h3>YEAR</h3>

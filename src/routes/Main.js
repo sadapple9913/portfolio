@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import "../styles/Main.scss";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import Cube from '../components/Cube';
@@ -14,6 +14,21 @@ function Main() {
     const {opacity, handleOpacityChange} = useOpacity();
     const {handleMouseEnter, handleMouseLeave} = useCursorEffect();
     const [moveImage, setMoveImage] = useState(false);
+    const [greeting, setGreeting] = useState({greeting: "HI , I'M", name: "SAGNCHEAL JUNG"});
+    const [isTransitioning, setIsTransitioning] = useState(false);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setIsTransitioning(true);
+            setTimeout(() => {
+                setGreeting(prevState => prevState.greeting === "HI , I'M"
+                    ? { greeting: "안녕하세요", name: "제 이름은 정상철입니다." }
+                    : { greeting: "HI , I'M", name: "SAGNCHEAL JUNG" });
+                setIsTransitioning(false);
+            }, 500); 
+        }, 3000); 
+        return () => clearInterval(interval);
+    }, []);
 
     const handleMouseOverText = () => {
         setMoveImage(true);
@@ -29,7 +44,7 @@ function Main() {
 
     const projectOnClick = () => {
         handleOpacityChange(() => {
-            window.open("https://github.com/sadapple9913/", "_blank");
+            navigate('/Work');
         });
     };
 
@@ -65,19 +80,22 @@ function Main() {
                     <span
                         className={`span ${opacity === 1
                             ? "visible"
-                            : "hidden"}`}>HI , I'M
+                            : "hidden"} ${isTransitioning ? 'fade' : ''}`}>
+                        {greeting.greeting}
                     </span>
                     <span
                         className={` wave cursor-effect ${opacity === 1
                             ? "visible"
-                            : "hidden"}`}
+                            : "hidden"} ${isTransitioning ? 'fade' : ''}`}
                         onMouseOver={handleMouseOverText}
                         onMouseOut={handleMouseOutText}
                         onMouseEnter={handleMouseEnter}
-                        onMouseLeave={handleMouseLeave}>SAGNCHEAL JUNG</span>
+                        onMouseLeave={handleMouseLeave}>
+                        {greeting.name}
+                    </span>
                 </h1>
                 <p
-                    className={`moveMent ${opacity === 1
+                    className={`devloper moveMent ${opacity === 1
                         ? "visible"
                         : "hidden"}`}>
                     <span>I'm front-end developer</span>
