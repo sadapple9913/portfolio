@@ -3,6 +3,9 @@ import Nav from '../components/Nav'
 import "../styles/Contact.scss"
 import {useOpacity} from '../Hooks/UseOpacity';
 import {useCursorEffect} from '../Hooks/UseCursorEffect';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import Cube from '../components/Cube';
 
 function Contact() {
     const {opacity, handleOpacityChange} = useOpacity();
@@ -20,6 +23,13 @@ function Contact() {
 
     return (
         <div className='contact_wrap'>
+            <div className='bg'></div>  
+            <div
+                className={`cube ${opacity === 1
+                    ? "visible"
+                    : "hidden"}`}>
+                            <Cube/>
+            </div>
             <Nav handleOnClick={handleOnClick}/>
             <div className='contact_info'>
                 <h2
@@ -44,12 +54,8 @@ function Contact() {
                         ? "visible"
                         : "hidden"}`}>
                     <span>GitHub</span>
-                    <img
-                        className="github cursor-effect"
-                        alt="github-icon"
-                        src={process.env.PUBLIC_URL + '/images/github-icon.png'}
-                        onMouseEnter={handleMouseEnter}
-                        onMouseLeave={handleMouseLeave}/></p>
+                    <FontAwesomeIcon icon={faGithub} />
+                    </p>
             </div>
         </div>
     )

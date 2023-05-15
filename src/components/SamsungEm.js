@@ -5,6 +5,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {useNavigate} from 'react-router-dom';
 import { useOpacity } from '../Hooks/UseOpacity';
 import { useCursorEffect } from '../Hooks/UseCursorEffect';
+import Cube from './Cube';
 
 function SamsungEm() {
 const navigate = useNavigate();
@@ -38,27 +39,36 @@ const webSiteOnClick = () => {
     return (
         <div className='wrap samsungEm'>
             <div className='bg'></div>
+            <div
+                className={`cube samsungEm ${opacity === 1
+                    ? "visible"
+                    : "hidden"}`}>
+                            <Cube/>
+            </div>
             <Nav handleOnClick={handleOnClick}/>
             <div className='top_wrap samsungEm'>
+                <div className={`mockup_frame_desktop  bgMoveMent ${opacity === 1
+                                        ? "visible"
+                                        : "hidden"}`}>
                 <video
                     autoPlay="autoPlay"
                     loop="loop"
                     muted="muted"
-                    className={`bgMoveMent ${opacity === 1
-                        ? "visible"
-                        : "hidden"}`}>
+>
                     <source src={process.env.PUBLIC_URL + '/videos/em_movie.mp4'} type="video/mp4"/>
                 </video>
+                </div>
+
             </div>
             <div className='info samsungEm'>
                 <div
-                    className={`info_top_wrap cursor-effect moveMent ${opacity === 1
+                    className={`info_top_wrap moveMent ${opacity === 1
                         ? "visible"
                         : "hidden"}`}>
                     <h2>
                         <span>SAMSUNG EM</span>
                         - 삼성전기</h2>
-                    <p
+                    <p  className='cursor-effect'
                         onClick={webSiteOnClick}
                         onMouseEnter={handleMouseEnter}
                         onMouseLeave={handleMouseLeave}>
@@ -117,10 +127,6 @@ const webSiteOnClick = () => {
                     </div>
 
                 </div>
-                {/* <div className='mockup'>
-                <div className='mockup_desktop samsungEm'></div>
-            </div> */
-                }
                 <div
                     className={`move__project moveMent ${opacity === 1
                         ? "visible"

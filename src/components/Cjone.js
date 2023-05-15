@@ -3,67 +3,114 @@ import Nav from './Nav'
 import "../styles/Cjone.scss"
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {useNavigate} from 'react-router-dom';
-import { useOpacity } from '../Hooks/UseOpacity';
-import { useCursorEffect } from '../Hooks/UseCursorEffect';
+import {useOpacity} from '../Hooks/UseOpacity';
+import {useCursorEffect} from '../Hooks/UseCursorEffect';
+import Cube from './Cube';
 
 function Cjone() {
     const navigate = useNavigate();
-    const { opacity, handleOpacityChange } = useOpacity();
-    const { handleMouseEnter, handleMouseLeave } = useCursorEffect();
+    const {opacity, handleOpacityChange} = useOpacity();
+    const {handleMouseEnter, handleMouseLeave} = useCursorEffect();
 
-const webSiteOnClick = () => {
-    handleOpacityChange(() => {
-        window.open("https://sadapple9913.github.io/cjone_clone/", "_blank");
-    });
+    const webSiteOnClick = () => {
+        handleOpacityChange(() => {
+            window.open("https://sadapple9913.github.io/cjone_clone/", "_blank");
+        });
     };
 
     const handleOnClick = () => {
-    handleOpacityChange(() => {});
+        handleOpacityChange(() => {});
     };
 
     const moveProjectClick = () => {
-    handleOpacityChange(() => {
-        navigate('/Work');
-        window.scrollTo(0, 0);
-    });
+        handleOpacityChange(() => {
+            navigate('/Work');
+            window.scrollTo(0, 0);
+        });
     };
 
     const moveNextClick = () => {
-    handleOpacityChange(() => {
-        navigate('/samsungEg');
-        window.scrollTo(0, 0);
-    });
+        handleOpacityChange(() => {
+            navigate('/samsungEg');
+            window.scrollTo(0, 0);
+        });
     };
 
     return (
         <div className='wrap Cjone'>
             <div className='bg'></div>
+            <div
+                className={`cube cjone ${opacity === 1
+                    ? "visible"
+                    : "hidden"}`}>
+                            <Cube/>
+            </div>
             <Nav handleOnClick={handleOnClick}/>
             <div className='top_wrap Cjone'>
-                <video
-                    autoPlay="autoPlay"
-                    loop="loop"
-                    muted="muted"
-                    className={`bgMoveMent ${opacity === 1
+                <div
+                    className={`mockup_frame_desktop  bgMoveMent ${opacity === 1
                         ? "visible"
                         : "hidden"}`}>
-                    <source
-                        src={process.env.PUBLIC_URL + '/videos/cjone_movie.mp4'}
-                        type="video/mp4"/>
-                </video>
+                    <video
+                        autoPlay="autoPlay"
+                        loop="loop"
+                        muted="muted"
+                        className={`bgMoveMent ${opacity === 1
+                            ? "visible"
+                            : "hidden"}`}>
+                        <source
+                            src={process.env.PUBLIC_URL + '/videos/cjone_movie.mp4'}
+                            type="video/mp4"/>
+                    </video>
+                </div>
+                <div
+                    className={`mockup_frame_tablet  bgMoveMent ${opacity === 1
+                        ? "visible"
+                        : "hidden"}`}>
+                    <video
+                        autoPlay="autoPlay"
+                        loop="loop"
+                        muted="muted"
+                        className={`bgMoveMent ${opacity === 1
+                            ? "visible"
+                            : "hidden"}`}>
+                        <source
+                            src={process.env.PUBLIC_URL + '/videos/cjone-tablet.mp4'}
+                            type="video/mp4"/>
+                    </video>
+                </div>
+                <div
+                    className={`mockup_frame_phone  bgMoveMent ${opacity === 1
+                        ? "visible"
+                        : "hidden"}`}>
+                    <video
+                        autoPlay="autoPlay"
+                        loop="loop"
+                        muted="muted"
+                        className={`bgMoveMent ${opacity === 1
+                            ? "visible"
+                            : "hidden"}`}>
+                        <source
+                            src={process.env.PUBLIC_URL + '/videos/cjone-phone.mp4'}
+                            type="video/mp4"/>
+                    </video>
+                </div>
+          
             </div>
             <div className='info Cjone'>
                 <div
-                    className={`info_top_wrap cursor-effect moveMent ${opacity === 1
+                    className={`info_top_wrap moveMent ${opacity === 1
                         ? "visible"
                         : "hidden"}`}>
                     <h2>
                         <span>Cj one</span>
                     </h2>
                     <p
+                        className='cursor-effect'
                         onClick={webSiteOnClick}
                         onMouseEnter={handleMouseEnter}
-                        onMouseLeave={handleMouseLeave}><span><FontAwesomeIcon icon="fa-solid fa-arrow-right"/></span>
+                        onMouseLeave={handleMouseLeave}>
+                        <span><FontAwesomeIcon icon="fa-solid fa-arrow-right"/></span>
                         View the Website</p>
                 </div>
                 <div className='info_bottom_wrap'>
@@ -103,8 +150,6 @@ const webSiteOnClick = () => {
                             <h3>주요 업무</h3>
                             <ul>페이지별 주요 기술
                                 <li>- 메인 : js를 사용하여 다양한 인터렉션 구현</li>
-                                <li>- 서브1 : form속성을 사용하여 고객센터 페이지를 구성</li>
-                                <li>- 서브2 : table속성을 사용하여 채용정보 페이지를 구성</li>
                             </ul>
                             <ul>코드 리펙토링
                                 <li>- JS에서 3회이상 중복되는 코드는 함수로 만들어 호출하여 효율성과 재사용성을 높임</li>
@@ -121,12 +166,6 @@ const webSiteOnClick = () => {
                         </div>
                     </div>
                 </div>
-                {/* <div className='mockup'>
-        <div className='mockup_desktop Cjone'></div>
-        <div className='mockup_tablet Cjone'></div>
-        <div className='mockup_phone Cjone'></div>
-        </div> */
-                }
                 <div
                     className={`move__project cjone moveMent ${opacity === 1
                         ? "visible"

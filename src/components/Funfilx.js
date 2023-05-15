@@ -5,6 +5,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import { useOpacity } from '../Hooks/UseOpacity';
 import { useCursorEffect } from '../Hooks/UseCursorEffect';
 import { useNavigate } from 'react-router-dom';
+import Cube from './Cube';
 
 function Funfilx() {
 const navigate = useNavigate();
@@ -38,17 +39,75 @@ const { handleMouseEnter, handleMouseLeave } = useCursorEffect();
     return (
         <div className='wrap Funfilx'>
             <div className='bg'></div>
+            <div
+                className={`cube funfilx ${opacity === 1
+                    ? "visible"
+                    : "hidden"}`}>
+                            <Cube/>
+            </div>
             <Nav handleOnClick={handleOnClick}/>
-            <div className='top_wrap Funfilx'></div>
+            <div className='top_wrap Funfilx'>
+            <div
+                    className={`mockup_frame_desktop  bgMoveMent ${opacity === 1
+                        ? "visible"
+                        : "hidden"}`}>
+                    <video
+                        autoPlay="autoPlay"
+                        loop="loop"
+                        muted="muted"
+                        className={`bgMoveMent ${opacity === 1
+                            ? "visible"
+                            : "hidden"}`}>
+                        <source
+                            src={process.env.PUBLIC_URL + '/videos/funfilx-desktop.mp4'}
+                            type="video/mp4"/>
+                    </video>
+                </div>
+                <div
+                    className={`mockup_frame_tablet  bgMoveMent ${opacity === 1
+                        ? "visible"
+                        : "hidden"}`}>
+                    <video
+                        autoPlay="autoPlay"
+                        loop="loop"
+                        muted="muted"
+                        className={`bgMoveMent ${opacity === 1
+                            ? "visible"
+                            : "hidden"}`}>
+                        <source
+                            src={process.env.PUBLIC_URL + '/videos/funfilx-tablet.mp4'}
+                            type="video/mp4"/>
+                    </video>
+                </div>
+                <div
+                    className={`mockup_frame_phone  bgMoveMent ${opacity === 1
+                        ? "visible"
+                        : "hidden"}`}>
+                    <video
+                        autoPlay="autoPlay"
+                        loop="loop"
+                        muted="muted"
+                        className={`bgMoveMent ${opacity === 1
+                            ? "visible"
+                            : "hidden"}`}>
+                        <source
+                            src={process.env.PUBLIC_URL + '/videos/funfilx-phone.mp4'}
+                            type="video/mp4"/>
+                    </video>
+                </div>
+                          
+            </div>
             <div className='info Funfilx'>
                 <div
-                    className={`info_top_wrap cursor-effect moveMent ${opacity === 1
+                    className={`info_top_wrap moveMent ${opacity === 1
                         ? "visible"
                         : "hidden"}`}>
                     <h2>
                         <span>FunFilx</span>
                     </h2>
-                    <p onClick={webSiteOnClick}
+                    <p 
+                    className='cursor-effect'
+                    onClick={webSiteOnClick}
                 onMouseEnter={handleMouseEnter}
                     onMouseLeave={handleMouseLeave} >
                         <span><FontAwesomeIcon icon="fa-solid fa-arrow-right"/></span>
