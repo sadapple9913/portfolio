@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.764befb6.css",
+    "main.css": "/portfolio/static/css/main.1e88f1e9.css",
     "main.js": "/portfolio/static/js/main.b2160301.js",
     "static/media/funfilx.png": "/portfolio/static/media/funfilx.544192ae99cc730c6a1f.png",
     "static/media/samsungEg.png": "/portfolio/static/media/samsungEg.ea72de6bd35269abe755.png",
@@ -15,11 +15,11 @@
     "static/media/totalk.png": "/portfolio/static/media/totalk.01c663dcffd05dd62a99.png",
     "static/media/mockup-phone.png": "/portfolio/static/media/mockup-phone.0f2db6773941a5cb1853.png",
     "index.html": "/portfolio/index.html",
-    "main.764befb6.css.map": "/portfolio/static/css/main.764befb6.css.map",
+    "main.1e88f1e9.css.map": "/portfolio/static/css/main.1e88f1e9.css.map",
     "main.b2160301.js.map": "/portfolio/static/js/main.b2160301.js.map"
   },
   "entrypoints": [
-    "static/css/main.764befb6.css",
+    "static/css/main.1e88f1e9.css",
     "static/js/main.b2160301.js"
   ]
 }
