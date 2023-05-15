@@ -19,12 +19,9 @@
 
   h1{
     position: absolute;
-<<<<<<< HEAD
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
-=======
->>>>>>> 247bb97039e674d949c181eadf391d8182b5e46f
     font-size: 70px;
     font-weight: bold;
     margin-bottom: 20px;
@@ -135,7 +132,6 @@
 .moveMent{position: relative;
   transition: all 0.4s ease-in-out 0.2s;}
 
-<<<<<<< HEAD
 .main_wrap{
   .moveMent.visible{
     top: 120px;
@@ -149,16 +145,6 @@
     top: 20px;
     opacity: 0;
     }
-=======
-.moveMent.visible{
-top: 120px;
-opacity: 1;
-transition-delay: 0.25s;
-}
-.moveMent.hidden{
-top: 20px;
-opacity: 0;
->>>>>>> 247bb97039e674d949c181eadf391d8182b5e46f
 }
 
 .moveMent.visible{
@@ -222,18 +208,12 @@ opacity: 0;
 
 
 .span.visible.fade {
-<<<<<<< HEAD
   left: 50%;
-=======
->>>>>>> 247bb97039e674d949c181eadf391d8182b5e46f
   opacity: 0;
 }
 
 .wave.visible.fade{
-<<<<<<< HEAD
   left: 50%;
-=======
->>>>>>> 247bb97039e674d949c181eadf391d8182b5e46f
   opacity: 0;
   transition-delay: 0s;
 }
