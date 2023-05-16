@@ -131,7 +131,6 @@
 .moveMent{position: relative;
   transition: all 0.4s ease-in-out 0.2s;}
 
-<<<<<<< HEAD
 
 .moveMent.visible{
 top: 0px;
@@ -153,17 +152,6 @@ opacity: 0;
   }
   
   .moveMent.hidden{
-=======
-.moveMent.visible{
-  top: 120px;
-  }
-  .moveMent.visible{
-  opacity: 1;
-  transition-delay: 0.75s;
-  }
-
-.moveMent.hidden{
->>>>>>> fa280110e78b3e157407426b07ae5dab52229be2
   top: 20px;
   opacity: 0;
   }
@@ -234,11 +222,7 @@ opacity: 0;
 
 @media screen and (max-width:1275px) {
 
-<<<<<<< HEAD
   .main_wrap.main{
-=======
-  .main_wrap{
->>>>>>> fa280110e78b3e157407426b07ae5dab52229be2
 
     .moveMent.visible{
       top: 80px;
@@ -299,35 +283,8 @@ opacity: 0;
 }
 
 @media screen and (max-width:720px) {
-<<<<<<< HEAD
   .main_wrap.main{
 
-=======
-  .main_wrap{
-    .nav__wrap{
-      top: 10px;
-      height: 40px;
-
-      .left_side {
-        margin-left: 30px;
-        font-size: 36px;
-        color: #606887;
-        margin-top: 5px;
-    }
-  
-    .right_side {
-      right: 30px;
-      margin-top: 0px;
-      font-size: 25px;
-      color: #606887;
-  }
-  .hamburger-btn {
-   transform: scale(0.9);
-  }
-  }
-
-  
->>>>>>> fa280110e78b3e157407426b07ae5dab52229be2
   .main__info{
     width: 80%;
     h1{
