@@ -15,10 +15,9 @@
 
 .left_side{
   margin-left: 100px;
-  &{
-    font-size: 48px;
-    color: #606887;
-  }
+  font-size: 48px;
+  color: #606887;
+  margin-top: 10px;
 }
 
 .right_side{
@@ -26,12 +25,49 @@ position: fixed;
 right: 120px;
 display: flex;
 margin-top: 15px;
-font-size: 25px;
 color: #606887;
 
-.moon{
-  margin-top: 6px;
 }
 
+@media screen and (max-width:1275px) {
+  .main_wrap{
+    .nav__wrap{
+      top: 50px;
+    }
+
+    .left_side{
+      margin-left: 50px;
+    }
+
+    .right_side{
+    right: 50px;
+
+    }
+  }
 }
 
+
+@media screen and (max-width:720px) {
+  .main_wrap{
+    .nav__wrap{
+      top: 20px;
+      height: 40px;
+
+      .left_side {
+        margin-left: 30px;
+        font-size: 36px;
+        color: #606887;
+        margin-top: 5px;
+    }
+  
+    .right_side {
+      right: 30px;
+      margin-top: 0px;
+      font-size: 25px;
+      color: #606887;
+    }
+    .hamburger-btn {
+    transform: scale(0.9);
+    }
+  }
+}}

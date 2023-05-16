@@ -6,7 +6,7 @@ import Nav from '../components/Nav';
 import {useNavigate} from 'react-router-dom';
 import {useCursorEffect} from '../Hooks/UseCursorEffect';
 import {useOpacity} from '../Hooks/UseOpacity';
-import WorkImage from '../components/WorkImage';
+// import WorkImage from '../components/WorkImage';
 
 
 function Main() {
@@ -22,11 +22,11 @@ function Main() {
             setIsTransitioning(true);
             setTimeout(() => {
                 setGreeting(prevState => prevState.greeting === "HI , I'M"
-                    ? { greeting: "안녕하세요", name: "제 이름은 정상철입니다." }
+                    ? { greeting: "안녕하세요", name: "저는 정상철입니다." }
                     : { greeting: "HI , I'M", name: "SAGNCHEAL JUNG" });
                 setIsTransitioning(false);
-            }, 500); 
-        }, 3000); 
+            }, 700); 
+        }, 8000); 
         return () => clearInterval(interval);
     }, []);
 

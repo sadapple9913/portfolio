@@ -47,25 +47,34 @@ function About() {
                             : "hidden"}`}><img className="java" alt="java-icon" src={process.env.PUBLIC_URL + '/images/java-icon.png'} /> JavaScript</li>
             <li className={`moveMent ${opacity === 1
                             ? "visible"
-                            : "hidden"}`}><img className="react" alt="java-icon" src={process.env.PUBLIC_URL + '/images/react-icon.png'} /> React</li>
+                            : "hidden"}`}><img className="react" alt="react-icon" src={process.env.PUBLIC_URL + '/images/react-icon.png'} /> React</li>
             <li className={`moveMent ${opacity === 1
                             ? "visible"
-                            : "hidden"}`}><img className="HTML" alt="java-icon" src={process.env.PUBLIC_URL + '/images/Html5.icon.png'} /> HTML</li>
+                            : "hidden"}`}><img className="HTML" alt="HTML-icon" src={process.env.PUBLIC_URL + '/images/Html5.icon.png'} /> HTML</li>
             <li className={`moveMent ${opacity === 1
                             ? "visible"
-                            : "hidden"}`}><img className="CSS" alt="java-icon" src={process.env.PUBLIC_URL + '/images/CSS3.icon.png'} /> CSS</li>
+                            : "hidden"}`}><img className="CSS" alt="CSS-icon" src={process.env.PUBLIC_URL + '/images/CSS3.icon.png'} /> CSS</li>
             <li className={`moveMent ${opacity === 1
                             ? "visible"
-                            : "hidden"}`}><img className="SCSS" alt="java-icon" src={process.env.PUBLIC_URL + '/images/SCSS-icon.png'} /> SCSS</li>
+                            : "hidden"}`}><img className="SCSS" alt="SCSS-icon" src={process.env.PUBLIC_URL + '/images/SCSS-icon.png'} /> SCSS</li>
             <li className={`moveMent ${opacity === 1
                             ? "visible"
-                            : "hidden"}`}><img className="figma" alt="java-icon" src={process.env.PUBLIC_URL + '/images/figma-icon.png'} /> Figma</li>
+                            : "hidden"}`}><img className="firebase" alt="firebase-icon" src={process.env.PUBLIC_URL + '/images/firebase-logo.png'} /> FireBase</li>
             <li className={`moveMent ${opacity === 1
                             ? "visible"
-                            : "hidden"}`}><img className="photoshop" alt="java-icon" src={process.env.PUBLIC_URL + '/images/Adobe_Photoshop_CC_icon.png'} /> Adobe Photoshop</li>
+                            : "hidden"}`}><img className="styledComponent" alt="styledComponent-icon" src={process.env.PUBLIC_URL + '/images/styled-component.png'} /> 
+                            styled-Component</li>
             <li className={`moveMent ${opacity === 1
                             ? "visible"
-                            : "hidden"}`}><img className="illustrator" alt="java-icon" src={process.env.PUBLIC_URL + '/images/Adobe_Illustrator_CC_icon.png'} /> Adobe illustrator</li>
+                            : "hidden"}`}><img className="figma" alt="figma-icon" src={process.env.PUBLIC_URL + '/images/figma-icon.png'} /> 
+                            Figma</li>
+            <li className={`moveMent ${opacity === 1
+                            ? "visible"
+                            : "hidden"}`}><img className="photoshop" alt="photoshop-icon" src={process.env.PUBLIC_URL + '/images/Adobe_Photoshop_CC_icon.png'} /> Adobe Photoshop</li>
+            <li className={`moveMent ${opacity === 1
+                            ? "visible"
+                            : "hidden"}`}><img className="illustrator" alt="illustrator-icon" src={process.env.PUBLIC_URL + '/images/Adobe_Illustrator_CC_icon.png'} /> Adobe illustrator</li>
+
           </ul>
         </div>
         <div className='right_side about'>

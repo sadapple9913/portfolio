@@ -78,20 +78,9 @@
         color: #AF3C42;
         p{
             &:before {
-              content: '';
-              position: absolute;
-              width: 0;
-              height: 2.5px;
-              top: 70px;
-              left: 1160px;
               background-color: #AF3C42; 
-              visibility: hidden;
-              transition: all 0.3s ease-in-out;
             }
-            &:hover:before {
-              visibility: visible;
-              width: 265px;
-            }
+
       }
     }
     
@@ -120,7 +109,6 @@
 .move__project.cjone{
     .info_left_side:hover{
         p{
-            animation: pmove 0.3s;
             animation-fill-mode: forwards;
             color: #1428A0;
         }
@@ -128,7 +116,6 @@
 
     .info_right_side:hover{
         p{
-            animation: pmove 0.3s;
             animation-fill-mode: forwards;
             color: #1428A0;
         }

@@ -27,7 +27,6 @@ function Nav({handleOnClick}) {
                 </span>
             </div>
             <div className='right_side'>
-                <span className='moon'><FontAwesomeIcon icon="fa-regular fa-moon"/></span>
                 <span
                     className='cursor-effect'
                     onClick={handleOnClick}

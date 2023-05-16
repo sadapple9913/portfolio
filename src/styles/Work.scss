@@ -4,19 +4,21 @@
 .list__content__wraper{
     position: absolute;
     left: 0;
-    bottom: 0;
-    width: 900px;
-    height: 700px;
+    bottom: 9%;
+    width: 47%;
+    height: 600px;
     overflow: hidden;
 
     .list__content__img{
         opacity: 0;
         position: absolute;
         top: 0px;
-        width: 900px;
-        height: 700px;
+        left: 8%;
+        width: 100%;
+        height: 100%;
         overflow: hidden;
         transition: all 0.5s ease-in-out;
+        transform: scale(0.9);
     }
 
     .list__content__img:nth-of-type(1) {
@@ -52,7 +54,7 @@
 
   .list__content__img.on {
     opacity: 1;
-    transform: scale(1.03);
+    transform: scale(1);
   }
 
 .Work__list{
@@ -67,12 +69,12 @@
 .list__content.title{
 
   h1{
-      font-size: 50px;
+      margin-top: 7px;
+      font-size: 2.6vw;
       font-weight: bold;
   }
   span{
-      margin-top: 10px;
-      font-size: 40px;
+      font-size: 2.3vw;
   }
 
 }
@@ -86,7 +88,7 @@
     overflow: hidden;
     
     p{
-        font-size: 24px;
+        font-size: 1.25vw;
         font-weight: bold;
         transform: translateX(-25px);
         transition: all 0.2s ease-in-out;
@@ -94,7 +96,7 @@
 
     span{
         margin: 7px 5px 0 0;
-        font-size: 16px;
+        font-size: 0.85vw;
         svg{
           font-size: 24px;
         }
@@ -195,3 +197,110 @@
     opacity: 0;
   }
   
+
+
+  
+@media screen and (max-width:1275px) {
+  .main_wrap.work{
+
+  .Work__list {
+  position: absolute;
+  top: 170px;
+  right: 50px;
+  width: 42%;
+  height: 50%;
+  color: #636B88;
+}
+
+.list__content.title{
+
+  h1{
+      font-size: 3.8vw;
+  }
+  span{
+      font-size: 3.8vw;
+  }
+
+}
+
+.list__content{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid #636B88;
+    padding: 30px 0px ;
+    overflow: hidden;
+    
+    p{
+        font-size: 2vw;
+        font-weight: bold;
+        transform: translateX(-25px);
+        transition: all 0.2s ease-in-out;
+    }
+
+    span{
+        margin: 7px 5px 0 0;
+        font-size: 1.3vw;
+        svg{
+          font-size: 24px;
+        }
+    }
+   
+}
+
+  .list__content:nth-of-type(1) {
+    padding: 20px 0px ;
+  }
+
+  .list__content.visible:nth-of-type(7) {
+    top: 0;
+    opacity: 1;
+    border-bottom: none;
+  }
+
+
+}
+
+  .list__content__wraper{
+    position: absolute;
+    left: 0;
+    bottom: 250px;
+    width: 600px;
+    height: 400px;
+    overflow: hidden;
+
+    .list__content__img{
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        transition: all 0.5s ease-in-out;
+        transform: scale(0.9);
+    }
+     .list__content__img:nth-of-type(4){
+      background: url(../../public/images/totalk.png)no-repeat 0 0;
+      top: 50px;
+      left: 200px;
+      width: 300px;
+      height: 300px;
+      background-size: cover;
+      border-radius: 20px;
+      overflow: hidden;
+  }
+}
+
+  .list__content__img.on {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+
+ 
+
+}
+
+
+// @media screen and (max-width:720px) {
+// .main_wrap{
+
+// }
+// }
