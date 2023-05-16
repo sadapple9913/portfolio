@@ -42,7 +42,7 @@ function Menu() {
       };
       
     return (
-        <div className='Menu__wrap'>
+        <div className='main_wrap menu'>
             <div className='bg'></div>
             <Nav handleOnClick={handleOnClick}/>
             <div

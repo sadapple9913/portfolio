@@ -6,7 +6,7 @@ import Nav from '../components/Nav';
 import {useNavigate} from 'react-router-dom';
 import {useCursorEffect} from '../Hooks/UseCursorEffect';
 import {useOpacity} from '../Hooks/UseOpacity';
-import WorkImage from '../components/WorkImage';
+// import WorkImage from '../components/WorkImage';
 
 
 function Main() {
@@ -26,7 +26,7 @@ function Main() {
                     : { greeting: "HI , I'M", name: "SAGNCHEAL JUNG" });
                 setIsTransitioning(false);
             }, 700); 
-        }, 5000); 
+        }, 8000); 
         return () => clearInterval(interval);
     }, []);
 
@@ -56,7 +56,7 @@ function Main() {
     };
 
     return (
-        <div className='main_wrap'>
+        <div className='main_wrap main'>
             <div className='bg'></div>
             {/* <div><WorkImage /></div> */}
             <Nav handleOnClick={handleOnClick}/>

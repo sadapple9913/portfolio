@@ -32,7 +32,7 @@ function Work() {
   }, [navigate, handleOpacityChange]);
 
   return (
-    <div>
+    <div className='main_wrap work'>
         <div className='bg'></div>
       <Nav handleOnClick={handleOnClick}/>
       <div className="list__content__wraper">
@@ -56,7 +56,7 @@ function Work() {
             onMouseOut={handleMouseOut}
             onClick={() => handleLinkClick("/SamsungEm")}
           >
-            <p><span><FontAwesomeIcon icon="fa-solid fa-arrow-right" /></span> Samsung-Em clone</p>
+            <p><span><FontAwesomeIcon icon="fa-solid fa-arrow-right" /></span> Samsung-Em </p>
             <span>Web Development</span>
           </li>
           <li
@@ -65,7 +65,7 @@ function Work() {
             onMouseOut={handleMouseOut}
             onClick={() => handleLinkClick("/Cjone")}
           >
-            <p><span><FontAwesomeIcon icon="fa-solid fa-arrow-right" /></span> Cj one clone</p>
+            <p><span><FontAwesomeIcon icon="fa-solid fa-arrow-right" /></span> Cj one</p>
             <span>Web Development</span>
           </li>
           <li
@@ -74,7 +74,7 @@ function Work() {
             onMouseOut={handleMouseOut}
             onClick={() => handleLinkClick("/SamsungEg")}
           >
-            <p><span><FontAwesomeIcon icon="fa-solid fa-arrow-right" /></span> Samsung Engineering clone</p>
+            <p><span><FontAwesomeIcon icon="fa-solid fa-arrow-right" /></span> Samsung Engineering</p>
             <span>Web Development</span>
           </li>
           <li

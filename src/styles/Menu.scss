@@ -1,199 +1,324 @@
 @charset "UTF-8";
 @import url(../styles/Common.scss);
 
-.Menu__wrap{
+.main_wrap.menu{
     font-family: 'Gmarket' , sans-serif;
     color: #636B88;
-}
 
+    
 .profile__name{
-    position: absolute;
-    top: 100px;left: 190px;
-    font-size: 32px;
-    font-weight: bold;
-    background: url(../../public/images/wave-light.png) repeat-x 0 100%;
-
+  position: absolute;
+  top: 100px;left: 190px;
+  font-size: 2vw;
+  font-weight: bold;
+  background: url(../../public/images/wave-light.png) repeat-x 0 100%;
 }
+
 .profile__name:hover{
-    animation: ani 5s linear 0s infinite;
+  animation: ani 5s linear 0s infinite;
 }
 
+.profile__name.moveMent.visible {
+  top: 100px;left: 190px;
+}
 
 @keyframes ani {
-    0%{background-position-x: 0;}
-    100%{background-position-x: 100%;}
+  0%{background-position-x: 0;}
+  100%{background-position-x: 100%;}
 }
 
 .Menu__list{
-    position: absolute;
-    top: 30%;
-    left: 24%;
-    font-weight: bold;
-    
-    span{
-        font-size: 40px;
-        margin-right: 20px;
-    }
-}
-.Menu__list{
+  z-index: 1000;
+  position: absolute;
+  top: 30%;
+  left: 24%;
+  font-weight: bold;
+  
+  span{
+      font-size: 16px;
+      margin-right: 20px;
+      font-weight: normal;
+  }
+
   ul{
     li.visible{
     font-size: 85px;
   }
-}
-}
-
-.Menu__list{
-  ul{
-    li.hidden{
+  li.hidden{
     font-size: 0px;
   }
-}
+  }
 }
 
 .cube.menu{
-    z-index: 1;
-      position: absolute;
-      top:50%;
-      left: 15%;
-      animation: cubeMove 0.7s ease 0s ;
-      animation-fill-mode: forwards;
-  }
-  
-  @keyframes cubeMove {
-    0%{left: 15%;}
-    100%{left: 75%;}
-  }
+  z-index: 0;
+    position: absolute;
+    top:50%;
+    left: 15%;
+    animation: cubeMove 0.7s ease 0s ;
+    animation-fill-mode: forwards;
+}
 
-  .cube.menu .cube__face {
-    margin: -1em;
-    width: 2em;
-    height: 2em;
-    border: 2px solid #eeaeca;
-    box-shadow: 0 0 2px 3px #78ffd1 inset;
-    backface-visibility: hidden;
-    // background: radial-gradient(circle, #f0ffa6 38%, #78ffd1 63%, #ffb3c2 91%);
-    background: radial-gradient(circle, #78ffd1 18%, #f0ffa6 100%);
-    // background: radial-gradient(circle, #eeaeca 0%, #94bbe9 100%);
-    animation: colorChange 0s infinite;
-  }
+@keyframes cubeMove {
+  0%{left: 15%;}
+  100%{left: 75%;}
+}
 
-    @keyframes colorChange {
-        0% {
-          background-color: #f5f5f5;
-        }
-        20%{
-          background-color: #f5f5f5;
-        }
-      
-        40% {
-          background-color: #c5c5c5;
-          border: 2px solid #c5c5c5;
-          box-shadow: 0 0 2px 3px #ccc inset;
-        }
-        60%{
-          background-color: #6f6f6f;
-          border: 2px solid #6f6f6f;
-          box-shadow: 0 0 2px 3px #777 inset;
-        }
-        
-      80% {
-        background-color: #333;
-        border: 2px solid #333;
-        box-shadow: 0 0 2px 3px #555 inset;
+.cube.menu .cube__face {
+  margin: -1em;
+  width: 2em;
+  height: 2em;
+  border: 2px solid #eeaeca;
+  box-shadow: 0 0 2px 3px #78ffd1 inset;
+  backface-visibility: hidden;
+  // background: radial-gradient(circle, #f0ffa6 38%, #78ffd1 63%, #ffb3c2 91%);
+  background: radial-gradient(circle, #78ffd1 18%, #f0ffa6 100%);
+  // background: radial-gradient(circle, #eeaeca 0%, #94bbe9 100%);
+  animation: colorChange 0s infinite;
+}
+
+  @keyframes colorChange {
+      0% {
+        background-color: #f5f5f5;
+      }
+      20%{
+        background-color: #f5f5f5;
+      }
+    
+      40% {
+        background-color: #c5c5c5;
+        border: 2px solid #c5c5c5;
+        box-shadow: 0 0 2px 3px #ccc inset;
+      }
+      60%{
+        background-color: #6f6f6f;
+        border: 2px solid #6f6f6f;
+        box-shadow: 0 0 2px 3px #777 inset;
       }
       
-      100% {
-        background-color: #333;
-        border: 2px solid #333;
-        box-shadow: 0 0 2px 3px #555 inset;
-      }
-      }
-
-      // 페이지 이동모션
-      .profile__name{
-        transition: all 0.4s ease-in-out 0.2s;
-
-      }
-      .profile__name.visible {
-        z-index: 1000;
-        top: 95px;
-        opacity: 1;
-        transition-delay: 0.35s;
-      }
-
-      .profile__name.hidden {
-        top: 0px;
-        opacity: 0;
-        transition-delay: 0.05s;
-      }
-
-.Menu__list{
-      .moveMent{
-        position: relative;
-        transition: all 0.4s ease-in-out 0.2s;
-      }
-      .moveMent.visible {
-        top: 0;
-        opacity: 1;
-        transition-delay: 0.35s;
-      }
-
-      .moveMent.visible:nth-of-type(2) {
-        top: 0;
-        opacity: 1;
-        transition-delay: 0.25s;
-      }
-
-      
-      .moveMent.visible:nth-of-type(3) {
-        top: 0;
-        opacity: 1;
-        transition-delay: 0.15s;
-      }
-
-      .moveMent.visible:nth-of-type(4) {
-        top: 0;
-        opacity: 1;
-        transition-delay: 0.05s;
-      }
-
-      
-      .moveMent.hidden {
-        top: -95px;
-        opacity: 0;
-        transition-delay: 0.05s;
-      }
-
-       
-      .moveMent.hidden:nth-of-type(2) {
-        top: -95px;
-        opacity: 0;
-        transition-delay: 0.15s;
-      }
-
-      .moveMent.hidden:nth-of-type(3) {
-        top: -95px;
-        opacity: 0;
-        transition-delay: 0.25s;
-      }
-
-      .moveMent.hidden:nth-of-type(4) {
-        top: -95px;
-        opacity: 0;
-        transition-delay: 0.35s;
-      }
-      
+    80% {
+      background-color: #333;
+      border: 2px solid #333;
+      box-shadow: 0 0 2px 3px #555 inset;
     }
     
-      .cube.menu{
-        transition: all 0.2s ease-in-out 0.25s 
+    100% {
+      background-color: #333;
+      border: 2px solid #333;
+      box-shadow: 0 0 2px 3px #555 inset;
+    }
+    }
+
+    // 페이지 이동모션
+    .profile__name{
+      transition: all 0.4s ease-in-out 0.2s;
+
+    }
+    .profile__name.visible {
+      z-index: 1000;
+      top: 95px;
+      opacity: 1;
+      transition-delay: 0.35s;
+    }
+
+    .profile__name.hidden {
+      top: 0px;
+      opacity: 0;
+      transition-delay: 0.05s;
+    }
+
+.Menu__list{
+    .moveMent{
+      position: relative;
+      transition: all 0.4s ease-in-out 0.2s;
+    }
+    .moveMent.visible {
+      top: 0;
+      opacity: 1;
+      transition-delay: 0.35s;
+    }
+
+    .moveMent.visible:nth-of-type(2) {
+      top: 0;
+      opacity: 1;
+      transition-delay: 0.25s;
+    }
+
+    
+    .moveMent.visible:nth-of-type(3) {
+      top: 0;
+      opacity: 1;
+      transition-delay: 0.15s;
+    }
+
+    .moveMent.visible:nth-of-type(4) {
+      top: 0;
+      opacity: 1;
+      transition-delay: 0.05s;
+    }
+
+    
+    .moveMent.hidden {
+      top: -95px;
+      opacity: 0;
+      transition-delay: 0.05s;
+    }
+
+     
+    .moveMent.hidden:nth-of-type(2) {
+      top: -95px;
+      opacity: 0;
+      transition-delay: 0.15s;
+    }
+
+    .moveMent.hidden:nth-of-type(3) {
+      top: -95px;
+      opacity: 0;
+      transition-delay: 0.25s;
+    }
+
+    .moveMent.hidden:nth-of-type(4) {
+      top: -95px;
+      opacity: 0;
+      transition-delay: 0.35s;
+    }
+    
+  }
+  
+    .cube.menu{
+      transition: all 0.2s ease-in-out 0.25s 
+    }
+    .cube.menu.visible {
+      transform: scale(1.5);
+      opacity: 1;
+    }
+
+    .cube.menu.hidden {
+      opacity: 0;
+    }
+}
+
+
+
+  @media screen and (max-width:1275px) {
+    .main_wrap.menu{
+
+      .profile__name.moveMent.visible {
+        top: 65px;left:130px;
       }
-      .cube.menu.visible {
-        transform: scale(1.5);
-        opacity: 1;
+      .profile__name.moveMent.hidden {
+        left:130px;
       }
 
-      .cube.menu.hidden {
-        opacity: 0;
+      .Menu__list{
+        z-index: 1000;
+        position: absolute;
+        top: 33%;
+        left: 50%;
+        transform: translateX(-50%);
+        font-weight: bold;
+        
+        span{
+            margin-right: 10px;
+        }
+      
+        ul{
+          li.visible{
+          font-size: 5.5vw;
+        }
+        li.hidden{
+          font-size: 0px;
+
+        }
+        }
       }
+
+      .cube.menu{
+        z-index: 1;
+          position: absolute;
+          top:50%;
+          left: 50%;
+      }
+      
+      .cube.visible {
+        opacity: 0.8;
+        filter: blur(2px);
+        animation: rotateInfinite 10s linear infinite ;
+      }
+      
+      .cube__face {
+        background: #f2f2f2;
+        animation: none;
+      }
+      
+      .cubeMove {
+        transform: none;
+      }
+      
+      .cubeMove.move-right {
+        transform: none;
+      }
+    }
+
+  }
+
+  @media screen and (max-width:960px) {
+    .main_wrap.menu{
+
+      .profile__name.moveMent.visible {
+        top: 65px;left:130px;
+        font-size: 20px;
+      }
+      .profile__name.moveMent.hidden {
+        left:130px;
+      }
+
+      .Menu__list{
+        top: 36%;
+        left: 50px;
+        transform: none;
+        ul{
+          li.visible{
+          font-size: 66px;
+        }
+        li.hidden{
+          font-size: 0px;
+
+        }
+        }
+
+      }
+
+    }
+
+  }
+
+  @media screen and (max-width:720px) {
+
+    .main_wrap.menu{
+
+      .profile__name.moveMent.visible {
+        top: 27px;left: 90px;
+        font-size: 20px;
+      }
+      .profile__name.moveMent.hidden {
+        left:90px;
+      }
+
+      .Menu__list{
+        left: 30px;
+        transform: none;
+        ul{
+          li.visible{
+          font-size: 55px;
+        }
+        li.hidden{
+          font-size: 0px;
+
+        }
+        }
+      }
+
+    }
+
+  }

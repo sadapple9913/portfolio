@@ -73,8 +73,8 @@ function Totalks() {
                         onClick={webSiteOnClick}
                         onMouseEnter={handleMouseEnter}
                         onMouseLeave={handleMouseLeave}>
-                        <span><FontAwesomeIcon icon="fa-solid fa-arrow-right"/></span>
-                        View the Website</p>
+                        <span><FontAwesomeIcon icon="fa-solid fa-arrow-right"/> </span>
+                         Website</p>
                 </div>
                 <div className='info_bottom_wrap'>
 
