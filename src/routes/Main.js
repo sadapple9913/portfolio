@@ -26,11 +26,7 @@ function Main() {
                     : { greeting: "HI , I'M", name: "SAGNCHEAL JUNG" });
                 setIsTransitioning(false);
             }, 700); 
-<<<<<<< HEAD
         }, 8000); 
-=======
-        }, 5000); 
->>>>>>> 513e61f3deed1d1c05c3e9b5d19b6b1701a7c003
         return () => clearInterval(interval);
     }, []);
 
