@@ -56,7 +56,7 @@ function Main() {
     };
 
     return (
-        <div className='main_wrap'>
+        <div className='main_wrap main'>
             <div className='bg'></div>
             {/* <div><WorkImage /></div> */}
             <Nav handleOnClick={handleOnClick}/>

@@ -15,7 +15,7 @@ export function useOpacity() {
     };
   }, []);
 
-  const handleOpacityChange = (callback, delay = 800) => {
+  const handleOpacityChange = (callback, delay = 600) => {
     setOpacity(0);
     setTimeout(() => {
       callback();

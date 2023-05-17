@@ -131,20 +131,34 @@
 .moveMent{position: relative;
   transition: all 0.4s ease-in-out 0.2s;}
 
+
+.moveMent.visible{
+top: 0px;
+opacity: 1;
+transition-delay: 0.75s;
+}
+  
+.moveMent.hidden{
+top: -95px;
+opacity: 0;
+}
+
+.main_wrap.main{
+  
 .moveMent.visible{
   top: 120px;
-  }
-  .moveMent.visible{
   opacity: 1;
   transition-delay: 0.75s;
   }
-
-.moveMent.hidden{
+  
+  .moveMent.hidden{
   top: 20px;
   opacity: 0;
   }
 
 
+  
+}
   
 .more__box{
   position: relative;
@@ -208,7 +222,7 @@
 
 @media screen and (max-width:1275px) {
 
-  .main_wrap{
+  .main_wrap.main{
 
     .moveMent.visible{
       top: 80px;
@@ -269,30 +283,8 @@
 }
 
 @media screen and (max-width:720px) {
-  .main_wrap{
-    .nav__wrap{
-      top: 10px;
-      height: 40px;
+  .main_wrap.main{
 
-      .left_side {
-        margin-left: 30px;
-        font-size: 36px;
-        color: #606887;
-        margin-top: 5px;
-    }
-  
-    .right_side {
-      right: 30px;
-      margin-top: 0px;
-      font-size: 25px;
-      color: #606887;
-  }
-  .hamburger-btn {
-   transform: scale(0.9);
-  }
-  }
-
-  
   .main__info{
     width: 80%;
     h1{

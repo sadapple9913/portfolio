@@ -34,7 +34,7 @@ function HamMenu() {
         navigate("/menu");
         setOpacity(0);
       }
-    }, 800);
+    }, 600);
   };
 
   return (
