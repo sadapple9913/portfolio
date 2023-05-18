@@ -37,7 +37,7 @@ const { handleMouseEnter, handleMouseLeave } = useCursorEffect();
           };
 
     return (
-        <div className='wrap Funfilx'>
+        <div className='wrap funfilx'>
             <div className='bg'></div>
             <div
                 className={`cube funfilx ${opacity === 1
@@ -46,7 +46,7 @@ const { handleMouseEnter, handleMouseLeave } = useCursorEffect();
                             <Cube/>
             </div>
             <Nav handleOnClick={handleOnClick}/>
-            <div className='top_wrap Funfilx'>
+            <div className='top_wrap funfilx'>
             <div
                     className={`mockup_frame_desktop  bgMoveMent ${opacity === 1
                         ? "visible"
@@ -97,7 +97,7 @@ const { handleMouseEnter, handleMouseLeave } = useCursorEffect();
                 </div>
                           
             </div>
-            <div className='info Funfilx'>
+            <div className='info funfilx'>
                 <div
                     className={`info_top_wrap moveMent ${opacity === 1
                         ? "visible"

@@ -24,18 +24,19 @@
         p{
             &:before {
               content: '';
-              position: absolute;
+              display: block;
+              position: relative;
               width: 0;
               height: 2.5px;
-              top: 70px;
-              left: 1160px;
+              top: 91%;
+              left: 0;
               background-color: #E73446; 
               visibility: hidden;
               transition: all 0.3s ease-in-out;
             }
             &:hover:before {
               visibility: visible;
-              width: 265px;
+              width: 100%;
             }
   
       }
@@ -100,3 +101,57 @@
             top: 240px;
             opacity: 0;
           }
+
+@media screen and (max-width:1275px) {
+.wrap.Totalks{
+//   큐브 배경
+.top_wrap.Totalks{
+    left: 50%;
+  }
+
+}
+.cube.totalks{
+    left: 75px;
+    }
+    .cube.totalks.visible{
+    top: 150px;
+    opacity: 1;
+    transform: scale(0.25);
+    }
+    .cube.totalks.hidden{
+    top: 80px;
+    opacity: 0;
+    }
+}
+  
+@media screen and (max-width:720px) {
+    //   큐브 배경
+
+.cube.totalks{
+    left: 100px;
+}
+.cube.totalks.visible{
+    top: 44px;
+    opacity: 1;
+    transform: scale(0.2);
+}
+.cube.totalks.hidden{
+    top: 80px;
+    opacity: 0;
+}
+
+}
+
+@media screen and (max-width: 500px){
+    .wrap.Totalks .info_top_wrap {
+        p:before {
+            height: 1.5px;
+            top: 22px;
+            left: 83.6%;
+        }
+        p:hover:before {
+            width: 75px;
+          }
+    }
+
+}

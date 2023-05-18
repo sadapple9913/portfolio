@@ -126,7 +126,7 @@ function PureCss() {
                 </div>
 
                 <div
-                    className={`move__project purecss funfilx moveMent ${opacity === 1
+                    className={`move__project pureCss moveMent ${opacity === 1
                         ? "visible"
                         : "hidden"}`}>
                     <div

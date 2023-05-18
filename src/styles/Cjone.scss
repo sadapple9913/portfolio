@@ -147,3 +147,39 @@
         top: 240px;
         opacity: 0;
       }
+
+      @media screen and (max-width:1275px) {
+
+                //   큐브 배경
+
+            .cube.cjone{
+                left: 75px;
+            }
+            .cube.cjone.visible{
+                top: 150px;
+                opacity: 1;
+                transform: scale(0.25);
+            }
+            .cube.cjone.hidden{
+                top: 80px;
+                opacity: 0;
+            }
+      }
+      
+      @media screen and (max-width:720px) {
+           //   큐브 배경
+
+        .cube.cjone{
+            left: 100px;
+        }
+        .cube.cjone.visible{
+            top: 44px;
+            opacity: 1;
+            transform: scale(0.2);
+        }
+        .cube.cjone.hidden{
+            top: 80px;
+            opacity: 0;
+        }
+
+      }

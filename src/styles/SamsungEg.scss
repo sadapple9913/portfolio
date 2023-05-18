@@ -96,3 +96,57 @@
         top: 240px;
         opacity: 0;
       }
+
+      @media screen and (max-width:1275px) {
+        .wrap.samsungEg{
+        //   큐브 배경
+        .top_wrap.samsungEg{
+            left: 50%;
+          }
+        
+        }
+        .cube.samsungEg{
+            left: 75px;
+            }
+            .cube.samsungEg.visible{
+            top: 150px;
+            opacity: 1;
+            transform: scale(0.25);
+            }
+            .cube.samsungEg.hidden{
+            top: 80px;
+            opacity: 0;
+            }
+        }
+          
+        @media screen and (max-width:720px) {
+            //   큐브 배경
+        
+        .cube.samsungEg{
+            left: 100px;
+        }
+        .cube.samsungEg.visible{
+            top: 44px;
+            opacity: 1;
+            transform: scale(0.2);
+        }
+        .cube.samsungEg.hidden{
+            top: 80px;
+            opacity: 0;
+        }
+        
+        }
+        
+        @media screen and (max-width: 500px){
+            .wrap.samsungEg .info_top_wrap {
+                p:before {
+                    height: 1.5px;
+                    top: 22px;
+                    left: 83.6%;
+                }
+                p:hover:before {
+                    width: 75px;
+                  }
+            }
+        
+        }

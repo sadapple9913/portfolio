@@ -4,14 +4,12 @@
 .wrap{
     height: 100%;
 }
-.info{
-    height: 100%;
-}
+
 .top_wrap{
     position: relative;
     left: 11.6%;
     top: 0;
-    width: 1420px;
+    width: 74%;
     height: 580px;
     margin: 60px 0;
 
@@ -38,34 +36,18 @@
         background: url(../../public/images/mockup-desktop.png)no-repeat 0 0;
         background-size: cover;
     } 
-    // .info_top_wrap{
-    //     p{
-    //           &:before {
-    //             content: '';
-    //             position: absolute;
-    //             width: 0;
-    //             height: 2.5px;
-    //             top: 70px;
-    //             left: 1160px;
-    //             background-color: #1428A0; 
-    //             visibility: hidden;
-    //             transition: all 0.3s ease-in-out;
-    //           }
-    //           &:hover:before {
-    //             visibility: visible;
-    //             width: 265px;
-    //           }
-    
-    //     }
-    // }
 }
-
+.info{
+  position: relative;
+  left: 11.6%;
+  width: 74%;
+  height: 100%;
+}
 .info_top_wrap{
     display: flex;
     justify-content: space-between;
     position: relative;
-    left: 11.6%;
-    width: 1420px;
+    width: 100%;
     color: #1428A0;
     padding-bottom: 20px;
     margin-bottom: 10px;
@@ -77,7 +59,7 @@
         }
     }
     p{
-        margin-top: 40px;
+        margin-top: 30px;
         font-size: 30px;
         font-weight: bold;
         span{
@@ -85,18 +67,19 @@
         }
           &:before {
             content: '';
-            position: absolute;
+            display: block;
+            position: relative;
             width: 0;
             height: 2.5px;
-            top: 90px;
-            left: 1250px;
+            top: 80%;
+            left: 0;
             background-color: #1428A0; 
             visibility: hidden;
             transition: all 0.3s ease-in-out;
           }
           &:hover:before {
             visibility: visible;
-            width: 175px;
+            width: 100%;
           }
 
     }
@@ -107,12 +90,11 @@
     display: flex;
     justify-content: space-between;
     position: relative;
-    left: 11.6%;
-    width: 1420px;
+    width: 100%;
     font-size: 23px;
 
     .info_left_side{
-        width: 660px;
+        width: 46.7%;
                     div{
                     display: flex;
                     margin:18px 0 50px 0;
@@ -131,7 +113,7 @@
                     }
 }
     .info_right_side{
-                 width: 740px;
+                 width: 52.5%;
                  line-height: 2;
                     div{
                         display: flex;
@@ -146,9 +128,9 @@
                             position: relative;
                             top: -45px;
                             left: 150px;
-                            width: 560px;
+                            width: 75%;
                             margin: 0 0 30px 20px;
-                            font-size: 19px;}
+                            font-size: 1vw;}
                     }
     }
 }
@@ -156,10 +138,9 @@
 
 .move__project{
     position: relative;
-    left: 11.5%;
     display: flex;
     justify-content: space-between;
-    width: 1420px;
+    width: 100%;
     border-top: 2px solid #636B88;
     font-weight: bold;
     .info_left_side{
@@ -212,8 +193,6 @@
 }
 
 
-
-
 // 화면전환 효과
 
 .bgMoveMent{
@@ -246,19 +225,19 @@
 
 
   .info_top_wrap.moveMent.hidden{
-    transition-delay: 0.2s;
+    transition-delay: 0.1s;
   }
 
   .info_left_side.moveMent.hidden{
-    transition-delay: 0.5s;
+    transition-delay: 0.2s;
   }
 
   .info_right_side.moveMent.hidden{
-    transition-delay: 0.35s;
+    transition-delay: 0.3s;
   }
 
   .move__project.moveMent{
-    transition-delay: 0s;
+    transition-delay: 0.4s;
   }
 
 //   큐브 배경
@@ -286,3 +265,265 @@
     opacity: 0;
   }
 
+
+  @media screen and (max-width:1275px) {
+    .wrap{
+      .info {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
+    }
+    .top_wrap{
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .info_top_wrap{
+
+      h2{
+        margin-top: 20px;
+        font-size: 45px;
+      }
+      p {
+        margin-top: 40px;
+        font-size: 25px;
+        font-weight: bold;
+    }
+  }
+    .info_bottom_wrap{
+      font-size: 18px;
+      .info_left_side div p {
+        margin-top: 3px;
+        width: 250px;
+        font-size: 1.2vw;
+        margin-left: 0;
+    }
+    }
+    .info_right_side div ul {
+      position: relative;
+      top: -37px;
+      left: 150px;
+      width: 65%;
+      margin: 0 0 30px 0px;
+      font-size: 1.2vw;
+  }
+
+    }
+
+    //   큐브 배경
+
+.cube.samsungEm{
+  left: 75px;
+}
+.cube.samsungEm.visible{
+  top: 150px;
+  opacity: 1;
+  transform: scale(0.25);
+}
+.cube.samsungEm.hidden{
+  top: 80px;
+  opacity: 0;
+}
+  }
+
+
+  
+  @media screen and (max-width:1000px) {
+    .wrap{
+      .top_wrap{
+        transform:translateX(-50%) scale(0.8);
+        margin: 30px 0 0 0;
+      }
+      .info {
+        width: 75%;
+    }
+    .info_top_wrap{
+      h2 {     
+        margin-top: 30px;
+        font-size: 4.5vw;
+      }
+      p{
+        margin-top: 45px;
+        font-size: 2.5vw;
+        span{
+          font-size: 2.5vw;
+        }
+      }
+  }
+
+    .info_bottom_wrap{
+      font-size: 22px;
+      flex-direction: column;
+
+          .info_left_side {
+            width: 100%;
+            div{
+              p{
+                margin-left: 50px;
+                font-size: 18px;
+              }
+            }
+        }
+
+          .info_right_side {
+            width: 100%;
+            div{
+              ul{
+                width: 70%;
+                font-size: 16px;
+              }
+            }
+        }
+     }
+}
+   
+.move__project {
+  height: 12%;
+}
+
+}
+
+
+@media screen and (max-width:720px) {
+  .wrap{
+
+    .top_wrap{
+      top: -80px;
+      transform:translateX(-50%) scale(0.5);
+      margin: 30px 0 0 0;
+    }
+    .info {
+      top: -150px;
+      width: 80%;
+  }
+  .info_top_wrap{
+    h2 {     
+      margin-top: 30px;
+      font-size: 4.5vw;
+    }
+    p{
+      margin-top: 45px;
+      font-size: 2.5vw;
+      span{
+        font-size: 2.5vw;
+      }
+    }
+}
+
+  .info_bottom_wrap{
+    font-size: 22px;
+    flex-direction: column;
+
+        .info_left_side {
+          width: 100%;
+          div{
+            p{
+              margin-left: 50px;
+              font-size: 18px;
+            }
+          }
+      }
+
+        .info_right_side {
+          width: 100%;
+          div{
+            ul{
+              width: 70%;
+              font-size: 16px;
+            }
+          }
+      }
+   }
+
+   .move__project {
+    height: 12%;
+    .info_left_side {
+      font-size: 28px
+    }
+    .info_right_side {
+      font-size: 3vw;
+      p:last-of-type{
+        font-size: 1.5vw;
+      }
+    }
+  }
+    //   큐브 배경
+
+.cube.samsungEm{
+  left: 100px;
+}
+.cube.samsungEm.visible{
+  top: 44px;
+  opacity: 1;
+  transform: scale(0.2);
+}
+.cube.samsungEm.hidden{
+  top: 80px;
+  opacity: 0;
+}
+
+
+  }}
+
+
+  
+@media screen and (max-width:500px) {
+  .wrap{
+
+    .info{
+      top: -180px;
+      width: 90%;
+    }
+
+    .info_top_wrap {
+      flex-direction: column;
+      h2{
+        margin: 0;
+        font-size: 7.13vw;
+      }
+      p{
+        margin-top: 10px;
+        text-align: right;
+          &:before {
+            height: 1.5px;
+            top: 22px;
+            left: 83.6%;
+          }
+          &:hover:before {
+            width: 75px;
+          }
+
+    }
+  }
+
+  .info_bottom_wrap{
+
+    .info_left_side {
+      div {
+      display: flex;
+      flex-direction: column;
+      margin: 18px 0 0 0;
+      h3{
+        width: 90%;
+      }
+      p{
+        width: 92%;
+        margin: 20px;
+      }
+      }
+    }
+
+    .info_right_side {
+      div{
+        ul{
+          top: 0px;
+          left: 20px;
+          width: 90%;
+          margin: 0 0 20px 0px;
+        }
+      }
+
+  }
+
+  }
+    
+  }}

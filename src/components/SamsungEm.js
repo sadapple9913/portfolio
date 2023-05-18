@@ -151,7 +151,7 @@ const webSiteOnClick = () => {
                         onMouseLeave={handleMouseLeave}>
                         <p>
                             <span><FontAwesomeIcon icon="fa-solid fa-arrow-right"/></span>
-                            Cj one Clone</p>
+                            Cj one</p>
                         <p>Web development</p>
                     </div>
                 </div>

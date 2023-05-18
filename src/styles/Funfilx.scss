@@ -1,11 +1,11 @@
 @charset "UTF-8";
 @import url(../styles/Common.scss);
 
-.wrap.Funfilx{
+.wrap.funfilx{
     width: 100%;
     height: 100vh;
 
-        .top_wrap.Funfilx{
+        .top_wrap.funfilx{
             .mockup_frame_desktop{
                 background: url(../../public/images/mockup-desktop.png)no-repeat 0 0;
                 background-size: cover;
@@ -38,18 +38,19 @@
         p{
             &:before {
               content: '';
-              position: absolute;
+              display: block;
+              position: relative;
               width: 0;
               height: 2.5px;
-              top: 70px;
-              left: 1160px;
+              top: 91%;
+              left: 0;
               background-color: #e50914; 
               visibility: hidden;
               transition: all 0.3s ease-in-out;
             }
             &:hover:before {
               visibility: visible;
-              width: 265px;
+              width: 100%;
             }
       }
     }
@@ -114,3 +115,59 @@
     top: 240px;
     opacity: 0;
     }
+
+    
+@media screen and (max-width:1275px) {
+    .wrap.funfilx{
+    //   큐브 배경
+    .top_wrap.funfilx{
+        left: 50%;
+      }
+    
+    }
+    .cube.funfilx{
+        left: 75px;
+        }
+        .cube.funfilx.visible{
+        top: 150px;
+        opacity: 1;
+        transform: scale(0.25);
+        }
+        .cube.funfilx.hidden{
+        top: 80px;
+        opacity: 0;
+        }
+    }
+      
+    @media screen and (max-width:720px) {
+        //   큐브 배경
+    
+    .cube.funfilx{
+        left: 100px;
+    }
+    .cube.funfilx.visible{
+        top: 44px;
+        opacity: 1;
+        transform: scale(0.2);
+    }
+    .cube.funfilx.hidden{
+        top: 80px;
+        opacity: 0;
+    }
+    
+    }
+    
+    @media screen and (max-width: 500px){
+        .wrap.funfilx .info_top_wrap {
+            p:before {
+                height: 1.5px;
+                top: 22px;
+                left: 83.6%;
+            }
+            p:hover:before {
+                width: 75px;
+              }
+        }
+    
+    }
+    
