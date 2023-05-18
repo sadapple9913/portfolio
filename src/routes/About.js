@@ -14,9 +14,19 @@ function About() {
 
 
   return (
-    <div className='about_wrap'>
-      <div className='bg'></div>
+    <>
       <Nav handleOnClick={handleOnClick} />
+    <div className='about_wrap'>
+      <div className='background_image'>
+        <img className={`bImage ${opacity === 1
+                            ? "visible"
+                            : "hidden"}`} alt="background-image" src={process.env.PUBLIC_URL + '/images/Layer1.png'} />
+        <img className={`bImage ${opacity === 1
+                            ? "visible"
+                            : "hidden"}`} alt="background-image" src={process.env.PUBLIC_URL + '/images/Layer2.png'} />
+        </div>
+      <div className='bg'></div>
+
       <div className={`profile_image moveMent ${opacity === 1
                             ? "visible"
                             : "hidden"}`}>
@@ -25,6 +35,7 @@ function About() {
       <h1 className={`moveMent ${opacity === 1
                             ? "visible"
                             : "hidden"}`}>ABOUT</h1>
+      <div className='about_info' >
       <div className={`top_wrap about moveMent ${opacity === 1
                             ? "visible"
                             : "hidden"}`}>
@@ -89,7 +100,9 @@ function About() {
                             : "hidden"}`}>UI&UX 웹& 디자인&프론트엔드 / 2022~2023</span>
         </div>
       </div>
+      </div>
     </div>
+    </>
   )
 }
 

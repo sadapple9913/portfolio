@@ -3,17 +3,18 @@
 
 .list__content__wraper{
     position: absolute;
-    left: 0;
-    bottom: 9%;
-    width: 47%;
-    height: 600px;
+    left: 10%;
+    bottom: 0;
+    width: 35vw;
+    height: 719px;
     overflow: hidden;
-
+.namel{
+  background: #000;
+}
     .list__content__img{
         opacity: 0;
         position: absolute;
         top: 0px;
-        left: 8%;
         width: 100%;
         height: 100%;
         overflow: hidden;
@@ -35,7 +36,7 @@
     }
     .list__content__img:nth-of-type(4){
         background: url(../../public/images/totalk.png)no-repeat 0 0;
-        left: 200px;
+        left: 5%;
         width: 500px;
         height: 500px;
         background-size: cover;
@@ -47,8 +48,14 @@
         background-size: contain;
     }
     .list__content__img:last-of-type{
-        background: url(../../public/images/css.png)no-repeat 0 0;
+        background: url(../../public/images/css.png)no-repeat -45px 0;
         background-size: cover;
+        left: 5%;
+        width: 500px;
+        height: 500px;
+        background-size: cover;
+        border-radius: 50px;
+        overflow: hidden;
     }
 }
 
@@ -61,7 +68,7 @@
     position: absolute;
     top: 230px;
     right: 14%;
-    width: 35%;height: 50%;
+    width: 35%;
     // font-family: Caveat, sans-serif;
     color: #636B88;
 }
@@ -197,7 +204,33 @@
     opacity: 0;
   }
   
+  
+  @media screen and (max-width:1440px) {
+    .main_wrap.work{
 
+      .list__content__img:nth-of-type(4){
+        background: url(../../public/images/totalk.png)no-repeat 0 0;
+        left: 5%;
+        width: 400px;
+        height: 400px;
+        background-size: cover;
+        border-radius: 50px;
+        overflow: hidden;
+    }
+      .list__content__img:last-of-type{
+          background: url(../../public/images/css.png)no-repeat -45px 0;
+          background-size: cover;
+          left: 5%;
+          width: 400px;
+          height: 400px;
+          background-size: cover;
+          border-radius: 50px;
+          overflow: hidden;
+      }
+
+    }
+
+  }
 
   
 @media screen and (max-width:1275px) {
@@ -208,7 +241,6 @@
   top: 170px;
   right: 50px;
   width: 42%;
-  height: 50%;
   color: #636B88;
 }
 
@@ -257,41 +289,29 @@
     border-bottom: none;
   }
 
-
-}
-
   .list__content__wraper{
-    position: absolute;
+    bottom: 4%;
     left: 0;
-    bottom: 250px;
-    width: 600px;
-    height: 400px;
-    overflow: hidden;
+    width: 47vw;
+    height: 719px;
 
-    .list__content__img{
-        opacity: 0;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-        transition: all 0.5s ease-in-out;
-        transform: scale(0.9);
-    }
      .list__content__img:nth-of-type(4){
-      background: url(../../public/images/totalk.png)no-repeat 0 0;
       top: 50px;
-      left: 200px;
-      width: 300px;
-      height: 300px;
-      background-size: cover;
-      border-radius: 20px;
-      overflow: hidden;
+      left: 14%;
+      width: 40vw;
+      height: 40vw;
+  }
+  
+  .list__content__img:last-of-type{
+      top: 50px;
+      left: 14%;
+      width: 40vw;
+      height: 40vw;
+      background-position: -40px 0;
   }
 }
 
-  .list__content__img.on {
-    opacity: 1;
-    transform: scale(1);
-  }
+}
 
 
  
@@ -299,8 +319,81 @@
 }
 
 
-// @media screen and (max-width:720px) {
-// .main_wrap{
+@media screen and (max-width:960px) {
+.main_wrap.work{
+  .list__content__wraper{
+    display: none;
+  }
 
-// }
-// }
+  
+.Work__list{
+  top: 370px;
+  right: 50%;
+  transform: translateX(50%); 
+  width: 88%;height: 50%;
+}
+
+.list__content.title{
+
+h1{
+    font-size: 6vw;
+}
+span{
+    font-size: 6vw;
+}
+
+}
+
+
+.list__content{
+
+  border-bottom: 1px solid #636B88;
+
+  p{
+      font-size: 24px;
+  }
+
+  span{
+      font-size: 16px;
+  }
+ 
+}
+
+}
+}
+
+
+@media screen and (max-width:720px) {
+  .main_wrap.work{
+    .list__content__wraper{
+      display: none;
+    }
+  
+  .Work__list{
+    top: 390px;
+    width: 90%;
+  }
+  
+  .list__content.title{
+  
+  h1{
+      font-size: 32px
+  }
+  span{
+    margin-top: 22px;
+      font-size: 18px;
+  }
+  
+  }
+  
+  
+  .list__content{
+    padding: 24px 0;
+    p{
+        font-size: 16px;
+    }
+  
+  }
+  
+  }
+  }
