@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import "../styles/Main.scss";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import Cube from '../components/Cube';
@@ -6,7 +6,10 @@ import Nav from '../components/Nav';
 import {useNavigate} from 'react-router-dom';
 import {useCursorEffect} from '../Hooks/UseCursorEffect';
 import {useOpacity} from '../Hooks/UseOpacity';
-// import WorkImage from '../components/WorkImage';
+import useLoading from '../Hooks/UseLoading';
+import LoadingPage from '../components/LoadingPage';
+import AppContext from '../context/AppContext';
+
 
 
 function Main() {
@@ -16,6 +19,15 @@ function Main() {
     const [moveImage, setMoveImage] = useState(false);
     const [greeting, setGreeting] = useState({greeting: "HI , I'M", name: "SAGNCHEAL JUNG"});
     const [isTransitioning, setIsTransitioning] = useState(false);
+    const { hasLoaded, setHasLoaded } = useContext(AppContext);
+    const { loaded, showBar, handleLoad } = useLoading(true , 2000);
+
+    useEffect(() => {
+        if (!hasLoaded) {
+            handleLoad();
+            setHasLoaded(true);
+        }
+    }, []);
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -57,6 +69,7 @@ function Main() {
 
     return (
         <div className='main_wrap main'>
+            {showBar && <LoadingPage isLoading={loaded} />}
             <div className='bg'></div>
             {/* <div><WorkImage /></div> */}
             <Nav handleOnClick={handleOnClick}/>

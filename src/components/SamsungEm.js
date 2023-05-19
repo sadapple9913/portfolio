@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect, useState} from 'react'
+import React from 'react'
 import Nav from './Nav'
 import "../styles/SamsungEm.scss"
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
@@ -6,11 +6,14 @@ import {useNavigate} from 'react-router-dom';
 import { useOpacity } from '../Hooks/UseOpacity';
 import { useCursorEffect } from '../Hooks/UseCursorEffect';
 import Cube from './Cube';
+import LoadingBar from './LoadingBar';
+import useLoading from '../Hooks/UseLoading';
 
 function SamsungEm() {
 const navigate = useNavigate();
 const { opacity, handleOpacityChange } = useOpacity();
 const { handleMouseEnter, handleMouseLeave } = useCursorEffect();
+const { loaded, showBar, handleLoad } = useLoading();
 
 const webSiteOnClick = () => {
     handleOpacityChange(() => {
@@ -37,7 +40,9 @@ const webSiteOnClick = () => {
     };
     
     return (
+        <>
         <div className='wrap samsungEm'>
+        {showBar && <LoadingBar isLoading={loaded} />}
             <div className='bg'></div>
             <div
                 className={`cube samsungEm ${opacity === 1
@@ -51,12 +56,14 @@ const webSiteOnClick = () => {
                                         ? "visible"
                                         : "hidden"}`}>
                 <video
-                    autoPlay="autoPlay"
-                    loop="loop"
-                    muted="muted"
->
-                    <source src={process.env.PUBLIC_URL + '/videos/em_movie.mp4'} type="video/mp4"/>
+                onLoadedData={handleLoad}
+                autoPlay="autoPlay"
+                loop="loop"
+                muted="muted">
+                <source src={process.env.PUBLIC_URL + '/videos/em_movie.mp4'} type="video/mp4"/>
                 </video>
+                
+
                 </div>
 
             </div>
@@ -157,6 +164,7 @@ const webSiteOnClick = () => {
                 </div>
             </div>
         </div>
+        </>
     )
 }
 

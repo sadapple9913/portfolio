@@ -6,11 +6,14 @@ import {useNavigate} from 'react-router-dom';
 import {useOpacity} from '../Hooks/UseOpacity';
 import {useCursorEffect} from '../Hooks/UseCursorEffect';
 import Cube from './Cube';
+import useLoading from '../Hooks/UseLoading';
+import LoadingBar from './LoadingBar';
 
 function Totalks() {
     const navigate = useNavigate();
     const {opacity, handleOpacityChange} = useOpacity();
     const {handleMouseEnter, handleMouseLeave} = useCursorEffect();
+    const { loaded, showBar, handleLoad } = useLoading();
 
     const webSiteOnClick = () => {
         handleOpacityChange(() => {
@@ -38,6 +41,7 @@ function Totalks() {
 
     return (
         <div className='wrap Totalks'>
+            {showBar && <LoadingBar isLoading={loaded} />}
             <div className='bg'></div>
             <div
                 className={`cube totalks ${opacity === 1
@@ -51,6 +55,7 @@ function Totalks() {
                     ? "visible"
                     : "hidden"}`}>
                 <video
+                    onLoadedData={handleLoad}
                     className={`totalks_video bgMoveMent ${opacity === 1
                         ? "visible"
                         : "hidden"}`}

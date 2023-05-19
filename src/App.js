@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Main from "./routes/Main";
 import { BrowserRouter as Router, Route, Routes, BrowserRouter } from "react-router-dom";
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -16,31 +16,32 @@ import PureCss from "./components/PureCss";
 import MousePointer from "./components/MousePointer";
 import About from "./routes/About";
 import Contact from "./routes/Contact";
+import { AppProvider } from './context/AppContext';
 
 library.add(fas, faTwitter, faFontAwesome, far )
 
 
 function App() {
-
-
   return (
     <>
-    <MousePointer />
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
-    <Routes>
-      <Route path="/" element={<Main />} />
-      <Route path="/Menu" element={<Menu />} />
-      <Route path="/Work" element={<Work />} />
-      <Route path="/About" element={<About />} />
-      <Route path="/Contact" element={<Contact />} />
-      <Route path="/SamsungEm" element={<SamsungEm />} />
-      <Route path="/Cjone" element={<Cjone />} />
-      <Route path="/SamsungEg" element={<SamsungEg />} />
-      <Route path="/Totalks" element={<Totalks />} />
-      <Route path="/Funfilx" element={<Funfilx />} />
-      <Route path="/PureCss" element={<PureCss />} />
-    </Routes>
-    </BrowserRouter>
+      <MousePointer />
+      <AppProvider>
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
+          <Routes>
+            <Route path="/" element={<Main />} />
+            <Route path="/Menu" element={<Menu />} />
+            <Route path="/Work" element={<Work />} />
+            <Route path="/About" element={<About />} />
+            <Route path="/Contact" element={<Contact />} />
+            <Route path="/SamsungEm" element={<SamsungEm />} />
+            <Route path="/Cjone" element={<Cjone />} />
+            <Route path="/SamsungEg" element={<SamsungEg />} />
+            <Route path="/Totalks" element={<Totalks />} />
+            <Route path="/Funfilx" element={<Funfilx />} />
+            <Route path="/PureCss" element={<PureCss />} />
+          </Routes>
+        </BrowserRouter>
+      </AppProvider>
     </>
   );
 }

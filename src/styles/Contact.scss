@@ -9,17 +9,17 @@
     width: 70%;
     transform: translateX(-50%);
     color: #636B88;
-    line-height: 3;
+    line-height: 2;
   
     h2{
-      font-size: 55px;
+      font-size: 3.5vw;
       font-weight: bold;
       border-bottom: 2px solid #636B88;
       padding-bottom: 10px;
     }
     p{
       margin-top: 40px;
-      font-size: 35px;
+      font-size: 1.5vw;
       letter-spacing: 3px;
       
       span{
@@ -80,3 +80,34 @@
   100%{transform: scale(1.5) rotate(30deg);}
 }
 
+
+
+
+@media screen and (max-width:720px) {
+  .contact_wrap{
+  .contact_info{
+     width: 80%;
+    h2{
+      font-size: 6vw;
+      border-bottom: 1px solid #636B88;
+      padding-bottom: 10px;
+    }
+    p{
+      margin-top: 40px;
+      font-size: 3vw;
+      letter-spacing: 3px;
+    }
+
+    }
+  }
+}
+
+
+
+@media screen and (max-width:360px) {
+  .contact_wrap{
+    .contact_info {
+      width: 80%;
+    }
+  }
+}
