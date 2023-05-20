@@ -322,3 +322,21 @@
     }
 
   }
+
+
+  @media screen and (max-width:500px) {
+
+    .main_wrap.menu{
+
+      .Menu__list{
+
+        ul{
+          li.visible{
+          font-size: 45px;
+        }
+        }
+      }
+
+    }
+
+  }

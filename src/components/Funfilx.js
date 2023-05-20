@@ -6,12 +6,15 @@ import { useOpacity } from '../Hooks/UseOpacity';
 import { useCursorEffect } from '../Hooks/UseCursorEffect';
 import { useNavigate } from 'react-router-dom';
 import Cube from './Cube';
+import useLoading from '../Hooks/UseLoading';
+import LoadingBar from './LoadingBar';
 
 function Funfilx() {
 const navigate = useNavigate();
 const { opacity, handleOpacityChange } = useOpacity();
 const { handleMouseEnter, handleMouseLeave } = useCursorEffect();
-    
+const { loaded, showBar, handleLoad } = useLoading();
+
         const webSiteOnClick = () => {
             handleOpacityChange(() => {
                 window.open("https://sadapple9913.github.io/funfilx/", "_blank");
@@ -38,6 +41,7 @@ const { handleMouseEnter, handleMouseLeave } = useCursorEffect();
 
     return (
         <div className='wrap funfilx'>
+            {showBar && <LoadingBar isLoading={loaded} />}
             <div className='bg'></div>
             <div
                 className={`cube funfilx ${opacity === 1
@@ -52,6 +56,7 @@ const { handleMouseEnter, handleMouseLeave } = useCursorEffect();
                         ? "visible"
                         : "hidden"}`}>
                     <video
+                        onLoadedData={handleLoad}
                         autoPlay="autoPlay"
                         loop="loop"
                         muted="muted"

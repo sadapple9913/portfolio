@@ -49,6 +49,8 @@ function Contact() {
                     <span>Phone</span>
                     010-5746-9913</p>
                 <p
+                    onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}
                     onClick={webSiteOnClick}
                     className={`moveMent ${opacity === 1
                         ? "visible"

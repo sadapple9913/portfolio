@@ -6,11 +6,14 @@ import {useNavigate} from 'react-router-dom';
 import {useOpacity} from '../Hooks/UseOpacity';
 import {useCursorEffect} from '../Hooks/UseCursorEffect';
 import Cube from './Cube';
+import useLoading from '../Hooks/UseLoading';
+import LoadingBar from './LoadingBar';
 
 function PureCss() {
     const navigate = useNavigate();
     const {opacity, handleOpacityChange} = useOpacity();
     const {handleMouseEnter, handleMouseLeave} = useCursorEffect();
+    const { loaded, showBar, handleLoad } = useLoading();
 
     const handleOnClick = () => {
         handleOpacityChange(() => {});
@@ -32,6 +35,7 @@ function PureCss() {
 
     return (
         <div className='wrap PureCss'>
+            {showBar && <LoadingBar isLoading={loaded} />}
             <div className='bg'></div>
             <div
                 className={`cube pureCss ${opacity === 1
@@ -46,6 +50,7 @@ function PureCss() {
                         ? "visible"
                         : "hidden"}`}>
                     <video
+                        onLoadedData={handleLoad}
                         autoPlay="autoPlay"
                         loop="loop"
                         muted="muted"

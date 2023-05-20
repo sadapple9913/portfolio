@@ -68,6 +68,8 @@
 
 
 .move__project.pureCss{
+    height: 90px;
+    
     .info_left_side:hover{
         p{
             color: #1428A0;
@@ -107,10 +109,30 @@
             }
 
             @media screen and (max-width:1275px) {
-                .wrap.pureCss{
+                .wrap.PureCss{
                 //   큐브 배경
-                .top_wrap.pureCss{
+                .top_wrap.PureCss{
+                    justify-content: center;
+                    gap: 5%;
                     left: 50%;
+                    height: 350px;
+                    div:first-of-type {
+                        left: 0;
+                        width: 35%;
+                        height: 90%;
+                    }
+                    div:last-of-type {
+                        left: 0;
+                        width: 35%;
+                        height: 90%;
+                    }
+                    div video{
+                        object-fit: cover;
+                        width: 100%;
+                        height: 100%;
+                        left: 0;
+                    }
+                    
                   }
                 
                 }
@@ -127,8 +149,66 @@
                     opacity: 0;
                     }
                 }
-                  
+                @media screen and (max-width:1000px) {
+                    .wrap.PureCss{
+                        //   큐브 배경
+                        .top_wrap.PureCss{
+                            justify-content: center;
+                            gap: 5%;
+                            top: 0;
+                            left: 50%;
+                            height: 350px;
+                            div:first-of-type {
+                                left: 0;
+                                width: 45%;
+                                height: 90%;
+                            }
+                            div:last-of-type {
+                                left: 0;
+                                width: 45%;
+                                height: 90%;
+                            }
+                            div video{
+                                border-radius: 50px;
+                                width: 100%;
+                                height: 100%;
+                            }
+                            
+                          }
+                        }
+                }
                 @media screen and (max-width:720px) {
+                    .wrap.PureCss{
+
+                        .info {
+                            top: 0px;
+                            width: 80%;
+                        }
+                        //   큐브 배경
+                        .top_wrap.PureCss{
+                            flex-direction: column;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            width: 50%;
+                            height: 450px;
+                            div:first-of-type {
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                            }
+                            div:last-of-type {
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                            }
+                            div video{
+                                border-radius: 50px;
+                                width: 100%;
+                                height: 100%;
+                            }
+                            
+                          }
+                    }
                     //   큐브 배경
 
                 .cube.pureCss{
@@ -144,14 +224,17 @@
                     opacity: 0;
                 }
                 
-                .move__project.pureCss{
-                    height: 90px;
-                }
                 }
                 
                 @media screen and (max-width: 500px){
                     .wrap.PureCss{
-
+                        .top_wrap.PureCss{
+                            height: 350px; 
+                          }
+                        .info {
+                            top: 50px;
+                            width: 80%;
+                        }
                      .info_top_wrap {
                         p:before {
                             height: 1.5px;
@@ -162,9 +245,21 @@
                             width: 75px;
                           }
                     }
-                   .info {
-                    top: -100px;
-                      }
-
                 }
+
+                        //   큐브 배경
+
+                        .cube.pureCss{
+                            left: 50px;
+                        }
+                        .cube.pureCss.visible{
+                            top: 90px;
+                            opacity: 1;
+                            transform: scale(0.2);
+                        }
+                        .cube.pureCss.hidden{
+                            top: 90px;
+                            opacity: 0;
+                        }
+                        
             }

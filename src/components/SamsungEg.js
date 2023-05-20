@@ -6,11 +6,15 @@ import {useNavigate} from 'react-router-dom';
 import { useOpacity } from '../Hooks/UseOpacity';
 import { useCursorEffect } from '../Hooks/UseCursorEffect';
 import Cube from './Cube';
+import useLoading from '../Hooks/UseLoading';
+import LoadingBar from './LoadingBar';
 
 function SamsungEg() {
     const navigate = useNavigate();
     const { opacity, handleOpacityChange } = useOpacity();
     const { handleMouseEnter, handleMouseLeave } = useCursorEffect();
+    const { loaded, showBar, handleLoad } = useLoading();
+
 
     const webSiteOnClick = () => {
         handleOpacityChange(() => {
@@ -38,6 +42,7 @@ function SamsungEg() {
 
     return (
         <div className='wrap samsungEg'>
+        {showBar && <LoadingBar isLoading={loaded} />}
             <div className='bg'></div>
             <div
                 className={`cube samsungEg ${opacity === 1
@@ -52,6 +57,7 @@ function SamsungEg() {
                         ? "visible"
                         : "hidden"}`}>
                     <video
+                        onLoadedData={handleLoad}
                         autoPlay="autoPlay"
                         loop="loop"
                         muted="muted"
