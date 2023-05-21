@@ -18,15 +18,15 @@ function LoadingPage({ isLoading }) {
     isLoading ?
     <div className="loading-page">
       <div className='bg'></div>
-      <div class="loader">
-        <ul class="hexagon-container">
-          <li class="hexagon hex_1"></li>
-          <li class="hexagon hex_2"></li>
-          <li class="hexagon hex_3"></li>
-          <li class="hexagon hex_4"></li>
-          <li class="hexagon hex_5"></li>
-          <li class="hexagon hex_6"></li>
-          <li class="hexagon hex_7"></li>
+      <div className="loader">
+        <ul className="hexagon-container">
+          <li className="hexagon hex_1"></li>
+          <li className="hexagon hex_2"></li>
+          <li className="hexagon hex_3"></li>
+          <li className="hexagon hex_4"></li>
+          <li className="hexagon hex_5"></li>
+          <li className="hexagon hex_6"></li>
+          <li className="hexagon hex_7"></li>
         </ul>
       </div>
       <p className='text'>materializing shapes....</p>

@@ -23,13 +23,15 @@ function Contact() {
 
     return (
         <div className='contact_wrap'>
+        <div className='background_image'>
+        <img className={`bImage ${opacity === 1
+                            ? "visible"
+                            : "hidden"}`} alt="background-image" src={process.env.PUBLIC_URL + '/images/jelly3.png'} />
+        <img className={`bImage ${opacity === 1
+                            ? "visible"
+                            : "hidden"}`} alt="background-image" src={process.env.PUBLIC_URL + '/images/jelly4.png'} />
+        </div>
             <div className='bg'></div>  
-            <div
-                className={`cube ${opacity === 1
-                    ? "visible"
-                    : "hidden"}`}>
-                            <Cube/>
-            </div>
             <Nav handleOnClick={handleOnClick}/>
             <div className='contact_info'>
                 <h2

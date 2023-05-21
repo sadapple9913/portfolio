@@ -8,6 +8,7 @@ import {useCursorEffect} from '../Hooks/UseCursorEffect';
 import Cube from './Cube';
 import useLoading from '../Hooks/UseLoading';
 import LoadingBar from './LoadingBar';
+import MySvg from './svg/MySvg';
 
 function Totalks() {
     const navigate = useNavigate();
@@ -43,6 +44,11 @@ function Totalks() {
         <div className='wrap Totalks'>
             {showBar && <LoadingBar isLoading={loaded} />}
             <div className='bg'></div>
+            <div className={`background_image bImage ${opacity === 1
+                            ? "visible"
+                            : "hidden"}`} >
+          <MySvg fill1="#E73446" fill2="#E73446" />
+        </div>
             <div
                 className={`cube totalks ${opacity === 1
                     ? "visible"

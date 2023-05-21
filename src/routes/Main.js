@@ -71,7 +71,6 @@ function Main() {
         <div className='main_wrap main'>
             {showBar && <LoadingPage isLoading={loaded} />}
             <div className='bg'></div>
-            {/* <div><WorkImage /></div> */}
             <Nav handleOnClick={handleOnClick}/>
             <div
                 className={`cube ${opacity === 1

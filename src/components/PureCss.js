@@ -8,6 +8,7 @@ import {useCursorEffect} from '../Hooks/UseCursorEffect';
 import Cube from './Cube';
 import useLoading from '../Hooks/UseLoading';
 import LoadingBar from './LoadingBar';
+import MySvg from './svg/MySvg';
 
 function PureCss() {
     const navigate = useNavigate();
@@ -37,6 +38,11 @@ function PureCss() {
         <div className='wrap PureCss'>
             {showBar && <LoadingBar isLoading={loaded} />}
             <div className='bg'></div>
+            <div className={`background_image bImage ${opacity === 1
+                            ? "visible"
+                            : "hidden"}`} >
+          <MySvg fill1="#E58D09" fill2="#E58D09" />
+        </div>
             <div
                 className={`cube pureCss ${opacity === 1
                     ? "visible"

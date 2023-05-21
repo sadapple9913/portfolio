@@ -8,6 +8,7 @@ import { useNavigate } from 'react-router-dom';
 import Cube from './Cube';
 import useLoading from '../Hooks/UseLoading';
 import LoadingBar from './LoadingBar';
+import MySvg from './svg/MySvg';
 
 function Funfilx() {
 const navigate = useNavigate();
@@ -43,6 +44,11 @@ const { loaded, showBar, handleLoad } = useLoading();
         <div className='wrap funfilx'>
             {showBar && <LoadingBar isLoading={loaded} />}
             <div className='bg'></div>
+            <div className={`background_image bImage ${opacity === 1
+                            ? "visible"
+                            : "hidden"}`} >
+          <MySvg fill1="#E50914" fill2="#E50914" />
+        </div>
             <div
                 className={`cube funfilx ${opacity === 1
                     ? "visible"

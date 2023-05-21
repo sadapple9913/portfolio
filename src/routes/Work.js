@@ -5,6 +5,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useNavigate } from 'react-router-dom';
 import { useOpacity } from '../Hooks/UseOpacity';
 import { useCursorEffect } from '../Hooks/UseCursorEffect';
+import MySvg from '../components/svg/MySvg';
+
 
 
 function Work() {
@@ -34,6 +36,11 @@ function Work() {
   return (
     <div className='main_wrap work'>
         <div className='bg'></div>
+        <div className={`background_image bImage ${opacity === 1
+                            ? "visible"
+                            : "hidden"}`} >
+          <MySvg fill1="#78ffd1" fill2="#f0ffa6" />
+        </div>
       <Nav handleOnClick={handleOnClick}/>
       <div className="list__content__wraper">
       {Array(6).fill().map((_, i) => (
