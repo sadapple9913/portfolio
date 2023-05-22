@@ -1,7 +1,7 @@
 import React from 'react';
 
 const SvgFour = ({fill1, fill2}) => {
-  const lighterFill1 = fill1 + '80'; // Append '80' to get 50% transparency.
+  const lighterFill1 = fill1 + '80'; 
 
   return (
     <svg className='svg4 shake' id="_레이어_2" data-name="레이어 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 265.94 278.59">

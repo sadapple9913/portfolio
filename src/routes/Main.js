@@ -43,7 +43,7 @@ function Main() {
                     : { greeting: "HI , I'M", name: "SAGNCHEAL JUNG" });
                 setIsTransitioning(false);
             }, 700); 
-        }, 1000000); 
+        },5000); 
         return () => clearInterval(interval);
     }, []);
 
