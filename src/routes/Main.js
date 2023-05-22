@@ -8,7 +8,12 @@ import {useCursorEffect} from '../Hooks/UseCursorEffect';
 import {useOpacity} from '../Hooks/UseOpacity';
 import useLoading from '../Hooks/UseLoading';
 import LoadingPage from '../components/LoadingPage';
-import AppContext from '../context/AppContext';
+import AppContext from '../context/AppContext'
+import SvgFive from '../components/svg/SvgFive';
+import SvgTwo from '../components/svg/SvgTwo';
+import SvgThree from '../components/svg/SvgThree';
+import SvgFour from '../components/svg/SvgFour';
+import MySvg from '../components/svg/MySvg';
 
 
 
@@ -38,7 +43,7 @@ function Main() {
                     : { greeting: "HI , I'M", name: "SAGNCHEAL JUNG" });
                 setIsTransitioning(false);
             }, 700); 
-        }, 8000); 
+        }, 1000000); 
         return () => clearInterval(interval);
     }, []);
 
@@ -71,6 +76,36 @@ function Main() {
         <div className='main_wrap main'>
             {showBar && <LoadingPage isLoading={loaded} />}
             <div className='bg'></div>
+            <div className='background_image bImage' >
+            <img className={`svg5_box ${opacity === 1
+                            ? "visible"
+                            : "hidden"} ${moveImage ? 'move' : ''}`} src={process.env.PUBLIC_URL + '/images/221.png'} />
+            <div className={`svg3_box ${moveImage
+                        ? "move"
+                        : ""}`}>
+            <SvgThree fill1="#f0ffa6" fill2="#ffb3c2" />
+            </div>
+            <div className={`svg1_box ${moveImage
+                        ? "move"
+                        : ""}`}>
+            <MySvg fill1="#78ffd1" fill2="#f0ffa6"/>
+            </div>
+
+            <div className={`svg4_box ${moveImage
+                        ? "move"
+                        : ""}`}>
+            <SvgFour fill1="#99b9ff" fill2="#78ffd1" />
+            </div>
+            <div className={`svg2_box ${moveImage
+                        ? "move"
+                        : ""}`}>
+            <SvgTwo fill1="#99b9ff" fill2="#ffb3c2" />
+            </div>
+
+
+
+
+           </div>
             <Nav handleOnClick={handleOnClick}/>
             <div
                 className={`cube ${opacity === 1

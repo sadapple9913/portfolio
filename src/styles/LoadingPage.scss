@@ -15,8 +15,21 @@
   background-color: #f3f2f9;
   z-index: 9999;
 
+// .text.moveMent.visible{
+// top: 8%;
+// transition-delay: 0;
+// }
 
+// .copyRight.moveMent.visible{
+// top: 95%;
+// transition-delay: 0;
+// }
   
+// .copyRight.moveMent.hidden{
+// top: 85%;
+// }
+
+
 .loader {
   position: fixed;
   top: 45%;
@@ -188,7 +201,7 @@ $left in (1, 0px, 0px),
   top: 70px;
 }
 
-.copyright{
+.copyRight{
   position: absolute;
   bottom: 30px;
 }

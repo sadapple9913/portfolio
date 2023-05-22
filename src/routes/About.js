@@ -51,7 +51,7 @@ function About() {
         <div className='left_side about'>
           <h2 className={`moveMent ${opacity === 1
                             ? "visible"
-                            : "hidden"}`}>SKILLS</h2>
+                            : "hidden"}`}>SKILLS <span>TOOLS</span></h2>
           <ul className='skill_wrap'>
             <li className={`moveMent ${opacity === 1
                             ? "visible"

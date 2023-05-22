@@ -64,7 +64,7 @@ function Work() {
             onClick={() => handleLinkClick("/SamsungEm")}
           >
             <p><span><FontAwesomeIcon icon="fa-solid fa-arrow-right" /></span> Samsung-Em </p>
-            <span>Web Development</span>
+            <span>Web Standards</span>
           </li>
           <li
             className={`list__content cursor-effect ${opacity === 1 ? "visible" : "hidden"}`}
@@ -73,7 +73,7 @@ function Work() {
             onClick={() => handleLinkClick("/Cjone")}
           >
             <p><span><FontAwesomeIcon icon="fa-solid fa-arrow-right" /></span> Cj one</p>
-            <span>Web Development</span>
+            <span>Web Standards</span>
           </li>
           <li
             className={`list__content cursor-effect ${opacity === 1 ? "visible" : "hidden"}`}
@@ -82,7 +82,7 @@ function Work() {
             onClick={() => handleLinkClick("/SamsungEg")}
           >
             <p><span><FontAwesomeIcon icon="fa-solid fa-arrow-right" /></span> Samsung Engineering</p>
-            <span>Web Development</span>
+            <span>Web Standards</span>
           </li>
           <li
             className={`list__content cursor-effect ${opacity === 1 ? "visible" : "hidden"}`}
@@ -91,7 +91,7 @@ function Work() {
             onClick={() => handleLinkClick("/Totalks")}
           >
             <p><span><FontAwesomeIcon icon="fa-solid fa-arrow-right" /></span> ToTalk</p>
-            <span>Web Development</span>
+            <span>React APP</span>
           </li>
           <li
             className={`list__content cursor-effect ${opacity === 1 ? "visible" : "hidden"}`}
@@ -100,7 +100,7 @@ function Work() {
             onClick={() => handleLinkClick("/Funfilx")}
           >
             <p><span><FontAwesomeIcon icon="fa-solid fa-arrow-right" /></span> Funfilx</p>
-            <span>Web Development</span>
+            <span>React APP</span>
           </li>
           <li
             className={`list__content cursor-effect ${opacity === 1 ? "visible" : "hidden"}`}

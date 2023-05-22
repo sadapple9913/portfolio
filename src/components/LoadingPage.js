@@ -30,7 +30,7 @@ function LoadingPage({ isLoading }) {
         </ul>
       </div>
       <p className='text'>materializing shapes....</p>
-      <p className='copyright'>Coded by SangCheal JUNG &copy; 2023</p>
+      <p className='copyRight'>Coded by SangCheal JUNG &copy; 2023</p>
     </div> 
     : null
   )
