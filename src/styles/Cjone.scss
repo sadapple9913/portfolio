@@ -4,7 +4,15 @@
 .wrap{
     width: 100%;
     height: 100vh;
-
+    .background_image.cjone{
+        position: fixed;
+        left: 50%;
+        top: 20%;
+        width: 50%;
+        opacity: 0.25;
+        filter: blur(35px);
+        transition: all 0.3s ease-in-out;
+      }
     .mockup_frame_tablet{
         position: absolute;
         left: 70%;
@@ -98,7 +106,11 @@
                     color: #AF3C42;
                 }
                 ul{  
-                    margin: 0 0 20px 20px;}
+                    margin: 0 0 20px 20px;
+                    .pdf.cjone:hover{
+                        color: #AF3C42;
+                      }
+                }
                }
         }
     } 
@@ -119,6 +131,7 @@
             animation-fill-mode: forwards;
             color: #1428A0;
         }
+
     }
     }
 

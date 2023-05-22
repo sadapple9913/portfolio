@@ -8,7 +8,11 @@ import {useCursorEffect} from '../Hooks/UseCursorEffect';
 import {useOpacity} from '../Hooks/UseOpacity';
 import useLoading from '../Hooks/UseLoading';
 import LoadingPage from '../components/LoadingPage';
-import AppContext from '../context/AppContext';
+import AppContext from '../context/AppContext'
+import SvgFive from '../components/svg/SvgFive';
+import SvgTwo from '../components/svg/SvgTwo';
+import SvgThree from '../components/svg/SvgThree';
+import SvgFour from '../components/svg/SvgFour';
 
 
 
@@ -38,7 +42,7 @@ function Main() {
                     : { greeting: "HI , I'M", name: "SAGNCHEAL JUNG" });
                 setIsTransitioning(false);
             }, 700); 
-        }, 8000); 
+        }, 5000); 
         return () => clearInterval(interval);
     }, []);
 
@@ -71,7 +75,14 @@ function Main() {
         <div className='main_wrap main'>
             {showBar && <LoadingPage isLoading={loaded} />}
             <div className='bg'></div>
-            {/* <div><WorkImage /></div> */}
+            <div className={`background_image bImage ${opacity === 1
+                            ? "visible"
+                            : "hidden"}`} >
+            <SvgTwo fill1="#99b9ff" fill2="#ffb3c2" />
+            <SvgThree fill1="#f0ffa6" fill2="#ffb3c2" />
+            <SvgFour fill1="#99b9ff" fill2="#78ffd1" />
+            <img className="svgg4" src={process.env.PUBLIC_URL + '/images/svg4.svg'} />
+           </div>
             <Nav handleOnClick={handleOnClick}/>
             <div
                 className={`cube ${opacity === 1

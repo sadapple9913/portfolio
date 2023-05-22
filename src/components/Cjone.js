@@ -8,6 +8,7 @@ import {useCursorEffect} from '../Hooks/UseCursorEffect';
 import Cube from './Cube';
 import useLoading from '../Hooks/UseLoading';
 import LoadingBar from './LoadingBar';
+import MySvg from './svg/MySvg';
 
 function Cjone() {
     const navigate = useNavigate();
@@ -43,6 +44,11 @@ function Cjone() {
         <div className='wrap Cjone'>
             {showBar && <LoadingBar isLoading={loaded} />}
             <div className='bg'></div>
+            <div className={`background_image bImage cjone ${opacity === 1
+                            ? "visible"
+                            : "hidden"}`} >
+          <MySvg fill1="#AF3C42" fill2="#AF3C42" />
+        </div>
             <div
                 className={`cube cjone ${opacity === 1
                     ? "visible"
@@ -167,6 +173,11 @@ function Cjone() {
                             <ul>웹 표준 준수
                                 <li>- 웹 접근성 준수</li>
                                 <li>- HTML/CSS W3C 유효성검사 PASS</li>
+                                <li className='pdf cjone cursor-effect' 
+                                    onClick={() => window.open(process.env.PUBLIC_URL + '/assets/cjone.pdf', '_blank')}
+                                    onMouseEnter={handleMouseEnter}
+                                    onMouseLeave={handleMouseLeave}>
+                                    <FontAwesomeIcon icon="fa-solid fa-arrow-right"/> 검사 결과</li>
                             </ul>
                         </div>
                     </div>

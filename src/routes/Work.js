@@ -5,6 +5,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useNavigate } from 'react-router-dom';
 import { useOpacity } from '../Hooks/UseOpacity';
 import { useCursorEffect } from '../Hooks/UseCursorEffect';
+import MySvg from '../components/svg/MySvg';
+
 
 
 function Work() {
@@ -34,6 +36,11 @@ function Work() {
   return (
     <div className='main_wrap work'>
         <div className='bg'></div>
+        <div className={`background_image bImage ${opacity === 1
+                            ? "visible"
+                            : "hidden"}`} >
+          <MySvg fill1="#78ffd1" fill2="#f0ffa6" />
+        </div>
       <Nav handleOnClick={handleOnClick}/>
       <div className="list__content__wraper">
       {Array(6).fill().map((_, i) => (
@@ -57,7 +64,7 @@ function Work() {
             onClick={() => handleLinkClick("/SamsungEm")}
           >
             <p><span><FontAwesomeIcon icon="fa-solid fa-arrow-right" /></span> Samsung-Em </p>
-            <span>Web Development</span>
+            <span>Web Standards</span>
           </li>
           <li
             className={`list__content cursor-effect ${opacity === 1 ? "visible" : "hidden"}`}
@@ -66,7 +73,7 @@ function Work() {
             onClick={() => handleLinkClick("/Cjone")}
           >
             <p><span><FontAwesomeIcon icon="fa-solid fa-arrow-right" /></span> Cj one</p>
-            <span>Web Development</span>
+            <span>Web Standards</span>
           </li>
           <li
             className={`list__content cursor-effect ${opacity === 1 ? "visible" : "hidden"}`}
@@ -75,7 +82,7 @@ function Work() {
             onClick={() => handleLinkClick("/SamsungEg")}
           >
             <p><span><FontAwesomeIcon icon="fa-solid fa-arrow-right" /></span> Samsung Engineering</p>
-            <span>Web Development</span>
+            <span>Web Standards</span>
           </li>
           <li
             className={`list__content cursor-effect ${opacity === 1 ? "visible" : "hidden"}`}
@@ -84,7 +91,7 @@ function Work() {
             onClick={() => handleLinkClick("/Totalks")}
           >
             <p><span><FontAwesomeIcon icon="fa-solid fa-arrow-right" /></span> ToTalk</p>
-            <span>Web Development</span>
+            <span>React APP</span>
           </li>
           <li
             className={`list__content cursor-effect ${opacity === 1 ? "visible" : "hidden"}`}
@@ -93,7 +100,7 @@ function Work() {
             onClick={() => handleLinkClick("/Funfilx")}
           >
             <p><span><FontAwesomeIcon icon="fa-solid fa-arrow-right" /></span> Funfilx</p>
-            <span>Web Development</span>
+            <span>React APP</span>
           </li>
           <li
             className={`list__content cursor-effect ${opacity === 1 ? "visible" : "hidden"}`}

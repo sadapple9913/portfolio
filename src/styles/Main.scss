@@ -3,7 +3,62 @@
 
 .main_wrap{
   height: 100%;
+    .background_image{
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      // overflow: hidden;
+    .svg5{
+      position: absolute;
+      top: -70px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 240px;
+      height: 240px;
+      transition: all 0.3s ease-in-out;
+    }
+    .svg2{
+      position: absolute;
+      bottom: -41%;
+      left: 23%;
+      transform: translateX(-50%) rotate(85deg);
+      width: 740px;
+      height: 740px;
+      transition: all 0.3s ease-in-out;
+    }
+    .svg3{
+      position: absolute;
+      top: -30%;
+      right: 0;
+      transform: rotate(130deg);
+      width: 640px;
+      height: 640px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .svg4{
+      position: absolute;
+      bottom: -20%;
+      right: 0%;
+      transform: rotate(80deg);
+      width: 660px;
+      height: 660px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .svgg4{
+      position: absolute;
+      top: -70px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 240px;
+      height: 240px;
+      transition: all 0.3s ease-in-out;
+  }
+
 }
+}
+
 
 .main__info{
   z-index: 100 !important;

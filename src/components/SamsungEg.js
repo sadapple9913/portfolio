@@ -8,6 +8,7 @@ import { useCursorEffect } from '../Hooks/UseCursorEffect';
 import Cube from './Cube';
 import useLoading from '../Hooks/UseLoading';
 import LoadingBar from './LoadingBar';
+import MySvg from './svg/MySvg';
 
 function SamsungEg() {
     const navigate = useNavigate();
@@ -44,6 +45,11 @@ function SamsungEg() {
         <div className='wrap samsungEg'>
         {showBar && <LoadingBar isLoading={loaded} />}
             <div className='bg'></div>
+            <div className={`background_image bImage ${opacity === 1
+                            ? "visible"
+                            : "hidden"}`} >
+          <MySvg fill1="#1428A0" fill2="#1428A0" />
+        </div>
             <div
                 className={`cube samsungEg ${opacity === 1
                     ? "visible"
@@ -170,16 +176,15 @@ function SamsungEg() {
                             <ul>웹 표준 준수
                                 <li>- 웹 접근성 준수</li>
                                 <li>- HTML/CSS W3C 유효성검사 PASS</li>
+                                <li className='pdf samsungEg cursor-effect' 
+                                    onClick={() => window.open(process.env.PUBLIC_URL + '/assets/samsungEg.pdf', '_blank')}
+                                    onMouseEnter={handleMouseEnter}
+                                    onMouseLeave={handleMouseLeave}>
+                                    <FontAwesomeIcon icon="fa-solid fa-arrow-right"/> 검사 결과</li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                {/* <div className='mockup'>
-    <div className='mockup_desktop samsungEg'></div>
-    <div className='mockup_tablet samsungEg'></div>
-    <div className='mockup_phone samsungEg'></div>
-    </div> */
-                }
 
                 <div
                     className={`move__project samsungEg moveMent ${opacity === 1

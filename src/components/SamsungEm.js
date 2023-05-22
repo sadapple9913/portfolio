@@ -8,6 +8,8 @@ import { useCursorEffect } from '../Hooks/UseCursorEffect';
 import Cube from './Cube';
 import LoadingBar from './LoadingBar';
 import useLoading from '../Hooks/UseLoading';
+import MySvg from './svg/MySvg';
+
 
 function SamsungEm() {
 const navigate = useNavigate();
@@ -44,6 +46,11 @@ const webSiteOnClick = () => {
         <div className='wrap samsungEm'>
         {showBar && <LoadingBar isLoading={loaded} />}
             <div className='bg'></div>
+            <div className={`background_image bImage ${opacity === 1
+                            ? "visible"
+                            : "hidden"}`} >
+          <MySvg fill1="#1428A0" fill2="#1428A0" />
+        </div>
             <div
                 className={`cube samsungEm ${opacity === 1
                     ? "visible"
@@ -129,6 +136,11 @@ const webSiteOnClick = () => {
                             <ul>웹 표준 준수
                                 <li>- 웹 접근성 준수</li>
                                 <li>- HTML/CSS W3C 유효성검사 PASS</li>
+                                <li className='pdf cursor-effect' 
+                                    onClick={() => window.open(process.env.PUBLIC_URL + '/assets/samsungEm.pdf', '_blank')}
+                                    onMouseEnter={handleMouseEnter}
+                                    onMouseLeave={handleMouseLeave}>
+                                    <FontAwesomeIcon icon="fa-solid fa-arrow-right"/> 검사 결과</li>
                             </ul>
                         </div>
                     </div>
