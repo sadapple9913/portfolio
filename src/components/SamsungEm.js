@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Nav from './Nav'
 import "../styles/SamsungEm.scss"
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
@@ -40,7 +40,19 @@ const webSiteOnClick = () => {
         window.scrollTo(0, 0);
     });
     };
-    
+
+    useEffect(() => {
+        const loadEvent = () => {
+            handleLoad();
+        };
+
+        window.addEventListener('load', loadEvent);
+
+        return () => {
+            window.removeEventListener('load', loadEvent);
+        };
+    }, [handleLoad]);
+
     return (
         <>
         <div className='wrap samsungEm'>
@@ -63,7 +75,6 @@ const webSiteOnClick = () => {
                                         ? "visible"
                                         : "hidden"}`}>
                 <video
-                onLoadedData={handleLoad}
                 autoPlay="autoPlay"
                 loop="loop"
                 muted="muted">
@@ -137,7 +148,7 @@ const webSiteOnClick = () => {
                                 <li>- 웹 접근성 준수</li>
                                 <li>- HTML/CSS W3C 유효성검사 PASS</li>
                                 <li className='pdf cursor-effect' 
-                                    onClick={() => window.open(process.env.PUBLIC_URL + '/assets/samsungEm.pdf', '_blank')}
+                                    onClick={() => window.open(process.env.PUBLIC_URL + '/assets/samsungEm1.pdf', '_blank')}
                                     onMouseEnter={handleMouseEnter}
                                     onMouseLeave={handleMouseLeave}>
                                     <FontAwesomeIcon icon="fa-solid fa-arrow-right"/> 검사 결과</li>

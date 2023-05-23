@@ -40,6 +40,19 @@ function Totalks() {
         });
     };
 
+    
+    useEffect(() => {
+        const loadEvent = () => {
+            handleLoad();
+        };
+
+        window.addEventListener('load', loadEvent);
+
+        return () => {
+            window.removeEventListener('load', loadEvent);
+        };
+    }, [handleLoad]);
+
     return (
         <div className='wrap Totalks'>
             {showBar && <LoadingBar isLoading={loaded} />}
@@ -61,7 +74,6 @@ function Totalks() {
                     ? "visible"
                     : "hidden"}`}>
                 <video
-                    onLoadedData={handleLoad}
                     className={`totalks_video bgMoveMent ${opacity === 1
                         ? "visible"
                         : "hidden"}`}

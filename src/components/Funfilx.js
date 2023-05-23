@@ -40,6 +40,19 @@ const { loaded, showBar, handleLoad } = useLoading();
             });
           };
 
+          
+    useEffect(() => {
+        const loadEvent = () => {
+            handleLoad();
+        };
+
+        window.addEventListener('load', loadEvent);
+
+        return () => {
+            window.removeEventListener('load', loadEvent);
+        };
+    }, [handleLoad]);
+
     return (
         <div className='wrap funfilx'>
             {showBar && <LoadingBar isLoading={loaded} />}
@@ -62,7 +75,6 @@ const { loaded, showBar, handleLoad } = useLoading();
                         ? "visible"
                         : "hidden"}`}>
                     <video
-                        onLoadedData={handleLoad}
                         autoPlay="autoPlay"
                         loop="loop"
                         muted="muted"

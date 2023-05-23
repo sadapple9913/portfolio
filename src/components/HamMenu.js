@@ -1,47 +1,34 @@
 import React, { useEffect, useState } from 'react'
 import "../styles/HamMenu.scss"
-import { NavLink, useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { useOpacity } from '../Hooks/UseOpacity';
 
 function HamMenu() {
   const navigate = useNavigate();
   const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(location.pathname === "/menu");
-  const [opacity, setOpacity] = useState(0);
 
-  useEffect(() => {
-    setOpacity(0);
-  
-    const timeoutId = setTimeout(() => {
-      setOpacity(1);
-    }, 0);
-  
-    return () => {
-      clearTimeout(timeoutId);
-      setOpacity(0);
-    };
-  }, []);
+  const isMainOrMenu = ['/', '/menu'].includes(location.pathname);
+  const { opacity, handleOpacityChange } = useOpacity(isMainOrMenu ? 0 : 600);
 
   useEffect(() => {
     setIsMenuOpen(location.pathname === "/menu");
   }, [location.pathname]);
 
   const toggleMenu = () => {
-    setTimeout(() => {
+    handleOpacityChange(() => {
       if (isMenuOpen) {
         navigate(-1);
-        setOpacity(0);
       } else {
         navigate("/menu");
-        setOpacity(0);
       }
-    }, 600);
+    });
   };
 
   return (
     <div
       className={`hamburger-btn ${isMenuOpen && "hamburger-btn__click"}`}
       onClick={toggleMenu}
-      style={{ opacity: opacity }}
     >
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" className="icons-style">
         <title>Menu</title>
