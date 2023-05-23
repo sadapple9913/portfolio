@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect, useRef, useState} from 'react'
 import Nav from './Nav'
 import "../styles/Totalks.scss"
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
@@ -15,6 +15,7 @@ function Totalks() {
     const {opacity, handleOpacityChange} = useOpacity();
     const {handleMouseEnter, handleMouseLeave} = useCursorEffect();
     const { loaded, showBar, handleLoad } = useLoading();
+    const videoRef = useRef(null);
 
     const webSiteOnClick = () => {
         handleOpacityChange(() => {
@@ -53,6 +54,21 @@ function Totalks() {
         };
     }, [handleLoad]);
 
+
+
+    useEffect(() => {
+      const videoElement = videoRef.current;
+  
+      videoElement.preload = 'auto';
+  
+      videoElement.oncanplaythrough = () => {
+      };
+  
+      return () => {
+        videoElement.oncanplaythrough = null;
+      };
+    }, []);
+
     return (
         <div className='wrap Totalks'>
             {showBar && <LoadingBar isLoading={loaded} />}
@@ -74,6 +90,7 @@ function Totalks() {
                     ? "visible"
                     : "hidden"}`}>
                 <video
+                    ref={videoRef}
                     className={`totalks_video bgMoveMent ${opacity === 1
                         ? "visible"
                         : "hidden"}`}
