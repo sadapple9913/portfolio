@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.c90db04a.css",
-    "main.js": "/portfolio/static/js/main.fd345cc2.js",
+    "main.css": "/portfolio/static/css/main.d5204353.css",
+    "main.js": "/portfolio/static/js/main.83e6d239.js",
     "static/media/funfilx.png": "/portfolio/static/media/funfilx.69eec071441de513241f.png",
     "static/media/samsungEm.png": "/portfolio/static/media/samsungEm.e12e03c514acfc8d9654.png",
     "static/media/cjone.png": "/portfolio/static/media/cjone.6c04754b15adfd3a5fd9.png",
@@ -10,16 +10,16 @@
     "static/media/kimm_Light.woff": "/portfolio/static/media/kimm_Light.a0d78cda2538bd72ed49.woff",
     "static/media/css.png": "/portfolio/static/media/css.bfb7e2644752e697b7c9.png",
     "static/media/mockup-desktop.png": "/portfolio/static/media/mockup-desktop.98226de4b7039c40ec60.png",
-    "static/media/totalks-Large.png": "/portfolio/static/media/totalks-Large.de3af4b6a8151cc7050a.png",
     "static/media/mockup-tablet1.png": "/portfolio/static/media/mockup-tablet1.126c2b3f608f1c0b6e4c.png",
-    "static/media/totalk.png": "/portfolio/static/media/totalk.01c663dcffd05dd62a99.png",
     "static/media/mockup-phone.png": "/portfolio/static/media/mockup-phone.0f2db6773941a5cb1853.png",
+    "static/media/totalks.png": "/portfolio/static/media/totalks.745019e88b1993fafa77.png",
+    "static/media/totalks-Large.png": "/portfolio/static/media/totalks-Large.a0e3139d96b1225657eb.png",
     "index.html": "/portfolio/index.html",
-    "main.c90db04a.css.map": "/portfolio/static/css/main.c90db04a.css.map",
-    "main.fd345cc2.js.map": "/portfolio/static/js/main.fd345cc2.js.map"
+    "main.d5204353.css.map": "/portfolio/static/css/main.d5204353.css.map",
+    "main.83e6d239.js.map": "/portfolio/static/js/main.83e6d239.js.map"
   },
   "entrypoints": [
-    "static/css/main.c90db04a.css",
-    "static/js/main.fd345cc2.js"
+    "static/css/main.d5204353.css",
+    "static/js/main.83e6d239.js"
   ]
 }
