@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react'
+import React, {useCallback, useEffect, useRef, useState} from 'react'
 import Nav from './Nav'
 import "../styles/Totalks.scss"
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
@@ -17,11 +17,11 @@ function Totalks() {
     const { loaded, showBar, handleLoad } = useLoading();
     const videoRef = useRef(null);
 
-    const webSiteOnClick = () => {
+    const webSiteOnClick = useCallback(() => {
         handleOpacityChange(() => {
             window.open("https://sadapple9913.github.io/kakao/", "_blank");
         });
-    };
+    }, [handleOpacityChange]);
 
     const handleOnClick = () => {
         handleOpacityChange(() => {});
@@ -53,8 +53,6 @@ function Totalks() {
             window.removeEventListener('load', loadEvent);
         };
     }, [handleLoad]);
-
-
 
     useEffect(() => {
       const videoElement = videoRef.current;
