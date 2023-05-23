@@ -1,7 +1,7 @@
 import React from 'react';
 
 const SvgThree = ({fill1, fill2}) => (
-  <svg className="svg3 shake" id="_레이어_2" data-name="레이어 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 269.57 211.83">
+  <svg className="svg3 shake" id="_레이어_2" data-name="레이어 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 269.57 211.83" >
     <defs>
       <linearGradient id="_무제_그라디언트_60" data-name="무제 그라디언트 60" x1="0" y1="70%" x2="20" y2="0" gradientUnits="userSpaceOnUse">
         <stop offset="0%" stopColor={fill2}/>

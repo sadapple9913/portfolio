@@ -7,18 +7,22 @@
 
     .top_wrap.Totalks{
         left: 40%;
-        width: 382px;height: 730px;
+        width: 361px;height: 730px;
         background: url(../../public/images/totalks-Large.png)no-repeat 0 0;
         border-radius: 0px 0px 50px 52px;
-        background-size: cover;
+        background-size: contain;
         .totalks_video{
             position: absolute;
-            left:36px;
-            width: 321px;
-            height: 730px;
+            top: 48px;
+            left:22.5px;
+            width: 316.5px;
+            height: 627px;
+            object-fit: fill;
         }
     }
-
+    .info{
+        height: 80%;
+      }
     .info_top_wrap{
         color: #E73446;
         p{

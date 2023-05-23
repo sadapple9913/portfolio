@@ -33,10 +33,13 @@
         }
     }
     .info{
-        height: 50%;
+        height: 80%;
     }
     .info_top_wrap{
         color: #E58D09;
+        p:before{
+            background-color: #E58D09;
+        }
     }
 
     .info_bottom_wrap{

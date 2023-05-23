@@ -22,15 +22,6 @@
             } 
         }
     
-        .mockup_frame_phone{
-            video{
-                position: absolute;
-                top: 0px;
-                left: 11px;
-                width: 163px;
-                height: 100%;
-            }
-        }
     
 
     .info_top_wrap{
@@ -54,7 +45,9 @@
             }
       }
     }
-
+    .info{
+        height: 80%;
+      }
     .info_bottom_wrap{
         
          .info_left_side{
@@ -123,7 +116,7 @@
     .top_wrap.funfilx{
         left: 50%;
       }
-    
+ 
     }
     .cube.funfilx{
         left: 75px;
@@ -145,6 +138,7 @@
     .cube.funfilx{
         left: 100px;
     }
+    
     .cube.funfilx.visible{
         top: 44px;
         opacity: 1;

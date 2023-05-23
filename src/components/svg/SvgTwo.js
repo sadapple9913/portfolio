@@ -1,6 +1,6 @@
 
 const SvgTwo = ({fill1, fill2}) => (
-  <svg className="svg2" id="_레이어_2" data-name="레이어 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 269.56 211.84">
+  <svg className="svg2" id="_레이어_2" data-name="레이어 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 269.56 211.84" >
     <defs>
       <linearGradient id="_무제_그라디언트_59" data-name="무제 그라디언트 59" x1="0" y1="100%" x2="0" y2="0" gradientUnits="userSpaceOnUse">
         <stop offset="0%" stopColor={fill2}/>

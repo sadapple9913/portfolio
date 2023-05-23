@@ -78,7 +78,7 @@ const webSiteOnClick = () => {
                 autoPlay="autoPlay"
                 loop="loop"
                 muted="muted">
-                <source src={process.env.PUBLIC_URL + '/videos/em_movie.mp4'} type="video/mp4"/>
+                <source src={process.env.PUBLIC_URL + '/videos/samsungEm.mp4'} type="video/mp4"/>
                 </video>
                 
 

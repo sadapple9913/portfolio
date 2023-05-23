@@ -9,7 +9,7 @@
     .background_image{
         perspective: 1000px;
 
-      .svg1_box, .svg2_box, .svg3_box, .svg4_box, .svg5_box {
+      .svg1_box.off, .svg2_box.off, .svg3_box.off, .svg4_box.off, .svg5_box.off {
         opacity: 0.5;
         transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
       }
@@ -29,8 +29,9 @@
 
     
     .svg1_box.on {
+      z-index: 1000;
       opacity: 1;
-      transform: translateZ(100px)  translateX(100px) rotate(-45deg) scale(0.4) ;
+      transform: translateZ(100px)  translateX(5vw) rotate(-45deg) scale(0.4) ;
     }
     
     .svg2_box{
@@ -46,8 +47,9 @@
     }
 
     .svg2_box.on {
+      z-index: 1000;
       opacity: 1;
-      transform: translateZ(100px) translateX(100px) scale(0.42);
+      transform: translateZ(100px) translateX(5vw) scale(0.4);
     }
 
     .svg3_box{
@@ -61,8 +63,9 @@
       }
     }
     .svg3_box.on {
+      z-index: 1000;
       opacity: 1;
-      transform: translateZ(100px) translateX(100px) rotate(150deg) scale(0.5);
+      transform: translateZ(100px) translateX(5vw) rotate(150deg) scale(0.45);
     }
 
     .svg4_box{
@@ -78,8 +81,9 @@
     }
 
     .svg4_box.on {
+      z-index: 1000;
       opacity: 1;
-      transform: translateZ(100px) translateX(100px) rotate(15deg) scale(0.5);
+      transform: translateZ(100px) translateX(5vw) rotate(15deg) scale(0.45);
     }
 
     .svg5_box{
@@ -95,8 +99,9 @@
     }
 
     .svg5_box.on {
+      z-index: 1000;
       opacity: 1;
-      transform: translateZ(100px) translateX(100px) scale(0.4);
+      transform: translateZ(100px) translateX(5vw) scale(0.35);
     }
   }
 
