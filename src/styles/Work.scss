@@ -2,7 +2,7 @@
 @import url(../styles/Common.scss);
 
 .main_wrap.work{
-  .background_image{
+  .work_background_image{
     position: fixed;
     left: 80%;
     top: 20%;
@@ -59,12 +59,11 @@
         background-size: contain;
     }
     .list__content__img:nth-of-type(4){
-        background: url(../../public/images/totalk.png)no-repeat 0 0;
+        background: url(../../public/images/totalks.png)no-repeat 0 0;
         left: 5%;
-        width: 500px;
+        width: 510px;
         height: 500px;
         background-size: cover;
-        border-radius: 50px;
         overflow: hidden;
     }
     .list__content__img:nth-of-type(5){
@@ -78,7 +77,6 @@
         width: 500px;
         height: 500px;
         background-size: cover;
-        border-radius: 50px;
         overflow: hidden;
     }
 }

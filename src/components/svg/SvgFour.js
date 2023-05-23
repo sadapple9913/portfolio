@@ -1,12 +1,12 @@
 import React from 'react';
 
 const SvgFour = ({fill1, fill2}) => {
-  const lighterFill1 = fill1 + '80'; // Append '80' to get 50% transparency.
+  const lighterFill1 = fill1 + '80'; 
 
   return (
-    <svg className='svg4' id="_레이어_2" data-name="레이어 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 265.94 278.59">
+    <svg className='svg4 shake' id="_레이어_2" data-name="레이어 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 265.94 278.59">
       <defs>
-        <linearGradient id="_무제_그라디언트_61" x1="60%" y1="10%" x2="0" y2="0" gradientUnits="userSpaceOnUse">
+        <linearGradient id="_무제_그라디언트_61" x1="80%" y1="10%" x2="0" y2="0" gradientUnits="userSpaceOnUse">
           <stop offset="0%" stopColor={fill2}/>
           <stop offset="50%" stopColor={lighterFill1}/>
           <stop offset="100%" stopColor={fill1}/>

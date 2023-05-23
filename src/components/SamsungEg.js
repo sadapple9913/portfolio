@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Nav from './Nav'
 import "../styles/SamsungEg.scss"
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
@@ -41,6 +41,18 @@ function SamsungEg() {
         });
       };
 
+      useEffect(() => {
+        const loadEvent = () => {
+            handleLoad();
+        };
+
+        window.addEventListener('load', loadEvent);
+
+        return () => {
+            window.removeEventListener('load', loadEvent);
+        };
+    }, [handleLoad]);
+
     return (
         <div className='wrap samsungEg'>
         {showBar && <LoadingBar isLoading={loaded} />}
@@ -63,7 +75,6 @@ function SamsungEg() {
                         ? "visible"
                         : "hidden"}`}>
                     <video
-                        onLoadedData={handleLoad}
                         autoPlay="autoPlay"
                         loop="loop"
                         muted="muted"

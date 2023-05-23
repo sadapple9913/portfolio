@@ -36,7 +36,7 @@ function Work() {
   return (
     <div className='main_wrap work'>
         <div className='bg'></div>
-        <div className={`background_image bImage ${opacity === 1
+        <div className={`work_background_image bImage ${opacity === 1
                             ? "visible"
                             : "hidden"}`} >
           <MySvg fill1="#78ffd1" fill2="#f0ffa6" />

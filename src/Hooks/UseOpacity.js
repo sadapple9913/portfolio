@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
 
-export function useOpacity() {
+
+export function useOpacity(defaultDelay = 600) {
   const [opacity, setOpacity] = useState(0);
+
 
   useEffect(() => {
     setOpacity(0);
@@ -15,7 +17,7 @@ export function useOpacity() {
     };
   }, []);
 
-  const handleOpacityChange = (callback, delay = 600) => {
+  const handleOpacityChange = (callback, delay = defaultDelay) => {
     setOpacity(0);
     setTimeout(() => {
       callback();

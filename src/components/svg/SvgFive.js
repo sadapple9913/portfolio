@@ -1,7 +1,7 @@
 import React from 'react';
 
 const SvgFive = ({fill1 ,fill2 }) => (
-  <svg className='svg5' id="_레이어_2" data-name="레이어 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 84.05 84.05">
+  <svg className='svg5 ' id="_레이어_2" data-name="레이어 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 84.05 84.05">
     <defs>
       <linearGradient id="grad5" x1="0%" y1="95%" x2="0%" y2="0%">
         <stop offset="0%" style={{stopColor:fill1, stopOpacity:1}} />
