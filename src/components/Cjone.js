@@ -9,7 +9,6 @@ import Cube from './Cube';
 import useLoading from '../Hooks/UseLoading';
 import LoadingBar from './LoadingBar';
 import MySvg from './svg/MySvg';
-import LoadingPage from './LoadingPage';
 
 function Cjone() {
     const navigate = useNavigate();
@@ -83,7 +82,7 @@ function Cjone() {
 
     return (
         <div className='wrap Cjone'>
-            {showBar && <LoadingPage isLoading={loaded} />}
+            {showBar && <LoadingBar isLoading={loaded} />}
             <div className='bg'></div>
             <div className={`background_image bImage cjone ${opacity === 1
                             ? "visible"
