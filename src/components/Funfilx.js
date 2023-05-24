@@ -215,6 +215,7 @@ const videoRef = useRef(null);
                             <ul>React/SCSS 주요 기술
                                 <li>- SPA 방식으로 개발</li>
                                 <li>- Hooks(UseEffect,UseState)</li>
+                                <li>- 커스텀 Hooks로 효율 증가</li>
                                 <li>- Axios 비동기 라이브러리 사용</li>
                                 <li>- FireBase를 이용한 인증, 실시간 데이터 베이스, 스토리지 구현</li>
                                 <li>- FontAwesome을 이용한 아이콘 연결</li>
