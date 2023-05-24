@@ -193,7 +193,7 @@ const videoRef = useRef(null);
                         </div>
                         <div>
                             <h3>USE LANGUAGE</h3>
-                            <p>HTML, REACT, CSS</p>
+                            <p>REACT, CSS</p>
                         </div>
                         <div>
                             <h3>PROJECT OVERVIEW</h3>

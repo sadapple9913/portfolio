@@ -112,6 +112,13 @@ function PureCss() {
                         <span>Pure CSS</span>
                     </h2>
                     <p 
+                    className='orange cursor-effect'
+                    onClick={handleOpen}
+                    onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave} >
+                        <span><FontAwesomeIcon icon="fa-solid fa-arrow-right"/> </span>
+                         OPEN</p>
+                    <p 
                     className='cursor-effect'
                     onClick={handleOpen}
                     onMouseEnter={handleMouseEnter}

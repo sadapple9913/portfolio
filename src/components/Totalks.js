@@ -153,11 +153,11 @@ function Totalks() {
                         </div>
                         <div>
                             <h3>USE LANGUAGE</h3>
-                            <p>HTML, CSS, REACT, SCSS</p>
+                            <p>REACT, SCSS</p>
                         </div>
                         <div>
                             <h3>PROJECT OVERVIEW</h3>
-                            <p>HTML,CSS 로 기본 레이아웃을 만들었고 REACT 숙련도 상향을 위해 REACT, SCSS로 변환해 작업 하였습니다.</p>
+                            <p>HTML,CSS 로 기본 레이아웃을 만들었고 REACT 숙련도 상향을 위해 JSX, SCSS로 변환해 작업 하였습니다.</p>
                         </div>
                         <div>
                             <h3>CONTRIBUTIONS</h3>
