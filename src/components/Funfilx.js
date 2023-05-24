@@ -9,6 +9,7 @@ import Cube from './Cube';
 import useLoading from '../Hooks/UseLoading';
 import LoadingBar from './LoadingBar';
 import MySvg from './svg/MySvg';
+import LoadingPage from './LoadingPage';
 
 function Funfilx() {
 const navigate = useNavigate();
@@ -82,7 +83,7 @@ const videoRef = useRef(null);
 
     return (
         <div className='wrap funfilx'>
-            {showBar && <LoadingBar isLoading={loaded} />}
+            {showBar && <LoadingPage isLoading={loaded} />}
             <div className='bg'></div>
             <div className={`background_image bImage ${opacity === 1
                             ? "visible"

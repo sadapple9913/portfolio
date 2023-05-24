@@ -9,6 +9,7 @@ import Cube from './Cube';
 import useLoading from '../Hooks/UseLoading';
 import LoadingBar from './LoadingBar';
 import MySvg from './svg/MySvg';
+import LoadingPage from './LoadingPage';
 
 function Totalks() {
     const navigate = useNavigate();
@@ -81,7 +82,7 @@ function Totalks() {
 
     return (
         <div className='wrap Totalks'>
-            {showBar && <LoadingBar isLoading={loaded} />}
+            {showBar && <LoadingPage isLoading={loaded} />}
             <div className='bg'></div>
             <div className={`background_image bImage ${opacity === 1
                             ? "visible"
