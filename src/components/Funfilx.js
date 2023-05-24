@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect, useRef, useState} from 'react'
 import Nav from './Nav'
 import "../styles/Funfilx.scss"
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
@@ -15,6 +15,7 @@ const navigate = useNavigate();
 const { opacity, handleOpacityChange } = useOpacity();
 const { handleMouseEnter, handleMouseLeave } = useCursorEffect();
 const { loaded, showBar, handleLoad } = useLoading();
+const videoRef = useRef(null);
 
         const webSiteOnClick = () => {
             handleOpacityChange(() => {
@@ -53,6 +54,20 @@ const { loaded, showBar, handleLoad } = useLoading();
         };
     }, [handleLoad]);
 
+    useEffect(() => {
+        const videoElement = videoRef.current;
+    
+        videoElement.preload = 'auto';
+    
+        videoElement.oncanplaythrough = () => {
+        };
+    
+        return () => {
+          videoElement.oncanplaythrough = null;
+        };
+      }, []);
+  
+
     return (
         <div className='wrap funfilx'>
             {showBar && <LoadingBar isLoading={loaded} />}
@@ -75,6 +90,7 @@ const { loaded, showBar, handleLoad } = useLoading();
                         ? "visible"
                         : "hidden"}`}>
                     <video
+                        ref={videoRef}
                         autoPlay="autoPlay"
                         loop="loop"
                         muted="muted"
@@ -91,6 +107,7 @@ const { loaded, showBar, handleLoad } = useLoading();
                         ? "visible"
                         : "hidden"}`}>
                     <video
+                        ref={videoRef}
                         autoPlay="autoPlay"
                         loop="loop"
                         muted="muted"
@@ -107,6 +124,7 @@ const { loaded, showBar, handleLoad } = useLoading();
                         ? "visible"
                         : "hidden"}`}>
                     <video
+                        ref={videoRef}
                         autoPlay="autoPlay"
                         loop="loop"
                         muted="muted"

@@ -13,7 +13,7 @@ import SvgTwo from '../components/svg/SvgTwo'
 
 function Menu() {
     const navigate = useNavigate();
-    const {opacity, handleOpacityChange} = useOpacity(100);
+    const {opacity, handleOpacityChange} = useOpacity(200);
     const [moveImage, setMoveImage] = useState(false);
     const [activeItem, setActiveItem] = useState(null);
 
@@ -64,21 +64,21 @@ function Menu() {
 
             <div className='background_image bImage' >
 
-            <img className={`svg5_box ${opacity === 1 ? "" : "hidden"} ${activeItem === 'home' ? "on" : ""} ${activeItem === 'about' ? "on" : ""}`} src={process.env.PUBLIC_URL + '/images/221.png'} />
+            <img className={`svg5_box ${opacity === 1 ? "" : "hidden"} ${activeItem === 'home' ? "on" : ""} ${activeItem === 'about' ? "on" : ""} ${activeItem === 'work' ? "off" : ""} ${activeItem === 'contact' ? "off" : ""}`} src={process.env.PUBLIC_URL + '/images/221.png'} />
 
-            <div className={`svg3_box ${opacity === 1 ? "" : "hidden"} ${activeItem === 'home' ? "on" : ""} ${activeItem === 'contact' ? "on" : ""}`}>
+            <div className={`svg3_box ${opacity === 1 ? "" : "hidden"} ${activeItem === 'home' ? "on" : ""} ${activeItem === 'contact' ? "on" : ""} ${activeItem === 'about' ? "off" : ""} ${activeItem === 'work' ? "off" : ""}`}>
                 <SvgThree fill1="#f0ffa6" fill2="#ffb3c2" />
             </div>
 
-            <div className={`svg1_box ${opacity === 1 ? "" : "hidden"} ${activeItem === 'home' ? "on" : ""} ${activeItem === 'work' ? "on" : ""}`}>
+            <div className={`svg1_box ${opacity === 1 ? "" : "hidden"} ${activeItem === 'home' ? "on" : ""} ${activeItem === 'work' ? "on" : ""} ${activeItem === 'about' ? "off" : ""} ${activeItem === 'contact' ? "off" : ""}`}>
                 <MySvg fill1="#78ffd1" fill2="#f0ffa6"/>
             </div>
 
-            <div className={`svg4_box ${opacity === 1 ? "" : "hidden"} ${activeItem === 'home' ? "on" : ""} ${activeItem === 'about' ? "on" : ""}`}>
+            <div className={`svg4_box ${opacity === 1 ? "" : "hidden"} ${activeItem === 'home' ? "on" : ""} ${activeItem === 'about' ? "on" : ""} ${activeItem === 'work' ? "off" : ""} ${activeItem === 'contact' ? "off" : ""}`}>
                 <SvgFour fill1="#99b9ff" fill2="#78ffd1" />
             </div>
 
-            <div className={`svg2_box ${opacity === 1 ? "" : "hidden"} ${activeItem === 'home' ? "on" : ""} ${activeItem === 'contact' ? "on" : ""}`}>
+            <div className={`svg2_box ${opacity === 1 ? "" : "hidden"} ${activeItem === 'home' ? "on" : ""} ${activeItem === 'contact' ? "on" : ""} ${activeItem === 'work' ? "off" : ""} ${activeItem === 'about' ? "off" : ""}`}>
                 <SvgTwo fill1="#99b9ff" fill2="#ffb3c2" />
             </div>
 

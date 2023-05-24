@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import Nav from './Nav'
 import "../styles/SamsungEm.scss"
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
@@ -16,6 +16,7 @@ const navigate = useNavigate();
 const { opacity, handleOpacityChange } = useOpacity();
 const { handleMouseEnter, handleMouseLeave } = useCursorEffect();
 const { loaded, showBar, handleLoad } = useLoading();
+const videoRef = useRef(null);
 
 const webSiteOnClick = () => {
     handleOpacityChange(() => {
@@ -53,6 +54,20 @@ const webSiteOnClick = () => {
         };
     }, [handleLoad]);
 
+    
+    useEffect(() => {
+        const videoElement = videoRef.current;
+    
+        videoElement.preload = 'auto';
+    
+        videoElement.oncanplaythrough = () => {
+        };
+    
+        return () => {
+          videoElement.oncanplaythrough = null;
+        };
+      }, []);
+  
     return (
         <>
         <div className='wrap samsungEm'>
@@ -75,10 +90,11 @@ const webSiteOnClick = () => {
                                         ? "visible"
                                         : "hidden"}`}>
                 <video
+                ref={videoRef}
                 autoPlay="autoPlay"
                 loop="loop"
                 muted="muted">
-                <source src={process.env.PUBLIC_URL + '/videos/em_movie.mp4'} type="video/mp4"/>
+                <source src={process.env.PUBLIC_URL + '/videos/samsungEm.mp4'} type="video/mp4"/>
                 </video>
                 
 
@@ -191,4 +207,4 @@ const webSiteOnClick = () => {
     )
 }
 
-export default SamsungEm
+export default SamsungEm;

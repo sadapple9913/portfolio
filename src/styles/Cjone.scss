@@ -22,10 +22,12 @@
 
         video{
             position: absolute;
-            top: 0px;
-            left: 12px;
-            width: 238px;
-            height: 100%;
+            top: 11px;
+            left: 11px;
+            width: 239px;
+            height: 319px;
+            border-radius: 5px;
+            object-fit: fill;
         }
     }
     .mockup_frame_phone{
@@ -37,10 +39,12 @@
 
         video{
             position: absolute;
-            top: 0px;
-            left: 14px;
-            width: 160px;
-            height: 100%;
+            top: 8px;
+            left: 11px;
+            width: 164px;
+            height: 353px;
+            object-fit: fill;
+            border-radius: 10px;
         }
 
     }

@@ -18,7 +18,7 @@ import MySvg from '../components/svg/MySvg';
 
 function Main() {
     const navigate = useNavigate();
-    const {opacity, handleOpacityChange} = useOpacity(100);
+    const {opacity, handleOpacityChange} = useOpacity(200);
     const {handleMouseEnter, handleMouseLeave} = useCursorEffect();
     const [moveImage, setMoveImage] = useState(false);
     const [greeting, setGreeting] = useState({greeting: "HI , I'M", name: "SAGNCHEAL JUNG"});

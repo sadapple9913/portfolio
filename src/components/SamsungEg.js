@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import Nav from './Nav'
 import "../styles/SamsungEg.scss"
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
@@ -15,7 +15,7 @@ function SamsungEg() {
     const { opacity, handleOpacityChange } = useOpacity();
     const { handleMouseEnter, handleMouseLeave } = useCursorEffect();
     const { loaded, showBar, handleLoad } = useLoading();
-
+    const videoRef = useRef(null);
 
     const webSiteOnClick = () => {
         handleOpacityChange(() => {
@@ -53,6 +53,19 @@ function SamsungEg() {
         };
     }, [handleLoad]);
 
+    useEffect(() => {
+        const videoElement = videoRef.current;
+    
+        videoElement.preload = 'auto';
+    
+        videoElement.oncanplaythrough = () => {
+        };
+    
+        return () => {
+          videoElement.oncanplaythrough = null;
+        };
+      }, []);
+
     return (
         <div className='wrap samsungEg'>
         {showBar && <LoadingBar isLoading={loaded} />}
@@ -75,6 +88,7 @@ function SamsungEg() {
                         ? "visible"
                         : "hidden"}`}>
                     <video
+                        ref={videoRef}
                         autoPlay="autoPlay"
                         loop="loop"
                         muted="muted"
@@ -91,6 +105,7 @@ function SamsungEg() {
                         ? "visible"
                         : "hidden"}`}>
                     <video
+                        ref={videoRef}
                         autoPlay="autoPlay"
                         loop="loop"
                         muted="muted"
@@ -107,6 +122,7 @@ function SamsungEg() {
                         ? "visible"
                         : "hidden"}`}>
                     <video
+                        ref={videoRef}
                         autoPlay="autoPlay"
                         loop="loop"
                         muted="muted"

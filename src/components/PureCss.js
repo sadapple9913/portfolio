@@ -47,6 +47,12 @@ function PureCss() {
         };
     }, [handleLoad]);
 
+    const handleOpen = () => {
+        window.open(process.env.PUBLIC_URL + "/assets/orange.html", "_blank");
+        window.open(process.env.PUBLIC_URL + "/assets/facebook_Emoji.html", "_blank");
+      };
+    
+
     return (
         <div className='wrap PureCss'>
             {showBar && <LoadingBar isLoading={loaded} />}
@@ -105,6 +111,13 @@ function PureCss() {
                     <h2>
                         <span>Pure CSS</span>
                     </h2>
+                    <p 
+                    className='cursor-effect'
+                    onClick={handleOpen}
+                    onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave} >
+                        <span><FontAwesomeIcon icon="fa-solid fa-arrow-right"/> </span>
+                         OPEN</p>
                 </div>
                 <div className='info_bottom_wrap'>
 
