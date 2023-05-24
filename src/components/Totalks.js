@@ -43,16 +43,28 @@ function Totalks() {
 
     
     useEffect(() => {
+        const videoElement = videoRef.current;
+        videoElement.preload = 'auto';
+        videoElement.oncanplaythrough = () => {};
+        
         const loadEvent = () => {
             handleLoad();
         };
-
-        window.addEventListener('load', loadEvent);
-
+      
+        // Wait for the 'load' event
+        if (document.readyState === 'complete') {
+          // If the page has already loaded, call the handler immediately
+          loadEvent();
+        } else {
+          // Otherwise, wait for the page to load
+          window.addEventListener('load', loadEvent);
+        }
+      
         return () => {
-            window.removeEventListener('load', loadEvent);
+          videoElement.oncanplaythrough = null;
+          window.removeEventListener('load', loadEvent);
         };
-    }, [handleLoad]);
+      }, [handleLoad]);
 
     useEffect(() => {
       const videoElement = videoRef.current;

@@ -42,16 +42,28 @@ function SamsungEg() {
       };
 
       useEffect(() => {
+        const videoElement = videoRef.current;
+        videoElement.preload = 'auto';
+        videoElement.oncanplaythrough = () => {};
+        
         const loadEvent = () => {
             handleLoad();
         };
-
-        window.addEventListener('load', loadEvent);
-
+      
+        // Wait for the 'load' event
+        if (document.readyState === 'complete') {
+          // If the page has already loaded, call the handler immediately
+          loadEvent();
+        } else {
+          // Otherwise, wait for the page to load
+          window.addEventListener('load', loadEvent);
+        }
+      
         return () => {
-            window.removeEventListener('load', loadEvent);
+          videoElement.oncanplaythrough = null;
+          window.removeEventListener('load', loadEvent);
         };
-    }, [handleLoad]);
+      }, [handleLoad]);
 
     useEffect(() => {
         const videoElement = videoRef.current;
@@ -194,7 +206,7 @@ function SamsungEg() {
                             </ul>
                             <ul>코드 리펙토링
                                 <li>- JS에서 3회이상 중복되는 코드는 함수로 만들어 호출하여 효율성과 재사용성을 높임</li>
-                                <li>- Js에서 resize나 reroad시 업데이트가 필요한 데이터를 관리하는 함수를 만들었고, 이를통해 데이터 관리 효율증가</li>
+                                <li>- Js에서 resize나 reload시 업데이트가 필요한 데이터를 관리하는 함수를 만들었고, 이를통해 데이터 관리 효율증가</li>
                             </ul>
                             <ul>반응형 웹 개발
                                 <li>- PC, Tablet, Mobile
