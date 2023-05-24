@@ -40,30 +40,40 @@ function SamsungEg() {
           window.scrollTo(0, 0);
         });
       };
-
       useEffect(() => {
         const videoElement = videoRef.current;
         videoElement.preload = 'auto';
-        videoElement.oncanplaythrough = () => {};
-        
+    
+        let videoLoaded = false;
+        let pageLoaded = false;
+    
+        const checkLoad = () => {
+            if (videoLoaded && pageLoaded) {
+                handleLoad();
+            }
+        };
+    
+        videoElement.oncanplaythrough = () => {
+            videoLoaded = true;
+            checkLoad();
+        };
+    
         const loadEvent = () => {
-            handleLoad();
+            pageLoaded = true;
+            checkLoad();
         };
-      
-        // Wait for the 'load' event
+    
         if (document.readyState === 'complete') {
-          // If the page has already loaded, call the handler immediately
-          loadEvent();
+            loadEvent();
         } else {
-          // Otherwise, wait for the page to load
-          window.addEventListener('load', loadEvent);
+            window.addEventListener('load', loadEvent);
         }
-      
+    
         return () => {
-          videoElement.oncanplaythrough = null;
-          window.removeEventListener('load', loadEvent);
+            videoElement.oncanplaythrough = null;
+            window.removeEventListener('load', loadEvent);
         };
-      }, [handleLoad]);
+    }, [handleLoad]);
 
     useEffect(() => {
         const videoElement = videoRef.current;

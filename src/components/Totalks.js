@@ -9,7 +9,6 @@ import Cube from './Cube';
 import useLoading from '../Hooks/UseLoading';
 import LoadingBar from './LoadingBar';
 import MySvg from './svg/MySvg';
-import LoadingPage from './LoadingPage';
 
 function Totalks() {
     const navigate = useNavigate();
@@ -77,7 +76,6 @@ function Totalks() {
             window.removeEventListener('load', loadEvent);
         };
     }, [handleLoad]);
-    
 
     useEffect(() => {
       const videoElement = videoRef.current;
@@ -94,7 +92,7 @@ function Totalks() {
 
     return (
         <div className='wrap Totalks'>
-            {showBar && <LoadingPage isLoading={loaded} />}
+            {showBar && <LoadingBar isLoading={loaded} />}
             <div className='bg'></div>
             <div className={`background_image bImage ${opacity === 1
                             ? "visible"
