@@ -197,7 +197,7 @@ const videoRef = useRef(null);
                         </div>
                         <div>
                             <h3>PROJECT OVERVIEW</h3>
-                            <p>React와 일부 컴포넌트를 styled-component를 사용하여 제작하였고 The Movie DataBase API를 사용하
+                            <p>React와 일부 컴포넌트를 styled-component를 이용하여 제작하였고 The Movie DataBase API를 사용하여
                                 영화정보를 가져오게 만들었습니다.</p>
                         </div>
                         <div>

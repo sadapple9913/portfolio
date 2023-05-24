@@ -216,7 +216,6 @@ function SamsungEg() {
                             </ul>
                             <ul>코드 리펙토링
                                 <li>- JS에서 3회이상 중복되는 코드는 함수로 만들어 호출하여 효율성과 재사용성을 높임</li>
-                                <li>- Js에서 resize나 reload시 업데이트가 필요한 데이터를 관리하는 함수를 만들었고, 이를통해 데이터 관리 효율증가</li>
                             </ul>
                             <ul>반응형 웹 개발
                                 <li>- PC, Tablet, Mobile
