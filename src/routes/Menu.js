@@ -75,7 +75,7 @@ function Menu() {
             </div>
 
             <div className={`svg4_box ${opacity === 1 ? "" : "hidden"} ${activeItem === 'home' ? "on" : ""} ${activeItem === 'about' ? "on" : ""} ${activeItem === 'work' ? "off" : ""} ${activeItem === 'contact' ? "off" : ""}`}>
-                <SvgFour fill1="#99b9ff" fill2="#78ffd1" />
+                <SvgFour fill1="#99b9ff" fill2="#78ffd1" /> 
             </div>
 
             <div className={`svg2_box ${opacity === 1 ? "" : "hidden"} ${activeItem === 'home' ? "on" : ""} ${activeItem === 'contact' ? "on" : ""} ${activeItem === 'work' ? "off" : ""} ${activeItem === 'about' ? "off" : ""}`}>
@@ -133,12 +133,12 @@ function Menu() {
                         CONTACT</li>
                 </ul>
             </div>
-            <div
+            {/* <div
                 className={`cube menu ${opacity === 1
                     ? "visible"
                     : "hidden"}`}>
                 <Cube/>
-            </div>
+            </div> */}
         </div>
     )
 }

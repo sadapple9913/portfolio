@@ -348,6 +348,24 @@
 
 @media screen and (max-width:960px) {
 .main_wrap.work{
+
+  .work_background_image{
+    position: fixed;
+    left: 50%;
+    top: 0%;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+    filter: blur(40px);
+    transition: all 0.3s ease-in-out;
+  }
+  .bImage.visible{
+    transform: translateX(-70%) rotate(110deg) scale(0.9);
+  }
+  .bImage.hidden{
+    transform: translate(-230%) rotate(-360deg) scale(0.1);
+  }
+
   .list__content__wraper{
     display: none;
   }
@@ -392,6 +410,23 @@ span{
 
 @media screen and (max-width:720px) {
   .main_wrap.work{
+    .work_background_image{
+      position: fixed;
+      left: 35%;
+      top: 0%;
+      width: 100%;
+      height: 100%;
+      opacity: 0.8;
+      filter: blur(40px);
+      transition: all 0.3s ease-in-out;
+    }
+    .bImage.visible{
+      transform: translateX(-70%) rotate(110deg) scale(0.9);
+    }
+    .bImage.hidden{
+      transform: translate(-230%) rotate(-360deg) scale(0.1);
+    }
+
     .list__content__wraper{
       display: none;
     }
@@ -424,12 +459,49 @@ span{
   
   }
   }
+  @media screen and (max-width:500px) {
+    .main_wrap.work{
+  
+      .work_background_image{
+        position: fixed;
+        left: 15%;
+        top: 0%;
+        width: 100%;
+        height: 100%;
+        opacity: 0.8;
+        filter: blur(40px);
+        transition: all 0.3s ease-in-out;
+      }
+      .bImage.visible{
+        transform: translateX(-70%) rotate(110deg) scale(0.9);
+      }
+      .bImage.hidden{
+        transform: translate(-230%) rotate(-360deg) scale(0.1);
+      }
 
-
+    }
+  }
   
 @media screen and (max-width:420px) {
   .main_wrap.work{
   
+    .work_background_image{
+      position: fixed;
+      left: 25%;
+      top: 0%;
+      width: 100%;
+      height: 100%;
+      opacity: 0.8;
+      filter: blur(40px);
+      transition: all 0.3s ease-in-out;
+    }
+    .bImage.visible{
+      transform: translateX(-70%) rotate(110deg) scale(0.9);
+    }
+    .bImage.hidden{
+      transform: translate(-230%) rotate(-360deg) scale(0.1);
+    }
+
   .Work__list{
     top: 290px;
     width: 90%;

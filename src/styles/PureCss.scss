@@ -40,6 +40,28 @@
         p:before{
             background-color: #E58D09;
         }
+        .orange {
+           position: relative;
+           left: 25%;
+
+           .orange:before {
+            content: '';
+            display: block;
+            position: relative;
+            width: 0;
+            height: 2.5px;
+            top: 0%;
+            left: 0;
+            background-color: #E58D09; 
+            visibility: hidden;
+            transition: all 0.3s ease-in-out;
+          }
+        .orange:hover:before {
+            visibility: visible;
+            width: 100%;
+          }
+
+        }
     }
 
     .info_bottom_wrap{

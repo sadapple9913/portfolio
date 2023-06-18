@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect, useState} from 'react'
+import React, {useCallback, useEffect, useRef, useState} from 'react'
 import Nav from './Nav'
 import "../styles/Cjone.scss"
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
@@ -15,6 +15,7 @@ function Cjone() {
     const {opacity, handleOpacityChange} = useOpacity();
     const {handleMouseEnter, handleMouseLeave} = useCursorEffect();
     const { loaded, showBar, handleLoad } = useLoading();
+    const videoRef = useRef(null);
 
     const webSiteOnClick = () => {
         handleOpacityChange(() => {
@@ -42,16 +43,53 @@ function Cjone() {
 
     
     useEffect(() => {
-        const loadEvent = () => {
-            handleLoad();
+        const videoElement = videoRef.current;
+        videoElement.preload = 'auto';
+    
+        let videoLoaded = false;
+        let pageLoaded = false;
+    
+        const checkLoad = () => {
+            if (videoLoaded && pageLoaded) {
+                handleLoad();
+            }
         };
-
-        window.addEventListener('load', loadEvent);
-
+    
+        videoElement.oncanplaythrough = () => {
+            videoLoaded = true;
+            checkLoad();
+        };
+    
+        const loadEvent = () => {
+            pageLoaded = true;
+            checkLoad();
+        };
+    
+        if (document.readyState === 'complete') {
+            loadEvent();
+        } else {
+            window.addEventListener('load', loadEvent);
+        }
+    
         return () => {
+            videoElement.oncanplaythrough = null;
             window.removeEventListener('load', loadEvent);
         };
     }, [handleLoad]);
+
+       
+    useEffect(() => {
+        const videoElement = videoRef.current;
+    
+        videoElement.preload = 'auto';
+    
+        videoElement.oncanplaythrough = () => {
+        };
+    
+        return () => {
+          videoElement.oncanplaythrough = null;
+        };
+      }, []);
 
     return (
         <div className='wrap Cjone'>
@@ -75,6 +113,7 @@ function Cjone() {
                         ? "visible"
                         : "hidden"}`}>
                     <video
+                        ref={videoRef}
                         autoPlay="autoPlay"
                         loop="loop"
                         muted="muted"
@@ -91,6 +130,7 @@ function Cjone() {
                         ? "visible"
                         : "hidden"}`}>
                     <video
+                        ref={videoRef}
                         autoPlay="autoPlay"
                         loop="loop"
                         muted="muted"
@@ -107,6 +147,7 @@ function Cjone() {
                         ? "visible"
                         : "hidden"}`}>
                     <video
+                        ref={videoRef}
                         autoPlay="autoPlay"
                         loop="loop"
                         muted="muted"
@@ -176,7 +217,6 @@ function Cjone() {
                             </ul>
                             <ul>코드 리펙토링
                                 <li>- JS에서 3회이상 중복되는 코드는 함수로 만들어 호출하여 효율성과 재사용성을 높임</li>
-                                <li>- Js에서 resize나 reroad시 업데이트가 필요한 데이터를 관리하는 함수를 만들었고, 이를통해 데이터 관리 효율증가</li>
                             </ul>
                             <ul>반응형 웹 개발
                                 <li>- PC, Tablet, Mobile

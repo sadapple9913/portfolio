@@ -45,7 +45,7 @@ function About() {
         <p className={`moveMent ${opacity === 1
                             ? "visible"
                             : "hidden"}`}>저는 HTML, CSS, JavaScript를 활용한 웹 개발에 대한 열정과 경험이 있습니다. 최근에는 React를 배워서, 복잡한 웹 애플리케이션을 빠르게 개발하는 데 도움이 되었습니다.<br/>
-        저는 끊임없이 발전하고 성장하려는 열정을 가지고 있으며, 새로운 것을 배우는 것에 열려있습니다. 제가 갖고 있는 기술과 열정을 바탕으로, 여러분의 프로젝트를 함께 발전시키기 위해 노력하겠습니다. 감사합니다!</p>
+        저는 끊임없이 발전하고 성장하려는 열정을 가지고 있으며, 새로운 것을 배우는 것에 열려있습니다. 제가 갖고 있는 기술과 열정을 바탕으로, 함께 하게 될 프로젝트를  발전시키기 위해 노력하겠습니다. 감사합니다!</p>
       </div>
       <div className='bottom_wrap about'>
         <div className='left_side about'>

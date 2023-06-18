@@ -42,17 +42,40 @@ const videoRef = useRef(null);
           };
 
           
-    useEffect(() => {
-        const loadEvent = () => {
-            handleLoad();
-        };
-
-        window.addEventListener('load', loadEvent);
-
-        return () => {
-            window.removeEventListener('load', loadEvent);
-        };
-    }, [handleLoad]);
+          useEffect(() => {
+            const videoElement = videoRef.current;
+            videoElement.preload = 'auto';
+        
+            let videoLoaded = false;
+            let pageLoaded = false;
+        
+            const checkLoad = () => {
+                if (videoLoaded && pageLoaded) {
+                    handleLoad();
+                }
+            };
+        
+            videoElement.oncanplaythrough = () => {
+                videoLoaded = true;
+                checkLoad();
+            };
+        
+            const loadEvent = () => {
+                pageLoaded = true;
+                checkLoad();
+            };
+        
+            if (document.readyState === 'complete') {
+                loadEvent();
+            } else {
+                window.addEventListener('load', loadEvent);
+            }
+        
+            return () => {
+                videoElement.oncanplaythrough = null;
+                window.removeEventListener('load', loadEvent);
+            };
+        }, [handleLoad]);
 
     useEffect(() => {
         const videoElement = videoRef.current;
@@ -170,11 +193,11 @@ const videoRef = useRef(null);
                         </div>
                         <div>
                             <h3>USE LANGUAGE</h3>
-                            <p>HTML, REACT, CSS</p>
+                            <p>REACT, CSS</p>
                         </div>
                         <div>
                             <h3>PROJECT OVERVIEW</h3>
-                            <p>React와 일부 컴포넌트를 styled-component를 사용하여 제작하였고 The Movie DataBase API를 사용하
+                            <p>React와 일부 컴포넌트를 styled-component를 이용하여 제작하였고 The Movie DataBase API를 사용하여
                                 영화정보를 가져오게 만들었습니다.</p>
                         </div>
                         <div>
@@ -192,6 +215,7 @@ const videoRef = useRef(null);
                             <ul>React/SCSS 주요 기술
                                 <li>- SPA 방식으로 개발</li>
                                 <li>- Hooks(UseEffect,UseState)</li>
+                                <li>- 커스텀 Hooks 사용으로 효율 증가</li>
                                 <li>- Axios 비동기 라이브러리 사용</li>
                                 <li>- FireBase를 이용한 인증, 실시간 데이터 베이스, 스토리지 구현</li>
                                 <li>- FontAwesome을 이용한 아이콘 연결</li>

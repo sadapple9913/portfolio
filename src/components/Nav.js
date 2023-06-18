@@ -8,7 +8,7 @@ import {useCursorEffect} from '../Hooks/UseCursorEffect';
 
 function Nav({handleOnClick}) {
     const navigate = useNavigate();
-    const {opacity, handleOpacityChange} = useOpacity();
+    const {opacity, handleOpacityChange} = useOpacity(50);
     const {handleMouseEnter, handleMouseLeave} = useCursorEffect();
 
     const delayedNavigate = useCallback(() => {
